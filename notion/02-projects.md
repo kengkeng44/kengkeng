@@ -54,6 +54,10 @@
 <td>差異化</td>
 <td>避開 Online Retail 教學資料撞題，挑巴西市場（Boleto 文化、信用卡分期）得出與歐美不同結論</td>
 </tr>
+<tr>
+<td>AI 協作</td>
+<td>AI pair programming 完成，但每段邏輯、SQL 設計、統計選擇都自己 review；有信心維護、解釋決策、針對問題提出解法</td>
+</tr>
 	</table>
 	### [🎮 Cookie Cats A/B 測試評估 · 第一段抓出 SRM 異常](https://github.com/kengkeng44/cookie-cats-ab-test)
 	> 🚀 Live demo: https://cookie-cats-jenho.streamlit.app/ · Frequentist + Bootstrap + Bayesian · 90,189 玩家
@@ -81,6 +85,10 @@
 <tr>
 <td>展現能力</td>
 <td>看 A/B 結果先檢查實驗有效性、知道 p&lt;0.05 不等於 ship、用三方法交叉驗證</td>
+</tr>
+<tr>
+<td>AI 協作</td>
+<td>AI pair programming 完成，但每段邏輯、SQL 設計、統計選擇都自己 review；有信心維護、解釋決策、針對問題提出解法</td>
 </tr>
 	</table>
 	### [🤖 Telegram Bot 工作流套件 · 發文 + 收藏](https://github.com/kengkeng44/Telegram-Bot-Workflow-Suite-Publishing-Bookmarking)
