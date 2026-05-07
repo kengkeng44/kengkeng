@@ -25,24 +25,58 @@ notion/
 
 ## 工作流（branch-based）
 
-平常編輯：
+### 在自己這台機器上改
 
-```sh
+```powershell
+cd C:\Users\acer\Desktop\kengkeng
+
+# 1. 開分支
 git switch -c edit/<change-name>
-# 改 notion/*.md
+
+# 2. 改 notion/*.md（用 Claude Code 或編輯器）
+
+# 3. commit
 git commit -am "edit: <what changed>"
+
+# 4. 合進 main
+git switch main
+git merge edit/<change-name>
+
+# 5. 在這個資料夾開 Claude Code，跑：
+#    /sync-kengkeng-to-notion
+```
+
+### 在外面沒這台電腦時
+
+兩條路：
+
+**A. 用 GitHub 網頁 / 手機 App 直接改**
+
+1. 在 GitHub 上開 branch，網頁編輯 `notion/*.md`
+2. 開 PR、自己 merge 進 main
+3. 回家後 `git pull` 同步，再跑 `/sync-kengkeng-to-notion`
+
+**B. 用其他電腦 clone**
+
+```powershell
+gh repo clone kengkeng44/kengkeng
+cd kengkeng
+# 同上 branch-based 流程
 git push -u origin edit/<change-name>
-# 開 PR、自己 review、merge 進 main
-git switch main && git pull
+# 回家後 fetch + merge + sync
 ```
 
-合進 main 後在 Claude Code 跑：
+### 第一次 push 到 GitHub（還沒做）
 
-```
-/sync-kengkeng-to-notion
+```powershell
+gh repo create kengkeng --private --source=. --push
 ```
 
-就會把整頁覆蓋成 repo 目前 main 的內容。
+### Sync 機制
+
+- `replace_content` 整頁覆蓋。每跑一次都會把 repo `main` 的 6 個 `notion/*.md` 串起來推上去。
+- 串接順序由檔名前綴決定（00 → 05），中間用 `\n---\n` 分區。
+- Notion 的版本歷史（右上角 ··· → Updates）可以還原。
 
 ## 注意事項
 
