@@ -17,11 +17,16 @@ notion/
   03-skills.md      Skills 技能
   04-experience.md  學歷 & 經歷
   05-contact.md     Contact 聯絡方式
+profile/
+  README.md         GitHub 個人頁 (kengkeng44/kengkeng44) 的鏡像來源
 .claude/commands/
   sync-kengkeng-to-notion.md   slash command
+  sync-kengkeng-to-profile.md  把 profile/README.md 推到 kengkeng44/kengkeng44 README
 ```
 
-每個 `.md` 用的是 Notion-flavored markdown（toggle 用 `{toggle="true"}`、tab 縮排表示巢狀）。檔名前綴決定串接順序。
+每個 `notion/*.md` 用的是 Notion-flavored markdown（toggle 用 `{toggle="true"}`、tab 縮排表示巢狀）。檔名前綴決定串接順序。
+
+`profile/README.md` 走 **GitHub-flavored** markdown，跟 `notion/*.md` 是不同的渲染目標：notion 那邊吃的是 Notion 頁面、profile 這邊推到 GitHub 個人頁（`kengkeng44/kengkeng44/README.md`，顯示在 https://github.com/kengkeng44 頂部）。**故意不共用同一份**，讓兩邊語氣可以針對觀眾（Notion 給看履歷網頁的 HR、GitHub 給看 code 的 dev/recruiter）各自調整。
 
 ## 工作流（branch-based）
 
