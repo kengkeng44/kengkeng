@@ -9,204 +9,218 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=DM+Sans:opsz,wght@9..40,300..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#08090C;
-    --bg-2:#0D0F15;
-    --surface:#11131A;
-    --surface-2:#171924;
-    --line:rgba(255,255,255,0.07);
-    --line-strong:rgba(255,255,255,0.14);
-    --text:#ECEDEE;
-    --text-mute:#8C8F96;
-    --text-soft:#B7BAC1;
-    --coral:#FF7A6B;
-    --coral-soft:#FFB5AB;
-    --amber:#F2C57C;
-    --jade:#7DD3A8;
-    --rose:#E97A7A;
-    --serif:'Fraunces', 'Microsoft JhengHei UI', serif;
-    --sans:'DM Sans', 'Microsoft JhengHei UI', system-ui, sans-serif;
-    --mono:'JetBrains Mono', ui-monospace, Consolas, monospace;
-    --zh:'Microsoft JhengHei UI', 'Microsoft JhengHei', sans-serif;
+    --bg:#08090C;--bg-2:#0D0F15;--surface:#11131A;--surface-2:#171924;--surface-3:#1F222F;
+    --line:rgba(255,255,255,0.07);--line-strong:rgba(255,255,255,0.14);
+    --text:#ECEDEE;--text-mute:#8C8F96;--text-soft:#B7BAC1;
+    --coral:#FF7A6B;--coral-soft:#FFB5AB;--amber:#F2C57C;--jade:#7DD3A8;--rose:#E97A7A;--lavender:#A78BFA;--sky:#6FB7DC;
+    --serif:'Fraunces','Microsoft JhengHei UI',serif;
+    --sans:'DM Sans','Microsoft JhengHei UI',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+    --zh:'Microsoft JhengHei UI','Microsoft JhengHei',sans-serif;
   }
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
   body{
     background-image:
-      radial-gradient(800px 600px at 80% -10%, rgba(255,122,107,0.08), transparent 60%),
-      radial-gradient(900px 700px at -10% 30%, rgba(242,197,124,0.04), transparent 50%),
-      linear-gradient(180deg, var(--bg), var(--bg-2));
-    min-height:100vh;
-    overflow-x:hidden;
+      radial-gradient(800px 600px at 80% -10%,rgba(255,122,107,0.08),transparent 60%),
+      radial-gradient(900px 700px at -10% 30%,rgba(242,197,124,0.04),transparent 50%),
+      linear-gradient(180deg,var(--bg),var(--bg-2));
+    min-height:100vh;overflow-x:hidden
   }
-  /* grain overlay */
-  body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;mix-blend-mode:overlay;opacity:0.035;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>");
-  }
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;mix-blend-mode:overlay;opacity:0.035;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>")}
   .wrap{max-width:1280px;margin:0 auto;padding:64px 48px 96px;position:relative;z-index:2}
 
-  /* HERO ───── */
-  .hero{
-    border-bottom:1px solid var(--line);padding-bottom:56px;margin-bottom:80px;
-    display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;
-  }
-  .crest{
-    font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-    color:var(--coral);margin-bottom:32px;display:flex;gap:14px;align-items:center;
-  }
+  /* HERO */
+  .hero{border-bottom:1px solid var(--line);padding-bottom:48px;margin-bottom:48px;
+    display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+  .crest{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--coral);margin-bottom:28px;display:flex;gap:14px;align-items:center}
   .crest .dot{width:6px;height:6px;background:var(--coral);border-radius:50%;box-shadow:0 0 16px var(--coral)}
-  .title{
-    font-family:var(--serif);font-weight:380;font-size:clamp(56px,8vw,112px);line-height:0.92;
-    letter-spacing:-0.03em;margin:0 0 24px;
-    font-variation-settings:"opsz" 144, "SOFT" 30;
-  }
-  .title em{font-style:italic;font-weight:300;color:var(--coral-soft);font-variation-settings:"opsz" 144, "SOFT" 60, "WONK" 1}
+  .title{font-family:var(--serif);font-weight:380;font-size:clamp(48px,6.5vw,88px);line-height:0.94;
+    letter-spacing:-0.03em;margin:0 0 18px;font-variation-settings:"opsz" 144,"SOFT" 30}
+  .title em{font-style:italic;font-weight:300;color:var(--coral-soft);font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1}
   .title .ru{display:block;font-family:var(--zh);font-size:0.34em;font-weight:400;color:var(--text-soft);
-    letter-spacing:0.04em;margin-top:18px;line-height:1.3}
-  .lede{font-size:17px;color:var(--text-soft);max-width:54ch;margin:0 0 8px;font-weight:300}
-  .lede .zh{display:block;font-family:var(--zh);margin-top:6px;color:var(--text-mute);font-size:15px}
-  .meta-right{font-family:var(--mono);font-size:11px;text-align:right;color:var(--text-mute);letter-spacing:0.1em;line-height:2}
+    letter-spacing:0.04em;margin-top:14px;line-height:1.3}
+  .lede{font-size:15px;color:var(--text-soft);max-width:54ch;margin:0;font-weight:300}
+  .lede .zh{display:block;font-family:var(--zh);margin-top:4px;color:var(--text-mute);font-size:14px}
+  .meta-right{font-family:var(--mono);font-size:11px;text-align:right;color:var(--text-mute);letter-spacing:0.1em;line-height:1.9}
   .meta-right b{color:var(--text);font-weight:500}
 
-  /* STATS strip */
-  .stats{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    margin:48px 0 96px;
-  }
-  .stat{padding:32px 24px;border-right:1px solid var(--line);position:relative}
+  /* COMPACT STATS */
+  .stats{display:flex;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 40px}
+  .stat{padding:18px 24px;border-right:1px solid var(--line);flex:1;display:flex;align-items:baseline;gap:14px}
   .stat:last-child{border-right:none}
-  .stat .n{font-family:var(--serif);font-size:64px;line-height:1;letter-spacing:-0.04em;
-    font-variation-settings:"opsz" 144;font-weight:340}
-  .stat .n em{font-style:italic;color:var(--coral);font-variation-settings:"opsz" 144, "SOFT" 100, "WONK" 1}
-  .stat .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-mute);margin-top:14px}
-  .stat .lbl .zh{font-family:var(--zh);letter-spacing:0.04em;text-transform:none;font-size:11px;margin-left:8px;color:var(--text-soft)}
+  .stat .n{font-family:var(--serif);font-size:32px;line-height:1;letter-spacing:-0.03em;font-variation-settings:"opsz" 60;font-weight:380;color:var(--coral)}
+  .stat .n em{font-style:italic;font-variation-settings:"opsz" 60,"SOFT" 100,"WONK" 1}
+  .stat .lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mute)}
+  .stat .lbl .zh{font-family:var(--zh);letter-spacing:0.04em;text-transform:none;font-size:11.5px;margin-left:6px;color:var(--text-soft)}
 
-  /* SECTION ───── */
-  section{margin-bottom:120px;scroll-margin-top:40px}
-  .sec-head{
-    display:grid;grid-template-columns:120px 1fr auto;gap:32px;align-items:end;
-    padding-bottom:28px;border-bottom:1px solid var(--line-strong);margin-bottom:48px;
-  }
-  .sec-num{font-family:var(--serif);font-size:96px;line-height:0.85;color:var(--coral);
-    font-variation-settings:"opsz" 144, "SOFT" 50, "WONK" 1;font-weight:340;font-style:italic;letter-spacing:-0.04em}
-  .sec-title{margin:0;font-family:var(--serif);font-weight:380;font-size:48px;line-height:1;letter-spacing:-0.02em;
-    font-variation-settings:"opsz" 144}
-  .sec-title .zh{display:block;font-family:var(--zh);font-size:18px;color:var(--text-mute);font-weight:400;margin-top:10px;letter-spacing:0.04em}
-  .sec-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mute);text-align:right}
-  .sec-tag b{color:var(--coral);font-weight:500}
+  /* CONTROL BAR — sticky */
+  .control{position:sticky;top:0;z-index:10;background:rgba(8,9,12,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    margin:0 -48px 36px;padding:18px 48px;border-bottom:1px solid var(--line)}
+  .tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+  .tab{background:transparent;border:1px solid var(--line);color:var(--text-mute);cursor:pointer;
+    font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.04em;
+    padding:10px 18px;border-radius:2px;display:flex;align-items:center;gap:10px;transition:all 200ms ease}
+  .tab:hover{color:var(--text);border-color:var(--line-strong)}
+  .tab.active{background:var(--coral);color:#0a0a0a;border-color:var(--coral)}
+  .tab .num{font-family:var(--serif);font-style:italic;font-size:18px;font-variation-settings:"opsz" 36,"SOFT" 60}
+  .tab .zh{font-family:var(--zh);font-weight:400;font-size:12.5px;opacity:0.85}
+  .tab .ct{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(255,255,255,0.08);letter-spacing:0.04em}
+  .tab.active .ct{background:rgba(0,0,0,0.18);color:#0a0a0a}
 
-  /* CARDS — memory */
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-  .card{background:var(--surface);padding:24px 26px;display:flex;flex-direction:column;gap:12px;transition:background 220ms ease, transform 220ms ease}
+  .row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+  .search-wrap{position:relative;flex:1}
+  .search-wrap::before{content:"⌕";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-mute);font-size:18px;pointer-events:none}
+  #search{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--text);
+    font-family:var(--sans);font-size:14px;padding:11px 40px 11px 40px;border-radius:2px;letter-spacing:0.01em;outline:none;transition:border 200ms}
+  #search::placeholder{color:var(--text-mute)}
+  #search:focus{border-color:var(--coral)}
+  .clear-search{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-mute);cursor:pointer;font-size:18px;padding:4px 8px;display:none;line-height:1}
+  .clear-search.show{display:block}
+  .clear-search:hover{color:var(--coral)}
+  .result-count{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--text-mute);text-transform:uppercase;white-space:nowrap}
+  .result-count b{color:var(--coral);font-weight:500}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .chips-label{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mute);margin-right:4px}
+  .chip{background:transparent;border:1px solid var(--line);color:var(--text-soft);cursor:pointer;
+    font-family:var(--sans);font-size:12px;padding:6px 12px;border-radius:99px;display:flex;align-items:center;gap:8px;transition:all 180ms ease}
+  .chip:hover{border-color:var(--line-strong);color:var(--text)}
+  .chip .swatch{width:7px;height:7px;border-radius:50%}
+  .chip.active{background:var(--surface-3);border-color:var(--line-strong);color:var(--text)}
+  .chip.muted{opacity:0.4}
+  .chip .zh{font-family:var(--zh);font-size:11.5px;color:var(--text-mute)}
+  .chip.active .zh{color:var(--text-soft)}
+  .reset-chips{background:transparent;border:none;color:var(--text-mute);cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:6px 4px;margin-left:4px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+  .reset-chips:hover{color:var(--coral)}
+
+  /* PANEL */
+  .panel{display:none;animation:fi 0.4s ease}
+  .panel.active{display:block}
+  @keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  /* Section sub-headers within panels */
+  .panel-head{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:end;
+    padding-bottom:22px;border-bottom:1px solid var(--line-strong);margin-bottom:32px}
+  .panel-num{font-family:var(--serif);font-size:64px;line-height:0.85;color:var(--coral);
+    font-variation-settings:"opsz" 144,"SOFT" 50,"WONK" 1;font-weight:340;font-style:italic;letter-spacing:-0.04em}
+  .panel-title{margin:0;font-family:var(--serif);font-weight:380;font-size:36px;line-height:1;letter-spacing:-0.02em;font-variation-settings:"opsz" 144}
+  .panel-title .zh{display:block;font-family:var(--zh);font-size:14px;color:var(--text-mute);font-weight:400;margin-top:8px;letter-spacing:0.04em}
+  .panel-meta{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);text-align:right}
+
+  /* CARDS — collapsed by default */
+  .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--surface);transition:background 200ms}
   .card:hover{background:var(--surface-2)}
-  .card .type{
-    font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
-    color:var(--coral);display:flex;align-items:center;gap:10px;
-  }
-  .card .type::before{content:"";width:6px;height:6px;background:currentColor;border-radius:50%}
-  .card .type.feedback{color:var(--coral)}
-  .card .type.project{color:var(--amber)}
-  .card .type.reference{color:var(--jade)}
-  .card .type.user{color:#A78BFA}
-  .card .en{font-family:var(--serif);font-size:18px;line-height:1.25;letter-spacing:-0.01em;font-weight:420;
-    font-variation-settings:"opsz" 24}
-  .card .zh{font-family:var(--zh);font-size:14px;color:var(--text-soft);line-height:1.55}
-  .card .desc{font-size:13.5px;color:var(--text-mute);font-family:var(--zh);line-height:1.6}
-  .card .filename{font-family:var(--mono);font-size:10px;color:var(--text-mute);opacity:0.55;margin-top:4px;letter-spacing:0.04em}
+  .card.hidden{display:none}
 
-  /* PERMS — split */
-  .perm-split{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  .perm-col h3{font-family:var(--serif);font-size:24px;font-weight:400;margin:0 0 6px;
-    font-variation-settings:"opsz" 36;display:flex;align-items:baseline;gap:14px}
-  .perm-col h3 .badge{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+  .card-head{padding:14px 20px;display:grid;grid-template-columns:8px 1fr 16px;gap:14px;align-items:center;cursor:pointer;user-select:none;transition:padding 200ms}
+  .card-head:hover{padding-left:24px}
+  .type-dot{width:8px;height:8px;border-radius:50%;background:var(--text-mute);align-self:center}
+  .card.t-feedback .type-dot{background:var(--coral);box-shadow:0 0 10px rgba(255,122,107,0.4)}
+  .card.t-project .type-dot{background:var(--amber);box-shadow:0 0 10px rgba(242,197,124,0.4)}
+  .card.t-user .type-dot{background:var(--lavender);box-shadow:0 0 10px rgba(167,139,250,0.4)}
+  .card.t-reference .type-dot{background:var(--jade);box-shadow:0 0 10px rgba(125,211,168,0.4)}
+  .card.t-allow .type-dot{background:var(--jade)}
+  .card.t-ask .type-dot{background:var(--rose)}
+  .card.t-custom .type-dot{background:var(--sky)}
+  .card.t-docs .type-dot{background:var(--amber)}
+  .card.t-super .type-dot{background:var(--lavender)}
+
+  .card-titles{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .card-titles .en{font-family:var(--serif);font-size:15.5px;line-height:1.25;font-weight:420;font-variation-settings:"opsz" 24;color:var(--text)}
+  .card-titles .zh{font-family:var(--zh);font-size:13px;color:var(--text-mute);line-height:1.35}
+
+  .chev{color:var(--text-mute);font-size:11px;transition:transform 220ms ease;align-self:center}
+  .card.open .chev{transform:rotate(90deg);color:var(--coral)}
+
+  .card-body{max-height:0;overflow:hidden;transition:max-height 320ms ease}
+  .card.open .card-body{max-height:600px}
+  .card-body-inner{padding:0 20px 18px 42px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:2px}
+  .card-body .en-desc{font-size:13.5px;color:var(--text-soft);line-height:1.55}
+  .card-body .zh-desc{font-family:var(--zh);font-size:13px;color:var(--text-mute);line-height:1.6}
+  .card-body .filename{font-family:var(--mono);font-size:10px;color:var(--text-mute);opacity:0.55;letter-spacing:0.04em;margin-top:4px}
+  .card-body code{font-family:var(--mono);font-size:12.5px;background:rgba(255,255,255,0.04);padding:1px 5px;border-radius:2px}
+
+  /* PERMISSIONS panel — two columns */
+  .perm-split{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  .perm-col h3{font-family:var(--serif);font-size:22px;font-weight:400;margin:0 0 4px;font-variation-settings:"opsz" 36;display:flex;align-items:baseline;gap:12px}
+  .perm-col h3 .badge{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:3px 8px;border-radius:2px}
   .perm-col.allow h3 .badge{background:rgba(125,211,168,0.12);color:var(--jade)}
   .perm-col.ask h3 .badge{background:rgba(233,122,122,0.13);color:var(--rose)}
-  .perm-col .zh-sub{font-family:var(--zh);color:var(--text-mute);font-size:13px;margin-bottom:24px}
-  .perm-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
-  .perm-list li{display:grid;grid-template-columns:1fr;gap:4px;padding:14px 0;border-bottom:1px solid var(--line);transition:padding-left 200ms ease}
-  .perm-list li:hover{padding-left:8px}
-  .perm-list code{font-family:var(--mono);font-size:13px;color:var(--text);background:transparent;padding:0;letter-spacing:-0.01em}
-  .perm-list .why{font-family:var(--zh);font-size:12.5px;color:var(--text-mute);line-height:1.5}
-  .perm-list .why .en{color:var(--text-soft);font-family:var(--sans);margin-right:8px}
+  .perm-col .zh-sub{font-family:var(--zh);color:var(--text-mute);font-size:12.5px;margin:0 0 18px;line-height:1.5}
+  .perm-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
 
-  /* SKILLS */
-  .skill-group{margin-bottom:56px}
-  .skill-group h3{
-    font-family:var(--serif);font-size:28px;font-weight:380;margin:0 0 4px;
-    font-variation-settings:"opsz" 60;display:flex;align-items:baseline;gap:18px
-  }
-  .skill-group h3 em{color:var(--coral);font-style:italic;font-variation-settings:"opsz" 60, "SOFT" 100, "WONK" 1}
-  .skill-group h3 .count{font-family:var(--mono);font-size:11px;color:var(--text-mute);letter-spacing:0.18em;font-weight:400}
-  .skill-group .zh-sub{font-family:var(--zh);color:var(--text-mute);font-size:13.5px;margin:0 0 28px}
-  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-  .skill{background:var(--surface);padding:22px 24px;display:flex;flex-direction:column;gap:10px;transition:background 220ms ease}
-  .skill:hover{background:var(--surface-2)}
-  .skill .id{font-family:var(--mono);font-size:11px;color:var(--coral-soft);letter-spacing:0.04em;word-break:break-word}
-  .skill .id .ns{color:var(--text-mute);opacity:0.7}
-  .skill .name{font-family:var(--serif);font-size:18px;line-height:1.2;font-weight:420;
-    font-variation-settings:"opsz" 24}
-  .skill .en{font-size:13px;color:var(--text-soft);line-height:1.55}
-  .skill .zh{font-family:var(--zh);font-size:13px;color:var(--text-mute);line-height:1.55}
+  .perm-item{background:var(--surface);transition:background 200ms}
+  .perm-item:hover{background:var(--surface-2)}
+  .perm-item.hidden{display:none}
+  .perm-head{padding:11px 16px;display:grid;grid-template-columns:8px 1fr 16px;gap:12px;align-items:center;cursor:pointer;user-select:none}
+  .perm-head code{font-family:var(--mono);font-size:12.5px;color:var(--text);background:transparent;padding:0;letter-spacing:-0.01em}
+  .perm-item.open .chev{transform:rotate(90deg);color:var(--coral)}
+  .perm-body{max-height:0;overflow:hidden;transition:max-height 280ms ease}
+  .perm-item.open .perm-body{max-height:200px}
+  .perm-body-inner{padding:0 16px 14px 36px;border-top:1px solid var(--line);padding-top:10px;font-family:var(--zh);font-size:12.5px;color:var(--text-mute);line-height:1.55}
+  .perm-body-inner .en{color:var(--text-soft);font-family:var(--sans);margin-right:6px}
 
-  /* FOOTER ───── */
-  footer{margin-top:80px;padding-top:40px;border-top:1px solid var(--line);
+  /* SKILLS panel — sub-groups */
+  .skill-group{margin-bottom:40px}
+  .skill-group h3{font-family:var(--serif);font-size:22px;font-weight:380;margin:0 0 4px;font-variation-settings:"opsz" 60;display:flex;align-items:baseline;gap:14px}
+  .skill-group h3 em{color:var(--coral);font-style:italic;font-variation-settings:"opsz" 60,"SOFT" 100,"WONK" 1}
+  .skill-group h3 .count{font-family:var(--mono);font-size:10px;color:var(--text-mute);letter-spacing:0.16em;font-weight:400}
+  .skill-group .zh-sub{font-family:var(--zh);color:var(--text-mute);font-size:12.5px;margin:0 0 20px;line-height:1.5}
+
+  /* Card variants for skills */
+  .card.skill-card .card-titles .id{font-family:var(--mono);font-size:10.5px;color:var(--coral-soft);letter-spacing:0.02em;margin-bottom:2px;word-break:break-word}
+  .card.skill-card .card-titles .id .ns{color:var(--text-mute);opacity:0.7}
+
+  /* empty state */
+  .empty{padding:64px 24px;text-align:center;color:var(--text-mute);border:1px dashed var(--line);border-radius:2px;font-family:var(--zh)}
+  .empty .icon{font-size:48px;color:var(--text-mute);opacity:0.4;margin-bottom:12px;font-family:var(--serif);font-style:italic}
+  .empty .hint{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;margin-top:8px;color:var(--text-mute);opacity:0.7}
+
+  /* highlight matches */
+  mark{background:rgba(255,122,107,0.22);color:var(--coral-soft);padding:0 2px;border-radius:2px}
+
+  /* FOOTER */
+  footer{margin-top:80px;padding-top:36px;border-top:1px solid var(--line);
     display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;color:var(--text-mute);font-size:12px;font-family:var(--mono);letter-spacing:0.06em}
-  footer .zh{font-family:var(--zh);color:var(--text-soft);font-size:13px;letter-spacing:normal;line-height:1.7;max-width:60ch}
+  footer .zh{font-family:var(--zh);color:var(--text-soft);font-size:13px;letter-spacing:normal;line-height:1.7;max-width:62ch}
   footer a{color:var(--coral);text-decoration:none}
   footer a:hover{text-decoration:underline}
 
-  /* TOC nav */
-  .toc{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:18px}
-  .toc a{
-    font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
-    writing-mode:vertical-rl;color:var(--text-mute);text-decoration:none;
-    padding:8px 4px;border-left:1px solid var(--line);transition:color 200ms, border-color 200ms;
-  }
-  .toc a:hover{color:var(--coral);border-color:var(--coral)}
-
-  /* responsive */
   @media (max-width:900px){
-    .wrap{padding:40px 24px 64px}
-    .toc{display:none}
+    .wrap{padding:32px 20px 64px}
     .hero{grid-template-columns:1fr}
-    .stats{grid-template-columns:1fr 1fr;border-right:0}
+    .stats{flex-wrap:wrap}
+    .stat{flex:1 1 50%;border-bottom:1px solid var(--line)}
     .stat:nth-child(2n){border-right:0}
-    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-    .sec-head{grid-template-columns:auto 1fr;gap:20px}
-    .sec-num{font-size:64px}
-    .sec-title{font-size:32px}
-    .grid-2,.skill-grid{grid-template-columns:1fr}
-    .perm-split{grid-template-columns:1fr;gap:36px}
+    .stat:nth-child(n+3){border-bottom:0}
+    .control{margin:0 -20px 28px;padding:14px 20px}
+    .row{grid-template-columns:1fr;gap:10px}
+    .result-count{text-align:left}
+    .cards-grid{grid-template-columns:1fr}
+    .perm-split{grid-template-columns:1fr;gap:28px}
+    .panel-head{grid-template-columns:auto 1fr;gap:16px}
+    .panel-num{font-size:48px}
+    .panel-title{font-size:26px}
   }
-
-  /* fade-in stagger */
-  .fi{opacity:0;transform:translateY(8px);animation:fi 0.7s ease forwards}
-  @keyframes fi{to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 
-<nav class="toc">
-  <a href="#memory">01 · Memory</a>
-  <a href="#perms">02 · Permissions</a>
-  <a href="#skills">03 · Skills</a>
-</nav>
-
 <div class="wrap">
 
-  <!-- HERO ─────────────────────────────────────────── -->
-  <header class="hero fi">
+  <!-- HERO -->
+  <header class="hero">
     <div>
       <div class="crest"><span class="dot"></span>Operator's Card · 操作員配置卡</div>
-      <h1 class="title">
-        Claude <em>Code</em><br>
-        Config <em>Atlas</em>
-        <span class="ru">Jen-Ho 鄭仁和 · Claude Code 主機的記憶、權限、技能完整盤點</span>
+      <h1 class="title">Claude <em>Code</em> Config <em>Atlas</em>
+        <span class="ru">Jen-Ho 鄭仁和 · 記憶 / 權限 / 技能 完整盤點 · 可搜尋、可折疊</span>
       </h1>
-      <p class="lede">
-        A bilingual snapshot of every persistent rule, allow/ask permission, and installed skill that shapes how Claude Code behaves in this account.
-        <span class="zh">這份儀表板把所有持久化的規則、權限、安裝的技能 攤平在一個畫面上 — 用以快速看清「Claude 在這台機器上能做什麼、不能做什麼」。</span>
+      <p class="lede">A bilingual snapshot of every persistent rule, permission, and installed skill that shapes Claude Code's behavior in this account.
+        <span class="zh">把所有持久化規則、權限、安裝的技能攤平在一頁,看清「Claude 在這台機器上能做什麼」。</span>
       </p>
     </div>
     <div class="meta-right">
@@ -218,552 +232,788 @@
     </div>
   </header>
 
-  <!-- STATS ─────────────────────────────────────────── -->
-  <section class="stats fi" style="animation-delay:.1s">
-    <div class="stat"><div class="n"><em>21</em></div><div class="lbl">Memory items <span class="zh">記憶條目</span></div></div>
-    <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Auto-allowed <span class="zh">自動放行</span></div></div>
-    <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask-first <span class="zh">先詢問</span></div></div>
-    <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills installed <span class="zh">已安裝技能</span></div></div>
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat"><div class="n"><em>21</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
+    <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
+    <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
   </section>
 
-  <!-- ════════════════════════════════════════════════
-       SECTION 01 · MEMORY
-       ════════════════════════════════════════════════ -->
-  <section id="memory" class="fi" style="animation-delay:.2s">
-    <div class="sec-head">
-      <div class="sec-num">01</div>
-      <h2 class="sec-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="sec-tag"><b>21</b> entries · <b>4</b> types</div>
+  <!-- CONTROL BAR -->
+  <div class="control">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">21</span></button>
+      <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
+      <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">42</span></button>
     </div>
 
-    <div class="grid-2">
+    <div class="row">
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
+        <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
+      </div>
+      <div class="result-count" id="result-count"><b>21</b> of <b>21</b> 顯示中</div>
+    </div>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Secret-Handling Discipline</div>
-        <div class="zh">Secret 處理規則</div>
-        <div class="desc">Never run commands that would print API keys or tokens to output. Hand the command to the user to execute themselves.<br><br>不主動跑會把 API key / token 值印到輸出的指令；給用戶指令讓他自己跑。</div>
-        <div class="filename">feedback_secrets_handling.md</div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <!-- ───── PANEL 01 · MEMORY ───── -->
+  <section class="panel active" data-panel="memory">
+    <div class="panel-head">
+      <div class="panel-num">01</div>
+      <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
+      <div class="panel-meta"><b>21</b> entries · <b>4</b> types</div>
+    </div>
+
+    <div class="cards-grid">
+
+      <article class="card t-feedback" data-type="feedback" data-search="secret api key token jenho secret 處理 feedback_secrets_handling">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Secret-Handling Discipline</div><div class="zh">Secret 處理規則</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Never run commands that would print API keys or tokens to output. Hand the command to the user to execute themselves.</div>
+          <div class="zh-desc">不主動跑會把 API key / token 值印到輸出的指令；給用戶指令讓他自己跑。</div>
+          <div class="filename">feedback_secrets_handling.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type user">USER · 使用者背景</div>
-        <div class="en">Olist Project · PM Portfolio Headliner</div>
-        <div class="zh">Olist 專案 PM portfolio 定位</div>
-        <div class="desc">olist-project is the headlining PM resume artifact. Analysis emphasizes business insight + ROI over technical depth.<br><br>olist-project 是 PM 履歷主打,分析以商業洞察 + ROI 為主,不是技術深度。</div>
-        <div class="filename">user_olist_pm_portfolio.md</div>
+      <article class="card t-user" data-type="user" data-search="olist pm portfolio roi 履歷 商業洞察 user_olist_pm_portfolio">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Olist Project · PM Portfolio Headliner</div><div class="zh">Olist 專案 PM portfolio 定位</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">olist-project is the headlining PM resume artifact. Analysis emphasizes business insight + ROI over technical depth.</div>
+          <div class="zh-desc">olist-project 是 PM 履歷主打,分析以商業洞察 + ROI 為主,不是技術深度。</div>
+          <div class="filename">user_olist_pm_portfolio.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type user">USER · 使用者背景</div>
-        <div class="en">Public Profile Links</div>
-        <div class="zh">使用者 profile 連結</div>
-        <div class="desc">GitHub / LinkedIn / portfolio Streamlit URLs — frequently reused in outbound resume copy.<br><br>GitHub / LinkedIn / portfolio Streamlit URL,履歷對外文案常用。</div>
-        <div class="filename">user_profile_links.md</div>
+      <article class="card t-user" data-type="user" data-search="github linkedin profile streamlit 履歷 user_profile_links">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Public Profile Links</div><div class="zh">使用者 profile 連結</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">GitHub / LinkedIn / portfolio Streamlit URLs — frequently reused in outbound resume copy.</div>
+          <div class="zh-desc">GitHub / LinkedIn / portfolio Streamlit URL,履歷對外文案常用。</div>
+          <div class="filename">user_profile_links.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">AI Output Style</div>
-        <div class="zh">AI 輸出文體偏好</div>
-        <div class="desc">No filler (no leading 🤖, no trailing ※, no "in summary"). Default to terse. Predictions must use bull/base/bear probability weighting.<br><br>禁贅字（開頭🤖/結尾※/簡言之等）、預設精簡版、預測類強制 bull/base/bear 機率加權。</div>
-        <div class="filename">feedback_ai_output_style.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="ai output style 文體 預測 bull base bear 機率 feedback_ai_output_style">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">AI Output Style</div><div class="zh">AI 輸出文體偏好</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">No filler (no leading 🤖, no trailing ※, no "in summary"). Default to terse. Predictions must use bull/base/bear probability weighting.</div>
+          <div class="zh-desc">禁贅字（開頭🤖/結尾※/簡言之等）、預設精簡版、預測類強制 bull/base/bear 機率加權。</div>
+          <div class="filename">feedback_ai_output_style.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type reference">REFERENCE · 外部資源</div>
-        <div class="en">Finance LLM Prompt Library</div>
-        <div class="zh">金融 LLM prompt 參考庫</div>
-        <div class="desc">Open-source prompt frameworks like awesome-claude-finance-prompts / claude-trading-skills for finance LLM work.<br><br>awesome-claude-finance-prompts / claude-trading-skills 等開源 prompt 框架。</div>
-        <div class="filename">reference_finance_prompt_libs.md</div>
+      <article class="card t-reference" data-type="reference" data-search="finance llm prompt awesome claude trading 金融 reference_finance_prompt_libs">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Finance LLM Prompt Library</div><div class="zh">金融 LLM prompt 參考庫</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Open-source prompt frameworks like awesome-claude-finance-prompts / claude-trading-skills for finance LLM work.</div>
+          <div class="zh-desc">awesome-claude-finance-prompts / claude-trading-skills 等開源 prompt 框架。</div>
+          <div class="filename">reference_finance_prompt_libs.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type project">PROJECT · 進行中專案</div>
-        <div class="en">kengkeng · Notion Portfolio Source-of-Truth</div>
-        <div class="zh">kengkeng repo</div>
-        <div class="desc">Desktop\kengkeng mirrors Notion page fbb7…. Run /sync-kengkeng-to-notion to push.<br><br>Desktop\kengkeng 鏡射 Notion fbb7… 頁面,跑 /sync-kengkeng-to-notion 推送。</div>
-        <div class="filename">project_kengkeng_repo.md</div>
+      <article class="card t-project" data-type="project" data-search="kengkeng notion portfolio sync source of truth project_kengkeng_repo">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">kengkeng · Notion Portfolio Source-of-Truth</div><div class="zh">kengkeng repo</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Desktop\kengkeng mirrors Notion page fbb7…. Run /sync-kengkeng-to-notion to push.</div>
+          <div class="zh-desc">Desktop\kengkeng 鏡射 Notion fbb7… 頁面,跑 /sync-kengkeng-to-notion 推送。</div>
+          <div class="filename">project_kengkeng_repo.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">PowerShell 5.1 + zh-TW · UTF-8 .ps1 Crash</div>
-        <div class="zh">PowerShell 5.1 + zh-TW 讀 UTF-8 .ps1 會炸</div>
-        <div class="desc">Open-source .ps1 parse errors: check BOM first. Fix by adding UTF-8 BOM or using <code>irm | iex</code>.<br><br>開源 .ps1 parse error 先檢查 BOM；修法是加 UTF-8 BOM 或用 <code>irm | iex</code>。</div>
-        <div class="filename">feedback_powershell_utf8_bom.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="powershell ps1 utf-8 bom zh-tw parse error feedback_powershell_utf8_bom">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">PowerShell 5.1 + zh-TW · UTF-8 .ps1 Crash</div><div class="zh">PowerShell 5.1 + zh-TW 讀 UTF-8 .ps1 會炸</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Open-source .ps1 parse errors: check BOM first. Fix by adding UTF-8 BOM or using <code>irm | iex</code>.</div>
+          <div class="zh-desc">開源 .ps1 parse error 先檢查 BOM；修法是加 UTF-8 BOM 或用 <code>irm | iex</code>。</div>
+          <div class="filename">feedback_powershell_utf8_bom.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type project">PROJECT · 進行中專案</div>
-        <div class="en">Hermes Agent · Install Path</div>
-        <div class="zh">Hermes Agent 安裝位置</div>
-        <div class="desc">%LOCALAPPDATA%\hermes. CLI in \hermes-agent\venv\Scripts. venv uses Python 3.12, not 3.11.<br><br>%LOCALAPPDATA%\hermes,CLI 在 \hermes-agent\venv\Scripts,venv 用 Python 3.12 非 3.11。</div>
-        <div class="filename">project_hermes_agent_install.md</div>
+      <article class="card t-project" data-type="project" data-search="hermes agent install path localappdata python 3.12 venv project_hermes_agent_install">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Hermes Agent · Install Path</div><div class="zh">Hermes Agent 安裝位置</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">%LOCALAPPDATA%\hermes. CLI in \hermes-agent\venv\Scripts. venv uses Python 3.12, not 3.11.</div>
+          <div class="zh-desc">%LOCALAPPDATA%\hermes,CLI 在 \hermes-agent\venv\Scripts,venv 用 Python 3.12 非 3.11。</div>
+          <div class="filename">project_hermes_agent_install.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type project">PROJECT · 進行中專案</div>
-        <div class="en">ReportRobot · LINE Briefing Bot Deployment</div>
-        <div class="zh">ReportRobot 部署架構</div>
-        <div class="desc">LINE briefing bot (repo description says "Telegram" — outdated artifact). Runs on Railway with Infisical-managed secrets. No local clone — don't suggest local setup.<br><br>LINE 簡報 bot（repo description 寫 Telegram 是過時殘骸）,跑 Railway + secrets 走 Infisical,本機沒 clone 不要建議本機 setup。</div>
-        <div class="filename">project_reportrobot_deployment.md</div>
+      <article class="card t-project" data-type="project" data-search="reportrobot line briefing bot railway infisical project_reportrobot_deployment">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">ReportRobot · LINE Briefing Bot Deployment</div><div class="zh">ReportRobot 部署架構</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">LINE briefing bot (repo description says "Telegram" — outdated artifact). Runs on Railway with Infisical-managed secrets. No local clone — don't suggest local setup.</div>
+          <div class="zh-desc">LINE 簡報 bot（repo description 寫 Telegram 是過時殘骸）,跑 Railway + secrets 走 Infisical,本機沒 clone 不要建議本機 setup。</div>
+          <div class="filename">project_reportrobot_deployment.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Notion Learning Map · Routing Rule</div>
-        <div class="zh">Notion 學習地圖 md 整合規則</div>
-        <div class="desc">Research/learning .md files always sync to Notion Learning Map (3597854a…). Uncategorized ones land in the "Pending" section.<br><br>研究 / 學習類 md 一律推到 Notion 學習地圖 (3597854a…)；分不類的進「待整理區域」。</div>
-        <div class="filename">feedback_notion_learning_map.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="notion learning map md sync 學習地圖 待整理 feedback_notion_learning_map">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Notion Learning Map · Routing Rule</div><div class="zh">Notion 學習地圖 md 整合規則</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Research/learning .md files always sync to Notion Learning Map (3597854a…). Uncategorized ones land in the "Pending" section.</div>
+          <div class="zh-desc">研究 / 學習類 md 一律推到 Notion 學習地圖 (3597854a…)；分不類的進「待整理區域」。</div>
+          <div class="filename">feedback_notion_learning_map.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type project">PROJECT · 進行中專案</div>
-        <div class="en">Learning Map · Notion Sync Mechanism</div>
-        <div class="zh">學習地圖 Notion 同步機制</div>
-        <div class="desc">Desktop\data analysis ↔ Notion subpage mapping table + /sync-learning-map-to-notion slash command.<br><br>Desktop\data analysis ↔ Notion 子頁對應表 + /sync-learning-map-to-notion 指令。</div>
-        <div class="filename">project_learning_map_notion.md</div>
+      <article class="card t-project" data-type="project" data-search="learning map notion sync mechanism 對應表 project_learning_map_notion">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Learning Map · Notion Sync Mechanism</div><div class="zh">學習地圖 Notion 同步機制</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Desktop\data analysis ↔ Notion subpage mapping table + /sync-learning-map-to-notion slash command.</div>
+          <div class="zh-desc">Desktop\data analysis ↔ Notion 子頁對應表 + /sync-learning-map-to-notion 指令。</div>
+          <div class="filename">project_learning_map_notion.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Disk Cleanup · Review-Only, Never Auto-Delete</div>
-        <div class="zh">磁碟/檔案清理只做 review,不自動刪</div>
-        <div class="desc">Generate disk reports + .lnk shortcuts for human review only. Never touch originals automatically.<br><br>掃磁碟產報告 + .lnk 捷徑供人工決定,絕不碰原檔。</div>
-        <div class="filename">feedback_cleanup_review_only.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="disk cleanup review only 磁碟 檔案清理 lnk 不自動刪 feedback_cleanup_review_only">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Disk Cleanup · Review-Only, Never Auto-Delete</div><div class="zh">磁碟/檔案清理只做 review,不自動刪</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Generate disk reports + .lnk shortcuts for human review only. Never touch originals automatically.</div>
+          <div class="zh-desc">掃磁碟產報告 + .lnk 捷徑供人工決定,絕不碰原檔。</div>
+          <div class="filename">feedback_cleanup_review_only.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">anaconda3 Internal Dedup Hazard</div>
-        <div class="zh">anaconda3 內部重複 dll 不能刪</div>
-        <div class="desc">Czkawka dedup hits on anaconda3\Library\bin vs pkgs are normal conda structure. Deletion breaks <code>conda install</code>.<br><br>Czkawka 抓到的 anaconda3\Library\bin vs pkgs 重複是 conda 正常結構,刪會壞 conda install。</div>
-        <div class="filename">feedback_anaconda_dedup_danger.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="anaconda3 dedup dll czkawka conda install hazard feedback_anaconda_dedup_danger">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">anaconda3 Internal Dedup Hazard</div><div class="zh">anaconda3 內部重複 dll 不能刪</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Czkawka dedup hits on anaconda3\Library\bin vs pkgs are normal conda structure. Deletion breaks <code>conda install</code>.</div>
+          <div class="zh-desc">Czkawka 抓到的 anaconda3\Library\bin vs pkgs 重複是 conda 正常結構,刪會壞 conda install。</div>
+          <div class="filename">feedback_anaconda_dedup_danger.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">PM Slide Visual Style</div>
-        <div class="zh">PM 簡報視覺風格偏好</div>
-        <div class="desc">Default pptx skill: Midnight Executive theme, 7-page sandwich layout, Microsoft JhengHei + coral accent.<br><br>pptx skill 預設套 Midnight Executive 7 頁 sandwich + Microsoft JhengHei + coral accent。</div>
-        <div class="filename">feedback_pm_slide_style.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="pm slide pptx midnight executive jhenghei coral 簡報 視覺風格 feedback_pm_slide_style">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">PM Slide Visual Style</div><div class="zh">PM 簡報視覺風格偏好</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Default pptx skill: Midnight Executive theme, 7-page sandwich layout, Microsoft JhengHei + coral accent.</div>
+          <div class="zh-desc">pptx skill 預設套 Midnight Executive 7 頁 sandwich + Microsoft JhengHei + coral accent。</div>
+          <div class="filename">feedback_pm_slide_style.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type project">PROJECT · 進行中專案</div>
-        <div class="en">Olist · Two Folders, Different Roles</div>
-        <div class="zh">Olist 專案兩個資料夾位置</div>
-        <div class="desc">Desktop\data_analysis\Olist is Excel workspace. ~\olist-project is the git repo. Don't conflate.<br><br>Desktop\data_analysis\Olist 是 Excel 工作區、~\olist-project 才是 git repo,別搞混。</div>
-        <div class="filename">project_olist_two_locations.md</div>
+      <article class="card t-project" data-type="project" data-search="olist excel git repo 兩個資料夾 project_olist_two_locations">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Olist · Two Folders, Different Roles</div><div class="zh">Olist 專案兩個資料夾位置</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Desktop\data_analysis\Olist is Excel workspace. ~\olist-project is the git repo. Don't conflate.</div>
+          <div class="zh-desc">Desktop\data_analysis\Olist 是 Excel 工作區、~\olist-project 才是 git repo,別搞混。</div>
+          <div class="filename">project_olist_two_locations.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Confirm Before Push / README Edit</div>
-        <div class="zh">動 git push / 修 README 前先確認</div>
-        <div class="desc">Show a preview + align on intent before writing README, commit, or push. No autonomous action.<br><br>寫 README / commit / push 前先給 preview + 對齊目標,不要直接動手。</div>
-        <div class="filename">feedback_confirm_before_push.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="git push readme confirm preview 對齊 feedback_confirm_before_push">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Confirm Before Push / README Edit</div><div class="zh">動 git push / 修 README 前先確認</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Show a preview + align on intent before writing README, commit, or push. No autonomous action.</div>
+          <div class="zh-desc">寫 README / commit / push 前先給 preview + 對齊目標,不要直接動手。</div>
+          <div class="filename">feedback_confirm_before_push.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Pre-Push · Content Audit + Dedup</div>
-        <div class="zh">Push 前先掃既有內容對齊去重</div>
-        <div class="desc">Before pushing, <code>gh api contents/...</code> to inspect existing files. Edit in place rather than creating parallel files (avoid the analysis_v2.py anti-pattern).<br><br>push 前先 gh api contents/... 看既有,優先編輯既有檔而非新建平行檔（analysis_v2.py 反模式）。</div>
-        <div class="filename">feedback_pre_push_dedup.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="push dedup gh api contents 平行檔 analysis_v2 反模式 feedback_pre_push_dedup">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pre-Push · Content Audit + Dedup</div><div class="zh">Push 前先掃既有內容對齊去重</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Before pushing, <code>gh api contents/...</code> to inspect existing files. Edit in place rather than creating parallel files (avoid the analysis_v2.py anti-pattern).</div>
+          <div class="zh-desc">push 前先 gh api contents/... 看既有,優先編輯既有檔而非新建平行檔（analysis_v2.py 反模式）。</div>
+          <div class="filename">feedback_pre_push_dedup.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Use <code>git -C</code>, Not <code>cd && git</code></div>
-        <div class="zh">讀寫 github 一律用 git -C 不用 cd && git</div>
-        <div class="desc">Avoid <code>cd && git</code> compounds (security risk via wildcard allowlist matches). Use <code>git -C &lt;path&gt;</code> or <code>gh -R &lt;owner&gt;/&lt;repo&gt;</code>.<br><br>避免 cd/echo 通配 allow 的風險,git 用 -C path / gh 用 -R owner/repo。</div>
-        <div class="filename">feedback_use_git_c_not_cd.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="git -c cd echo 通配 allow github security feedback_use_git_c_not_cd">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Use <code>git -C</code>, Not <code>cd && git</code></div><div class="zh">讀寫 github 一律用 git -C 不用 cd && git</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Avoid <code>cd && git</code> compounds (security risk via wildcard allowlist matches). Use <code>git -C &lt;path&gt;</code> or <code>gh -R &lt;owner&gt;/&lt;repo&gt;</code>.</div>
+          <div class="zh-desc">避免 cd/echo 通配 allow 的風險,git 用 -C path / gh 用 -R owner/repo。</div>
+          <div class="filename">feedback_use_git_c_not_cd.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Keep Git Repos Off OneDrive / Sync Folders</div>
-        <div class="zh">Git repo 不要放 OneDrive / 同步資料夾</div>
-        <div class="desc">.git inside OneDrive causes corruption. Excel workflow: turn off autosave, open from local, Ctrl+S, manual commit.<br><br>.git 放 OneDrive 會 corruption；Excel 工作流改「關自動儲存 + 從本機開 + Ctrl+S + 手動 commit」。</div>
-        <div class="filename">feedback_git_repo_not_in_onedrive.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="onedrive 同步資料夾 git repo corruption excel autosave 自動儲存 feedback_git_repo_not_in_onedrive">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Keep Git Repos Off OneDrive / Sync Folders</div><div class="zh">Git repo 不要放 OneDrive / 同步資料夾</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">.git inside OneDrive causes corruption. Excel workflow: turn off autosave, open from local, Ctrl+S, manual commit.</div>
+          <div class="zh-desc">.git 放 OneDrive 會 corruption；Excel 工作流改「關自動儲存 + 從本機開 + Ctrl+S + 手動 commit」。</div>
+          <div class="filename">feedback_git_repo_not_in_onedrive.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Plain-Language Tech Explanations</div>
-        <div class="zh">技術說明用小白聽得懂的語言</div>
-        <div class="desc">Use analogies + plain language. Minimize jargon. Describe outcomes before mechanism. Specify the exact command to type.<br><br>比喻 + 大白話、少 jargon、先講結果再講機制、步驟具體到打哪個字。</div>
-        <div class="filename">feedback_explain_technical_simply.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="plain language 大白話 比喻 jargon 小白 feedback_explain_technical_simply">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Plain-Language Tech Explanations</div><div class="zh">技術說明用小白聽得懂的語言</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Use analogies + plain language. Minimize jargon. Describe outcomes before mechanism. Specify the exact command to type.</div>
+          <div class="zh-desc">比喻 + 大白話、少 jargon、先講結果再講機制、步驟具體到打哪個字。</div>
+          <div class="filename">feedback_explain_technical_simply.md</div>
+        </div></div>
       </article>
 
-      <article class="card">
-        <div class="type feedback">FEEDBACK · 行為偏好</div>
-        <div class="en">Delete GitHub Repo · One-at-a-Time SOP</div>
-        <div class="zh">刪 GitHub repo SOP</div>
-        <div class="desc">One delete per session. Revoke <code>delete_repo</code> scope after each deletion; second deletion requires re-authorization via browser. Archive over delete.<br><br>一次只能刪一個,刪完撤 delete_repo 權限,要刪第二個必須重新瀏覽器授權；archive 優先於 delete。</div>
-        <div class="filename">feedback_repo_delete_sop.md</div>
+      <article class="card t-feedback" data-type="feedback" data-search="delete repo sop one at a time delete_repo scope archive 撤銷 重新授權 feedback_repo_delete_sop">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Delete GitHub Repo · One-at-a-Time SOP</div><div class="zh">刪 GitHub repo SOP</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">One delete per session. Revoke <code>delete_repo</code> scope after each deletion; second deletion requires re-authorization via browser. Archive over delete.</div>
+          <div class="zh-desc">一次只能刪一個,刪完撤 delete_repo 權限,要刪第二個必須重新瀏覽器授權；archive 優先於 delete。</div>
+          <div class="filename">feedback_repo_delete_sop.md</div>
+        </div></div>
       </article>
 
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════════
-       SECTION 02 · PERMISSIONS
-       ════════════════════════════════════════════════ -->
-  <section id="perms" class="fi" style="animation-delay:.3s">
-    <div class="sec-head">
-      <div class="sec-num">02</div>
-      <h2 class="sec-title">Permissions<span class="zh">工具呼叫權限 · 自動放行 vs 先詢問</span></h2>
-      <div class="sec-tag"><b>22</b> allow · <b>18</b> ask</div>
+  <!-- ───── PANEL 02 · PERMISSIONS ───── -->
+  <section class="panel" data-panel="perms">
+    <div class="panel-head">
+      <div class="panel-num">02</div>
+      <h2 class="panel-title">Permissions<span class="zh">工具呼叫權限 · 自動放行 vs 先詢問</span></h2>
+      <div class="panel-meta"><b>22</b> allow · <b>18</b> ask</div>
     </div>
 
     <div class="perm-split">
 
-      <!-- ALLOW -->
       <div class="perm-col allow">
         <h3>Auto-Allow <span class="badge">no prompt</span></h3>
         <div class="zh-sub">這些工具呼叫直接放行,不會跳確認視窗。多半是唯讀偵察 + 安全範圍寫入。</div>
-        <ul class="perm-list">
-          <li><code>Read</code><span class="why"><span class="en">Read any file on disk.</span>讀取任意檔案。</span></li>
-          <li><code>Bash(ls)</code><span class="why"><span class="en">Bare list current dir.</span>列出當前目錄。</span></li>
-          <li><code>Bash(ls *)</code><span class="why"><span class="en">List dir with arguments.</span>列目錄(帶參數)。</span></li>
-          <li><code>Bash(dir)</code><span class="why"><span class="en">Windows-style dir.</span>Windows 風格列表。</span></li>
-          <li><code>Bash(dir *)</code><span class="why"><span class="en">Windows dir with arguments.</span>Windows dir(帶參數)。</span></li>
-          <li><code>Bash(git status)</code><span class="why"><span class="en">Show working tree status.</span>顯示 working tree 狀態。</span></li>
-          <li><code>Bash(git status *)</code><span class="why"><span class="en">git status with flags.</span>git status 帶 flag。</span></li>
-          <li><code>Bash(git diff)</code><span class="why"><span class="en">Show diff.</span>顯示差異。</span></li>
-          <li><code>Bash(git diff *)</code><span class="why"><span class="en">git diff with arguments.</span>git diff 帶參數。</span></li>
-          <li><code>Bash(git log)</code><span class="why"><span class="en">Show commit history.</span>顯示 commit 歷史。</span></li>
-          <li><code>Bash(git log *)</code><span class="why"><span class="en">git log with arguments.</span>git log 帶參數。</span></li>
-          <li><code>Bash(npm install)</code><span class="why"><span class="en">Install local node deps.</span>安裝本機 node 套件。</span></li>
-          <li><code>Bash(npm install *)</code><span class="why"><span class="en">npm install with package args.</span>npm install 帶套件參數。</span></li>
-          <li><code>Bash(npm run *)</code><span class="why"><span class="en">Run package.json scripts.</span>跑 package.json scripts。</span></li>
-          <li><code>Bash(python *)</code><span class="why"><span class="en">Run python with args.</span>執行 python。</span></li>
-          <li><code>Bash(python3 *)</code><span class="why"><span class="en">Run python3 with args.</span>執行 python3。</span></li>
-          <li><code>Bash(py *)</code><span class="why"><span class="en">Windows Python launcher.</span>Windows py launcher。</span></li>
-          <li><code>Bash(grep *)</code><span class="why"><span class="en">Search file content.</span>搜尋檔案內容。</span></li>
-          <li><code>Bash(find *)</code><span class="why"><span class="en">Find files on disk.</span>搜尋磁碟檔案。</span></li>
-          <li><code>WebSearch</code><span class="why"><span class="en">Search the web.</span>網路搜尋。</span></li>
-          <li><code>WebFetch</code><span class="why"><span class="en">Fetch a web URL's content.</span>抓取網頁內容。</span></li>
-          <li><code>Write(./research-output/**)</code><span class="why"><span class="en">Write only inside the research-output folder.</span>只允許寫入 ./research-output/ 底下。</span></li>
-        </ul>
+        <div class="perm-list">
+          <div class="perm-item card t-allow" data-type="allow" data-search="read file read 讀檔">
+            <div class="perm-head"><span class="type-dot"></span><code>Read</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Read any file on disk.</span>讀取磁碟上的任意檔案。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="bash ls list 目錄">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(ls)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Bare list current dir.</span>列出當前目錄。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="bash ls list 目錄 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(ls *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">List dir with arguments.</span>列目錄(帶參數)。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="bash dir windows">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(dir)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows-style dir.</span>Windows 風格列表。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="bash dir windows 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(dir *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows dir with arguments.</span>Windows dir(帶參數)。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git status working tree">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git status)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show working tree status.</span>顯示 working tree 狀態。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git status flag">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git status *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">git status with flags.</span>git status 帶 flag。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git diff">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git diff)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show diff.</span>顯示差異。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git diff 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git diff *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">git diff with arguments.</span>git diff 帶參數。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git log commit history">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git log)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show commit history.</span>顯示 commit 歷史。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git log 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git log *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">git log with arguments.</span>git log 帶參數。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="npm install node 套件">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Install local node deps.</span>安裝本機 node 套件。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="npm install package 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">npm install with package args.</span>npm install 帶套件參數。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="npm run scripts package.json">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm run *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Run package.json scripts.</span>跑 package.json scripts。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="python 執行">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(python *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Run python with args.</span>執行 python。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="python3 執行">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(python3 *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Run python3 with args.</span>執行 python3。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="py windows python launcher">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(py *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows Python launcher.</span>Windows py launcher。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="grep 搜尋 內容">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(grep *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Search file content.</span>搜尋檔案內容。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="find 搜尋 磁碟 檔案">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(find *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Find files on disk.</span>搜尋磁碟檔案。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="websearch web 搜尋">
+            <div class="perm-head"><span class="type-dot"></span><code>WebSearch</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Search the web.</span>網路搜尋。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="webfetch web url 抓取">
+            <div class="perm-head"><span class="type-dot"></span><code>WebFetch</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Fetch a web URL's content.</span>抓取網頁內容。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="write research-output 寫入">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(./research-output/**)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Write only inside research-output folder.</span>只允許寫入 ./research-output/ 底下。</div></div>
+          </div>
+        </div>
       </div>
 
-      <!-- ASK -->
       <div class="perm-col ask">
         <h3>Ask First <span class="badge">prompt user</span></h3>
         <div class="zh-sub">這些動作會跳出確認視窗讓你按 Yes / No。多半是不可逆、會動遠端、或碰祕密檔。</div>
-        <ul class="perm-list">
-          <li><code>Bash(git push)</code><span class="why"><span class="en">Push to remote.</span>推送到遠端。</span></li>
-          <li><code>Bash(git push *)</code><span class="why"><span class="en">git push with flags.</span>git push 帶 flag。</span></li>
-          <li><code>Bash(git commit)</code><span class="why"><span class="en">Create a commit.</span>建立 commit。</span></li>
-          <li><code>Bash(git commit *)</code><span class="why"><span class="en">git commit with args.</span>git commit 帶參數。</span></li>
-          <li><code>Bash(rm *)</code><span class="why"><span class="en">Delete files.</span>刪除檔案。</span></li>
-          <li><code>Bash(npm install -g *)</code><span class="why"><span class="en">Global install.</span>全域安裝(會動系統)。</span></li>
-          <li><code>Bash(npm install --global *)</code><span class="why"><span class="en">Same as -g.</span>同上 (--global)。</span></li>
-          <li><code>Bash(npm i -g *)</code><span class="why"><span class="en">Short form of -g.</span>同上(縮寫)。</span></li>
-          <li><code>Edit(**/.env)</code><span class="why"><span class="en">Edit dotenv file.</span>編輯 .env 環境檔。</span></li>
-          <li><code>Edit(**/.env.*)</code><span class="why"><span class="en">Edit .env variants.</span>編輯 .env 變體。</span></li>
-          <li><code>Edit(**/secrets/**)</code><span class="why"><span class="en">Edit anything in a secrets folder.</span>編輯 secrets 資料夾內容。</span></li>
-          <li><code>Edit(**/*secret*)</code><span class="why"><span class="en">Edit any file with "secret" in name.</span>編輯檔名含 secret 的檔。</span></li>
-          <li><code>Edit(**/*credentials*)</code><span class="why"><span class="en">Edit credential files.</span>編輯憑證類檔案。</span></li>
-          <li><code>Write(**/.env)</code><span class="why"><span class="en">Create/overwrite .env.</span>建立/覆寫 .env。</span></li>
-          <li><code>Write(**/.env.*)</code><span class="why"><span class="en">Create/overwrite .env variants.</span>建立/覆寫 .env 變體。</span></li>
-          <li><code>Write(**/secrets/**)</code><span class="why"><span class="en">Write to secrets folder.</span>寫入 secrets 資料夾。</span></li>
-          <li><code>Write(**/*secret*)</code><span class="why"><span class="en">Write secret-named files.</span>寫入檔名含 secret 的檔。</span></li>
-          <li><code>Write(**/*credentials*)</code><span class="why"><span class="en">Write credential files.</span>寫入憑證類檔。</span></li>
-        </ul>
+        <div class="perm-list">
+          <div class="perm-item card t-ask" data-type="ask" data-search="git push 推送 遠端">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git push)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Push to remote.</span>推送到遠端。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="git push flag">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git push *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">git push with flags.</span>git push 帶 flag。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 建立">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git commit)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create a commit.</span>建立 commit。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 參數">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(git commit *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">git commit with args.</span>git commit 帶參數。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="rm 刪除 檔案">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(rm *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Delete files.</span>刪除檔案。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="npm install global 全域 系統">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install -g *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Global install.</span>全域安裝(會動系統)。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="npm install --global 全域">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install --global *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Same as -g.</span>同上 (--global)。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="npm i -g 全域 縮寫">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm i -g *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Short form of -g.</span>同上(縮寫)。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="edit env dotenv 環境變數">
+            <div class="perm-head"><span class="type-dot"></span><code>Edit(**/.env)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Edit dotenv file.</span>編輯 .env 環境檔。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="edit env 變體">
+            <div class="perm-head"><span class="type-dot"></span><code>Edit(**/.env.*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Edit .env variants.</span>編輯 .env 變體。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="edit secrets 資料夾">
+            <div class="perm-head"><span class="type-dot"></span><code>Edit(**/secrets/**)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Edit anything in a secrets folder.</span>編輯 secrets 資料夾內容。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="edit secret 檔名">
+            <div class="perm-head"><span class="type-dot"></span><code>Edit(**/*secret*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Edit any file with "secret" in name.</span>編輯檔名含 secret 的檔。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="edit credentials 憑證">
+            <div class="perm-head"><span class="type-dot"></span><code>Edit(**/*credentials*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Edit credential files.</span>編輯憑證類檔案。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="write env 建立 覆寫">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(**/.env)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create/overwrite .env.</span>建立/覆寫 .env。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="write env 變體 覆寫">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(**/.env.*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create/overwrite .env variants.</span>建立/覆寫 .env 變體。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="write secrets 資料夾">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(**/secrets/**)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Write to secrets folder.</span>寫入 secrets 資料夾。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="write secret 檔名">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(**/*secret*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Write secret-named files.</span>寫入檔名含 secret 的檔。</div></div>
+          </div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="write credentials 憑證">
+            <div class="perm-head"><span class="type-dot"></span><code>Write(**/*credentials*)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Write credential files.</span>寫入憑證類檔。</div></div>
+          </div>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════════
-       SECTION 03 · SKILLS
-       ════════════════════════════════════════════════ -->
-  <section id="skills" class="fi" style="animation-delay:.4s">
-    <div class="sec-head">
-      <div class="sec-num">03</div>
-      <h2 class="sec-title">Skills<span class="zh">已安裝技能 · 三大來源</span></h2>
-      <div class="sec-tag"><b>11</b> custom · <b>17</b> document · <b>14</b> superpowers</div>
+  <!-- ───── PANEL 03 · SKILLS ───── -->
+  <section class="panel" data-panel="skills">
+    <div class="panel-head">
+      <div class="panel-num">03</div>
+      <h2 class="panel-title">Skills<span class="zh">已安裝技能 · 三大來源</span></h2>
+      <div class="panel-meta"><b>11</b> custom · <b>17</b> document · <b>14</b> superpowers</div>
     </div>
 
-    <!-- group A: custom -->
-    <div class="skill-group">
+    <!-- A · Custom -->
+    <div class="skill-group" data-group="custom">
       <h3>Custom <em>&amp;</em> Top-Level <span class="count">— 11 SKILLS</span></h3>
       <p class="zh-sub">自訂 + 內建頂層 skill 群,涵蓋學習地圖同步、設定維護、循環任務、API 開發等。</p>
-      <div class="skill-grid">
+      <div class="cards-grid">
 
-        <article class="skill"><div class="id">sync-learning-map-to-notion</div>
-          <div class="name">Sync Learning Map · MD → Notion</div>
-          <div class="en">Push Desktop\data analysis Markdown files to corresponding Notion subpages — one MD becomes one Notion page (full replace).</div>
-          <div class="zh">把 Desktop\data analysis 學習地圖的本地 MD 同步到 Notion 對應子頁(每份 MD → 對應 Notion 頁,整頁覆蓋)。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="sync learning map notion md 學習地圖 desktop data analysis">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">sync-learning-map-to-notion</div><div class="en">Sync Learning Map · MD → Notion</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Push Desktop\data analysis Markdown files to corresponding Notion subpages — one MD becomes one Notion page (full replace).</div>
+            <div class="zh-desc">把 Desktop\data analysis 學習地圖的本地 MD 同步到 Notion 對應子頁(每份 MD → 對應 Notion 頁,整頁覆蓋)。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">update-config</div>
-          <div class="name">Update Config · settings.json</div>
-          <div class="en">Configure the Claude Code harness — permissions, env vars, hooks, automated behaviors (when-X-do-Y rules).</div>
-          <div class="zh">設定 Claude Code 主程式 — 權限、環境變數、hooks、「每次 X 就 Y」這類自動行為。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="update config settings.json permissions env hooks">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">update-config</div><div class="en">Update Config · settings.json</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Configure the Claude Code harness — permissions, env vars, hooks, automated behaviors (when-X-do-Y rules).</div>
+            <div class="zh-desc">設定 Claude Code 主程式 — 權限、環境變數、hooks、「每次 X 就 Y」這類自動行為。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">keybindings-help</div>
-          <div class="name">Keybindings Help</div>
-          <div class="en">Customize keyboard shortcuts and chord bindings in ~/.claude/keybindings.json.</div>
-          <div class="zh">客製化 ~/.claude/keybindings.json 裡的鍵盤捷徑與 chord 組合鍵。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="keybindings keyboard shortcuts chord 捷徑">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">keybindings-help</div><div class="en">Keybindings Help</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Customize keyboard shortcuts and chord bindings in ~/.claude/keybindings.json.</div>
+            <div class="zh-desc">客製化 ~/.claude/keybindings.json 裡的鍵盤捷徑與 chord 組合鍵。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">simplify</div>
-          <div class="name">Simplify · Code Review &amp; Fix</div>
-          <div class="en">Review changed code for reuse, quality, efficiency — then fix the issues found.</div>
-          <div class="zh">檢視已變更的程式碼,評估重用性、品質、效率,然後修正發現的問題。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="simplify code review reuse quality 程式碼">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">simplify</div><div class="en">Simplify · Code Review &amp; Fix</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Review changed code for reuse, quality, efficiency — then fix the issues found.</div>
+            <div class="zh-desc">檢視已變更的程式碼,評估重用性、品質、效率,然後修正發現的問題。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">fewer-permission-prompts</div>
-          <div class="name">Fewer Permission Prompts</div>
-          <div class="en">Scan transcripts for common read-only Bash/MCP calls, build a prioritized allowlist in .claude/settings.json.</div>
-          <div class="zh">掃描對話紀錄,把常見的唯讀 Bash/MCP 指令加進 .claude/settings.json 的 allowlist。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="fewer permission prompts allowlist transcripts">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">fewer-permission-prompts</div><div class="en">Fewer Permission Prompts</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Scan transcripts for common read-only Bash/MCP calls, build a prioritized allowlist in .claude/settings.json.</div>
+            <div class="zh-desc">掃描對話紀錄,把常見的唯讀 Bash/MCP 指令加進 .claude/settings.json 的 allowlist。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">loop</div>
-          <div class="name">Loop · Recurring Prompt</div>
-          <div class="en">Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.</div>
-          <div class="zh">把一條 prompt 或 slash 指令按固定間隔重複執行;不指定間隔則由模型自行決定步調。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="loop recurring interval prompt 循環">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">loop</div><div class="en">Loop · Recurring Prompt</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace.</div>
+            <div class="zh-desc">把一條 prompt 或 slash 指令按固定間隔重複執行;不指定間隔則由模型自行決定步調。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">schedule</div>
-          <div class="name">Schedule · Cron Routines</div>
-          <div class="en">Create, update, list, or run scheduled remote agents (routines) on a cron schedule, including one-time scheduled runs.</div>
-          <div class="zh">建立、更新、列出、執行依 cron 排程的遠端 agent (routines),也支援一次性排程。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="schedule cron routine remote agent 排程">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">schedule</div><div class="en">Schedule · Cron Routines</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create, update, list, or run scheduled remote agents (routines) on a cron schedule, including one-time scheduled runs.</div>
+            <div class="zh-desc">建立、更新、列出、執行依 cron 排程的遠端 agent (routines),也支援一次性排程。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">claude-api</div>
-          <div class="name">Claude API · Build / Debug / Migrate</div>
-          <div class="en">Build, debug, optimize Claude API / Anthropic SDK apps. Covers prompt caching, model migration (4.5 → 4.6 → 4.7), feature tuning.</div>
-          <div class="zh">開發、除錯、優化 Claude API / Anthropic SDK 應用;含 prompt cache、模型版本遷移、功能調校。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="claude api anthropic sdk prompt cache 模型 migration">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">claude-api</div><div class="en">Claude API · Build / Debug / Migrate</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Build, debug, optimize Claude API / Anthropic SDK apps. Covers prompt caching, model migration (4.5 → 4.6 → 4.7), feature tuning.</div>
+            <div class="zh-desc">開發、除錯、優化 Claude API / Anthropic SDK 應用;含 prompt cache、模型版本遷移、功能調校。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">init</div>
-          <div class="name">Init · New CLAUDE.md</div>
-          <div class="en">Initialize a new CLAUDE.md file with codebase documentation for the current project.</div>
-          <div class="zh">為當前專案建立新的 CLAUDE.md,自動匯入專案結構說明。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="init claude.md codebase documentation">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">init</div><div class="en">Init · New CLAUDE.md</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Initialize a new CLAUDE.md file with codebase documentation for the current project.</div>
+            <div class="zh-desc">為當前專案建立新的 CLAUDE.md,自動匯入專案結構說明。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">review</div>
-          <div class="name">Review · PR</div>
-          <div class="en">Review a pull request.</div>
-          <div class="zh">審查一個 pull request。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="review pull request pr">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">review</div><div class="en">Review · PR</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Review a pull request.</div>
+            <div class="zh-desc">審查一個 pull request。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id">security-review</div>
-          <div class="name">Security Review · Branch</div>
-          <div class="en">Complete a security review of the pending changes on the current branch.</div>
-          <div class="zh">對當前分支的待提交變更執行完整的安全性審查。</div>
+        <article class="card skill-card t-custom" data-type="custom" data-search="security review branch 安全性 審查">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">security-review</div><div class="en">Security Review · Branch</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Complete a security review of the pending changes on the current branch.</div>
+            <div class="zh-desc">對當前分支的待提交變更執行完整的安全性審查。</div>
+          </div></div>
         </article>
 
       </div>
     </div>
 
-    <!-- group B: document-skills -->
-    <div class="skill-group">
+    <!-- B · Document-skills -->
+    <div class="skill-group" data-group="docs">
       <h3>Document Skills <em>·</em> Anthropic Plugin <span class="count">— 17 SKILLS</span></h3>
       <p class="zh-sub">Anthropic 官方 plugin (document-skills@anthropic-agent-skills),涵蓋文件、簡報、海報、藝術、Web、品牌等產出。</p>
-      <div class="skill-grid">
+      <div class="cards-grid">
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>brand-guidelines</div>
-          <div class="name">Brand Guidelines · Anthropic</div>
-          <div class="en">Apply Anthropic's official brand colors and typography to any artifact.</div>
-          <div class="zh">把 Anthropic 官方品牌色與字體規範套到任何產出物。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="brand guidelines anthropic 品牌 字體">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>brand-guidelines</div><div class="en">Brand Guidelines · Anthropic</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Apply Anthropic's official brand colors and typography to any artifact.</div>
+            <div class="zh-desc">把 Anthropic 官方品牌色與字體規範套到任何產出物。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>claude-api</div>
-          <div class="name">Claude API · Plugin Version</div>
-          <div class="en">Build, debug, optimize Claude API / Anthropic SDK apps with caching + cross-version migration support.</div>
-          <div class="zh">開發/除錯/優化 Claude API / Anthropic SDK 應用,支援 prompt cache 與版本遷移。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="claude api plugin anthropic sdk prompt cache migration">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>claude-api</div><div class="en">Claude API · Plugin Version</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Build, debug, optimize Claude API / Anthropic SDK apps with caching + cross-version migration support.</div>
+            <div class="zh-desc">開發/除錯/優化 Claude API / Anthropic SDK 應用,支援 prompt cache 與版本遷移。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>algorithmic-art</div>
-          <div class="name">Algorithmic Art · p5.js</div>
-          <div class="en">Create algorithmic art using p5.js with seeded randomness and interactive parameter exploration.</div>
-          <div class="zh">用 p5.js 配 seed 隨機與可調參數,產生演算法藝術。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="algorithmic art p5.js seeded random 演算法 藝術">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>algorithmic-art</div><div class="en">Algorithmic Art · p5.js</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create algorithmic art using p5.js with seeded randomness and interactive parameter exploration.</div>
+            <div class="zh-desc">用 p5.js 配 seed 隨機與可調參數,產生演算法藝術。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>doc-coauthoring</div>
-          <div class="name">Doc Coauthoring · Workflow</div>
-          <div class="en">Guide a structured workflow for co-authoring documentation, proposals, technical specs, decision docs.</div>
-          <div class="zh">引導結構化共筆文件、提案、技術規格、決策文件的流程。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="doc coauthoring workflow proposal spec 共筆">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>doc-coauthoring</div><div class="en">Doc Coauthoring · Workflow</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Guide a structured workflow for co-authoring documentation, proposals, technical specs, decision docs.</div>
+            <div class="zh-desc">引導結構化共筆文件、提案、技術規格、決策文件的流程。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>frontend-design</div>
-          <div class="name">Frontend Design</div>
-          <div class="en">Create distinctive, production-grade frontend interfaces — components, pages, applications, posters — that avoid generic AI aesthetics.</div>
-          <div class="zh">打造有特色、可上線水準的前端 — 元件、頁面、應用、海報 — 避開「AI 通用感」。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="frontend design components pages dashboards posters 前端">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>frontend-design</div><div class="en">Frontend Design</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create distinctive, production-grade frontend interfaces — components, pages, applications, posters — that avoid generic AI aesthetics.</div>
+            <div class="zh-desc">打造有特色、可上線水準的前端 — 元件、頁面、應用、海報 — 避開「AI 通用感」。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>docx</div>
-          <div class="name">Word DOCX</div>
-          <div class="en">Create, read, edit, manipulate Word .docx — TOC, headings, tables, page numbers, letterheads, tracked changes.</div>
-          <div class="zh">建立、讀取、編輯 Word .docx — 目錄、標題、表格、頁碼、信頭、追蹤修訂。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="docx word document toc headings tables letterhead">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>docx</div><div class="en">Word DOCX</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create, read, edit, manipulate Word .docx — TOC, headings, tables, page numbers, letterheads, tracked changes.</div>
+            <div class="zh-desc">建立、讀取、編輯 Word .docx — 目錄、標題、表格、頁碼、信頭、追蹤修訂。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>canvas-design</div>
-          <div class="name">Canvas Design · PNG / PDF Art</div>
-          <div class="en">Create beautiful .png and .pdf visual art — posters, designs, static pieces — with original visual direction.</div>
-          <div class="zh">製作精美的 .png / .pdf 視覺作品 — 海報、設計、靜態作品 — 原創視覺方向。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="canvas design poster png pdf 海報 視覺">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>canvas-design</div><div class="en">Canvas Design · PNG / PDF Art</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create beautiful .png and .pdf visual art — posters, designs, static pieces — with original visual direction.</div>
+            <div class="zh-desc">製作精美的 .png / .pdf 視覺作品 — 海報、設計、靜態作品 — 原創視覺方向。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>xlsx</div>
-          <div class="name">Excel XLSX</div>
-          <div class="en">Open, read, edit, fix .xlsx/.xlsm/.csv/.tsv files. Build spreadsheets from scratch, clean messy data, compute formulas.</div>
-          <div class="zh">開啟、讀取、編輯、修復 .xlsx/.xlsm/.csv/.tsv;從零建表、清理雜亂資料、計算公式。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="xlsx excel spreadsheet csv tsv 試算表">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>xlsx</div><div class="en">Excel XLSX</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Open, read, edit, fix .xlsx/.xlsm/.csv/.tsv files. Build spreadsheets from scratch, clean messy data, compute formulas.</div>
+            <div class="zh-desc">開啟、讀取、編輯、修復 .xlsx/.xlsm/.csv/.tsv;從零建表、清理雜亂資料、計算公式。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>skill-creator</div>
-          <div class="name">Skill Creator</div>
-          <div class="en">Create new skills, edit/optimize existing ones, run evals to test, benchmark performance with variance analysis.</div>
-          <div class="zh">建立新 skill、修改/優化既有 skill、執行 eval 測試、效能基準與變異分析。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="skill creator eval benchmark optimize 建立">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>skill-creator</div><div class="en">Skill Creator</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create new skills, edit/optimize existing ones, run evals to test, benchmark performance with variance analysis.</div>
+            <div class="zh-desc">建立新 skill、修改/優化既有 skill、執行 eval 測試、效能基準與變異分析。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>pdf</div>
-          <div class="name">PDF</div>
-          <div class="en">Read, extract, combine, split, rotate, watermark, fill forms, encrypt/decrypt, OCR PDF files.</div>
-          <div class="zh">讀取、抽取、合併、拆分、旋轉、加浮水印、填表、加密/解密、OCR PDF 檔。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="pdf extract combine split rotate watermark ocr">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>pdf</div><div class="en">PDF</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Read, extract, combine, split, rotate, watermark, fill forms, encrypt/decrypt, OCR PDF files.</div>
+            <div class="zh-desc">讀取、抽取、合併、拆分、旋轉、加浮水印、填表、加密/解密、OCR PDF 檔。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>mcp-builder</div>
-          <div class="name">MCP Builder</div>
-          <div class="en">Build high-quality MCP (Model Context Protocol) servers in Python (FastMCP) or Node/TypeScript (MCP SDK).</div>
-          <div class="zh">開發高品質的 MCP server,Python (FastMCP) 或 Node/TypeScript (MCP SDK)。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="mcp builder model context protocol fastmcp typescript">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>mcp-builder</div><div class="en">MCP Builder</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Build high-quality MCP (Model Context Protocol) servers in Python (FastMCP) or Node/TypeScript (MCP SDK).</div>
+            <div class="zh-desc">開發高品質的 MCP server,Python (FastMCP) 或 Node/TypeScript (MCP SDK)。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>internal-comms</div>
-          <div class="name">Internal Comms</div>
-          <div class="en">Write internal comms: status reports, leadership updates, 3P updates, newsletters, FAQs, incident reports, project updates.</div>
-          <div class="zh">撰寫內部溝通文件:狀態回報、主管 update、3P update、電子報、FAQ、事件報告、專案更新。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="internal comms status report leadership update faq incident 內部溝通">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>internal-comms</div><div class="en">Internal Comms</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Write internal comms: status reports, leadership updates, 3P updates, newsletters, FAQs, incident reports, project updates.</div>
+            <div class="zh-desc">撰寫內部溝通文件:狀態回報、主管 update、3P update、電子報、FAQ、事件報告、專案更新。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>pptx</div>
-          <div class="name">PowerPoint PPTX</div>
-          <div class="en">Create, read, edit slide decks — pitch decks, presentations, templates, layouts, speaker notes, comments.</div>
-          <div class="zh">建立、讀取、編輯投影片 — pitch deck、簡報、版型、母片、講者備忘、評論。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="pptx powerpoint slides deck presentation 簡報">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>pptx</div><div class="en">PowerPoint PPTX</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create, read, edit slide decks — pitch decks, presentations, templates, layouts, speaker notes, comments.</div>
+            <div class="zh-desc">建立、讀取、編輯投影片 — pitch deck、簡報、版型、母片、講者備忘、評論。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>theme-factory</div>
-          <div class="name">Theme Factory</div>
-          <div class="en">Style artifacts with a preset or custom theme — 10 pre-set themes available, or generate one on the fly.</div>
-          <div class="zh">用預設或客製主題替產出物上裝 — 10 套預設主題,或現場生成。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="theme factory preset custom 主題">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>theme-factory</div><div class="en">Theme Factory</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Style artifacts with a preset or custom theme — 10 pre-set themes available, or generate one on the fly.</div>
+            <div class="zh-desc">用預設或客製主題替產出物上裝 — 10 套預設主題,或現場生成。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>webapp-testing</div>
-          <div class="name">Webapp Testing · Playwright</div>
-          <div class="en">Test local web apps via Playwright — verify UI, debug behavior, capture screenshots, view browser logs.</div>
-          <div class="zh">用 Playwright 測試本地 Web app — 驗證 UI、除錯行為、截圖、看 console log。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="webapp testing playwright ui debug screenshot">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>webapp-testing</div><div class="en">Webapp Testing · Playwright</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Test local web apps via Playwright — verify UI, debug behavior, capture screenshots, view browser logs.</div>
+            <div class="zh-desc">用 Playwright 測試本地 Web app — 驗證 UI、除錯行為、截圖、看 console log。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>slack-gif-creator</div>
-          <div class="name">Slack GIF Creator</div>
-          <div class="en">Create animated GIFs optimized for Slack with size constraints + validation tools.</div>
-          <div class="zh">製作符合 Slack 大小限制的動態 GIF,附驗證工具。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="slack gif animated 動態 限制">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>slack-gif-creator</div><div class="en">Slack GIF Creator</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create animated GIFs optimized for Slack with size constraints + validation tools.</div>
+            <div class="zh-desc">製作符合 Slack 大小限制的動態 GIF,附驗證工具。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">document-skills:</span>web-artifacts-builder</div>
-          <div class="name">Web Artifacts Builder</div>
-          <div class="en">Build complex multi-component claude.ai HTML artifacts (React, Tailwind, shadcn/ui) — for state, routing, advanced UI.</div>
-          <div class="zh">開發複雜的多元件 HTML artifact(React、Tailwind、shadcn/ui)— 處理 state、routing、進階 UI。</div>
+        <article class="card skill-card t-docs" data-type="docs" data-search="web artifacts builder react tailwind shadcn html">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">document-skills:</span>web-artifacts-builder</div><div class="en">Web Artifacts Builder</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Build complex multi-component claude.ai HTML artifacts (React, Tailwind, shadcn/ui) — for state, routing, advanced UI.</div>
+            <div class="zh-desc">開發複雜的多元件 HTML artifact(React、Tailwind、shadcn/ui)— 處理 state、routing、進階 UI。</div>
+          </div></div>
         </article>
 
       </div>
     </div>
 
-    <!-- group C: superpowers -->
-    <div class="skill-group">
+    <!-- C · Superpowers -->
+    <div class="skill-group" data-group="super">
       <h3>Superpowers <em>·</em> Workflow Discipline <span class="count">— 14 SKILLS</span></h3>
       <p class="zh-sub">superpowers@superpowers-marketplace (obra/superpowers-marketplace),強制 Claude 在做事前先走 brainstorm / TDD / verification 等工程紀律。</p>
-      <div class="skill-grid">
+      <div class="cards-grid">
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>brainstorming</div>
-          <div class="name">Brainstorming · Before Creation</div>
-          <div class="en">Must run before any creative work (features, components, behavior changes). Explores user intent, requirements, design.</div>
-          <div class="zh">任何創作前必跑(新功能、新元件、行為調整),先探討意圖、需求、設計。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="brainstorming creative work intent requirements">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>brainstorming</div><div class="en">Brainstorming · Before Creation</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Must run before any creative work (features, components, behavior changes). Explores user intent, requirements, design.</div>
+            <div class="zh-desc">任何創作前必跑(新功能、新元件、行為調整),先探討意圖、需求、設計。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>systematic-debugging</div>
-          <div class="name">Systematic Debugging</div>
-          <div class="en">Required for any bug, test failure, or unexpected behavior — before proposing fixes.</div>
-          <div class="zh">任何 bug、測試失敗、非預期行為,提出修法前必經。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="systematic debugging bug test failure 除錯">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>systematic-debugging</div><div class="en">Systematic Debugging</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Required for any bug, test failure, or unexpected behavior — before proposing fixes.</div>
+            <div class="zh-desc">任何 bug、測試失敗、非預期行為,提出修法前必經。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>executing-plans</div>
-          <div class="name">Executing Plans</div>
-          <div class="en">Execute a written implementation plan in a separate session with built-in review checkpoints.</div>
-          <div class="zh">在獨立 session 執行書面 implementation plan,中途有 review 檢查點。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="executing plans session review checkpoint implementation">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>executing-plans</div><div class="en">Executing Plans</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Execute a written implementation plan in a separate session with built-in review checkpoints.</div>
+            <div class="zh-desc">在獨立 session 執行書面 implementation plan,中途有 review 檢查點。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>receiving-code-review</div>
-          <div class="name">Receiving Code Review</div>
-          <div class="en">Handle code-review feedback with technical rigor — not performative agreement or blind implementation.</div>
-          <div class="zh">嚴謹處理 code review 回饋 — 不做表演式同意、不盲目實作。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="receiving code review feedback technical rigor 嚴謹">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>receiving-code-review</div><div class="en">Receiving Code Review</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Handle code-review feedback with technical rigor — not performative agreement or blind implementation.</div>
+            <div class="zh-desc">嚴謹處理 code review 回饋 — 不做表演式同意、不盲目實作。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>verification-before-completion</div>
-          <div class="name">Verification Before Completion</div>
-          <div class="en">Before claiming work is complete/fixed/passing, run verification commands and confirm output. Evidence before assertions.</div>
-          <div class="zh">宣告完成/修好/通過前,先跑驗證指令確認輸出 — 先有證據再下結論。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="verification before completion evidence assertion 驗證">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>verification-before-completion</div><div class="en">Verification Before Completion</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Before claiming work is complete/fixed/passing, run verification commands and confirm output. Evidence before assertions.</div>
+            <div class="zh-desc">宣告完成/修好/通過前,先跑驗證指令確認輸出 — 先有證據再下結論。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>using-superpowers</div>
-          <div class="name">Using Superpowers · Bootstrap</div>
-          <div class="en">Bootstrap skill — establishes how to find and use other skills before any response, including clarifying questions.</div>
-          <div class="zh">啟動 skill — 規範任何回應(含釐清提問)前必須先找並使用其他 skill。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="using superpowers bootstrap skill discovery">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>using-superpowers</div><div class="en">Using Superpowers · Bootstrap</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Bootstrap skill — establishes how to find and use other skills before any response, including clarifying questions.</div>
+            <div class="zh-desc">啟動 skill — 規範任何回應(含釐清提問)前必須先找並使用其他 skill。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>writing-skills</div>
-          <div class="name">Writing Skills</div>
-          <div class="en">Create new skills, edit existing skills, verify skills work before deployment.</div>
-          <div class="zh">建立新 skill、編輯既有 skill、部署前驗證 skill 是否正常運作。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="writing skills create edit verify deployment">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>writing-skills</div><div class="en">Writing Skills</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Create new skills, edit existing skills, verify skills work before deployment.</div>
+            <div class="zh-desc">建立新 skill、編輯既有 skill、部署前驗證 skill 是否正常運作。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>subagent-driven-development</div>
-          <div class="name">Subagent-Driven Development</div>
-          <div class="en">Execute implementation plans with independent tasks via subagents in the current session.</div>
-          <div class="zh">透過 subagent 在當前 session 並行處理 implementation plan 中的獨立任務。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="subagent driven development parallel independent tasks">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>subagent-driven-development</div><div class="en">Subagent-Driven Development</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Execute implementation plans with independent tasks via subagents in the current session.</div>
+            <div class="zh-desc">透過 subagent 在當前 session 並行處理 implementation plan 中的獨立任務。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>finishing-a-development-branch</div>
-          <div class="name">Finishing a Development Branch</div>
-          <div class="en">Decide how to integrate completed work — merge, PR, or cleanup — when implementation is done and tests pass.</div>
-          <div class="zh">實作完成、測試通過後,決定整合方式 — merge、開 PR、或收尾清理。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="finishing development branch merge pr cleanup">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>finishing-a-development-branch</div><div class="en">Finishing a Development Branch</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Decide how to integrate completed work — merge, PR, or cleanup — when implementation is done and tests pass.</div>
+            <div class="zh-desc">實作完成、測試通過後,決定整合方式 — merge、開 PR、或收尾清理。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>writing-plans</div>
-          <div class="name">Writing Plans</div>
-          <div class="en">Convert a spec or requirements into a multi-step implementation plan, before touching code.</div>
-          <div class="zh">在動 code 之前,把規格/需求轉成多步驟 implementation plan。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="writing plans spec requirements multi-step 計畫">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>writing-plans</div><div class="en">Writing Plans</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Convert a spec or requirements into a multi-step implementation plan, before touching code.</div>
+            <div class="zh-desc">在動 code 之前,把規格/需求轉成多步驟 implementation plan。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>requesting-code-review</div>
-          <div class="name">Requesting Code Review</div>
-          <div class="en">Verify work meets requirements when completing tasks, implementing features, or before merging.</div>
-          <div class="zh">完成任務、實作大功能、合併前確認工作是否符合需求。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="requesting code review merge verify requirements">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>requesting-code-review</div><div class="en">Requesting Code Review</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Verify work meets requirements when completing tasks, implementing features, or before merging.</div>
+            <div class="zh-desc">完成任務、實作大功能、合併前確認工作是否符合需求。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>using-git-worktrees</div>
-          <div class="name">Using Git Worktrees</div>
-          <div class="en">Ensure an isolated workspace exists (native worktree or fallback) before executing implementation plans.</div>
-          <div class="zh">執行 plan 前先用 worktree(或備援方案)確保工作環境隔離。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="git worktrees isolated workspace">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>using-git-worktrees</div><div class="en">Using Git Worktrees</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Ensure an isolated workspace exists (native worktree or fallback) before executing implementation plans.</div>
+            <div class="zh-desc">執行 plan 前先用 worktree(或備援方案)確保工作環境隔離。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>dispatching-parallel-agents</div>
-          <div class="name">Dispatching Parallel Agents</div>
-          <div class="en">Use when 2+ independent tasks can be worked on without shared state or sequential dependencies.</div>
-          <div class="zh">有 2+ 個獨立任務、無共享 state、無順序依賴時使用。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="dispatching parallel agents independent tasks shared state">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>dispatching-parallel-agents</div><div class="en">Dispatching Parallel Agents</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Use when 2+ independent tasks can be worked on without shared state or sequential dependencies.</div>
+            <div class="zh-desc">有 2+ 個獨立任務、無共享 state、無順序依賴時使用。</div>
+          </div></div>
         </article>
 
-        <article class="skill"><div class="id"><span class="ns">superpowers:</span>test-driven-development</div>
-          <div class="name">Test-Driven Development</div>
-          <div class="en">Write tests before implementation for any feature or bugfix.</div>
-          <div class="zh">任何 feature 或 bugfix,實作前先寫測試。</div>
+        <article class="card skill-card t-super" data-type="super" data-search="test driven development tdd 測試">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id"><span class="ns">superpowers:</span>test-driven-development</div><div class="en">Test-Driven Development</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Write tests before implementation for any feature or bugfix.</div>
+            <div class="zh-desc">任何 feature 或 bugfix,實作前先寫測試。</div>
+          </div></div>
         </article>
 
       </div>
@@ -771,16 +1021,179 @@
 
   </section>
 
-  <!-- FOOTER ─────────────────────────────────────────── -->
+  <!-- empty state placeholder -->
+  <div class="empty" id="empty-state" hidden>
+    <div class="icon">∅</div>
+    <div>找不到符合條件的項目</div>
+    <div class="hint">try clearing search · 試試清空搜尋</div>
+  </div>
+
   <footer>
     <div class="zh">
       Generated for <a href="https://github.com/kengkeng44">@kengkeng44</a> · Claude Opus 4.7 · 2026-05-15<br>
       Source-of-truth lives in <a href="https://github.com/kengkeng44/kengkeng">kengkeng44/kengkeng</a> · 設定變動會反映在 memory/*.md 與 settings.json。
     </div>
-    <div>END · OPERATOR'S CARD v.1</div>
+    <div>END · OPERATOR'S CARD v.2</div>
   </footer>
 
 </div>
+
+<script>
+(() => {
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  const search = document.getElementById('search');
+  const clearBtn = document.getElementById('clear-search');
+  const chipsBar = document.getElementById('chips');
+  const resultCount = document.getElementById('result-count');
+  const emptyState = document.getElementById('empty-state');
+
+  // chip configs per panel
+  const chipsByPanel = {
+    memory: [
+      {type:'feedback', label:'Feedback', zh:'行為偏好', color:'var(--coral)'},
+      {type:'project',  label:'Project',  zh:'專案',     color:'var(--amber)'},
+      {type:'user',     label:'User',     zh:'背景',     color:'var(--lavender)'},
+      {type:'reference',label:'Reference',zh:'外部資源', color:'var(--jade)'},
+    ],
+    perms: [
+      {type:'allow', label:'Allow', zh:'自動放行', color:'var(--jade)'},
+      {type:'ask',   label:'Ask',   zh:'先詢問',   color:'var(--rose)'},
+    ],
+    skills: [
+      {type:'custom', label:'Custom',     zh:'自訂',        color:'var(--sky)'},
+      {type:'docs',   label:'Document',   zh:'Anthropic 官方', color:'var(--amber)'},
+      {type:'super',  label:'Superpowers',zh:'工程紀律',    color:'var(--lavender)'},
+    ],
+  };
+
+  let activeTab = 'memory';
+  let activeTypes = new Set();
+  let query = '';
+
+  function renderChips(panelKey){
+    const cfg = chipsByPanel[panelKey] || [];
+    chipsBar.innerHTML = '<span class="chips-label">FILTER</span>' +
+      cfg.map(c => `<button class="chip active" data-chip="${c.type}">
+        <span class="swatch" style="background:${c.color}"></span>${c.label}<span class="zh">${c.zh}</span>
+      </button>`).join('') +
+      '<button class="reset-chips" id="reset-chips">reset · 重設</button>';
+
+    activeTypes = new Set(cfg.map(c => c.type));
+
+    chipsBar.querySelectorAll('.chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const t = btn.dataset.chip;
+        if (activeTypes.has(t)) {
+          activeTypes.delete(t);
+          btn.classList.remove('active');
+          btn.classList.add('muted');
+        } else {
+          activeTypes.add(t);
+          btn.classList.add('active');
+          btn.classList.remove('muted');
+        }
+        applyFilter();
+      });
+    });
+    document.getElementById('reset-chips').addEventListener('click', () => {
+      activeTypes = new Set(cfg.map(c => c.type));
+      chipsBar.querySelectorAll('.chip').forEach(b => {b.classList.add('active');b.classList.remove('muted')});
+      applyFilter();
+    });
+  }
+
+  function activePanelEl(){return document.querySelector(`.panel[data-panel="${activeTab}"]`)}
+
+  function applyFilter(){
+    const panel = activePanelEl();
+    if (!panel) return;
+    const q = query.trim().toLowerCase();
+    const cards = panel.querySelectorAll('.card');
+    let visible = 0, total = cards.length;
+    cards.forEach(card => {
+      const t = card.dataset.type;
+      const haystack = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+      const matchesType = activeTypes.has(t);
+      const matchesQuery = !q || haystack.includes(q);
+      if (matchesType && matchesQuery) {
+        card.classList.remove('hidden');
+        visible++;
+        // auto-expand on query match (only when there is a query)
+        if (q) card.classList.add('open'); else card.classList.remove('open');
+      } else {
+        card.classList.add('hidden');
+        card.classList.remove('open');
+      }
+    });
+    resultCount.innerHTML = `<b>${visible}</b> of <b>${total}</b> 顯示中`;
+    emptyState.hidden = visible !== 0;
+
+    // hide skill-group headers if all their cards are hidden
+    panel.querySelectorAll('.skill-group').forEach(g => {
+      const any = [...g.querySelectorAll('.card')].some(c => !c.classList.contains('hidden'));
+      g.style.display = any ? '' : 'none';
+    });
+    // same for perm-cols
+    panel.querySelectorAll('.perm-col').forEach(col => {
+      const any = [...col.querySelectorAll('.card')].some(c => !c.classList.contains('hidden'));
+      col.style.display = any ? '' : 'none';
+    });
+  }
+
+  function switchTab(tab){
+    activeTab = tab;
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    panels.forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+    renderChips(tab);
+    // reset search on tab change
+    query = '';
+    search.value = '';
+    clearBtn.classList.remove('show');
+    // collapse all cards in active panel
+    activePanelEl().querySelectorAll('.card.open').forEach(c => c.classList.remove('open'));
+    applyFilter();
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => switchTab(t.dataset.tab)));
+
+  search.addEventListener('input', e => {
+    query = e.target.value;
+    clearBtn.classList.toggle('show', query.length > 0);
+    applyFilter();
+  });
+
+  clearBtn.addEventListener('click', () => {
+    search.value = '';
+    query = '';
+    clearBtn.classList.remove('show');
+    applyFilter();
+    search.focus();
+  });
+
+  // card expand/collapse via event delegation on the whole document
+  document.addEventListener('click', e => {
+    const head = e.target.closest('.card-head, .perm-head');
+    if (!head) return;
+    head.closest('.card, .perm-item').classList.toggle('open');
+  });
+
+  // keyboard: / focuses search, Esc clears
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== search) {
+      e.preventDefault();
+      search.focus();
+    } else if (e.key === 'Escape' && document.activeElement === search) {
+      clearBtn.click();
+      search.blur();
+    }
+  });
+
+  // init
+  renderChips('memory');
+  applyFilter();
+})();
+</script>
 
 </body>
 </html>
