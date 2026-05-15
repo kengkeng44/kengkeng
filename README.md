@@ -19,6 +19,8 @@ notion/
   05-contact.md     Contact 聯絡方式
 profile/
   README.md         GitHub 個人頁 (kengkeng44/kengkeng44) 的鏡像來源
+dashboard/
+  index.html        Operator's Card — Memory / Permissions / Skills 三合一視覺化儀表板
 .claude/commands/
   sync-kengkeng-to-notion.md   slash command
   sync-kengkeng-to-profile.md  把 profile/README.md 推到 kengkeng44/kengkeng44 README
