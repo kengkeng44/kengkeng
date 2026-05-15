@@ -19,6 +19,8 @@ feedback_pm_slide_style: yellow
 feedback_pre_push_dedup: yellow
 feedback_explain_technical_simply: yellow
 user_career_status: yellow
+project_threads_bot: yellow
+feedback_refresh_dashboard_after_memory_change: yellow
 
 user_olist_pm_portfolio: green
 user_profile_links: green

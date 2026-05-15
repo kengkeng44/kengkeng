@@ -248,7 +248,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>24</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -257,7 +257,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">22</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">24</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">42</span></button>
     </div>
@@ -267,7 +267,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>22</b> of <b>22</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>24</b> of <b>24</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -278,7 +278,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>22</b> entries · <b>4</b> types</div>
+      <div class="panel-meta"><b>24</b> entries · <b>4</b> types</div>
     </div>
 
     <div class="cards-grid">
@@ -478,6 +478,24 @@
           <div class="en-desc">Currently employed but does not disclose current employer in portfolio. Still interested in PM / Analyst opportunities. Avoid "transitioning" / 轉職中 framing — that narrative is outdated.</div>
           <div class="zh-desc">已就職但 portfolio 不揭露現職;對 PM/分析機會仍有興趣;原「轉職中」敘事過時。</div>
           <div class="filename">user_career_status.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="threads bot data hoarder maintenance cookie scraping infisical railway api 收藏 project_threads_bot">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Threads Bot · Data Hoarder Maintenance &amp; Limits</div><div class="zh">Threads bot (Data Hoarder) 維護與限制</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Repo: <code>kengkeng44/Telegram-Bot-Workflow-Suite-Publishing-Bookmarking</code>. Threads official API has no "saved" feed endpoint — cookie scraping is the only viable path. Re-run <code>get_cookies.py</code> every 3–6 months and refresh Infisical <code>THREADS_STATE_JSON</code>. Sync interval lives in <code>AUTO_SYNC_HOURS</code> env (24h since 2026-05-15).</div>
+          <div class="zh-desc">Telegram-Bot-Workflow-Suite repo;官方 Threads API 沒 saved endpoint,必走 cookie scraping;3-6 月跑 get_cookies.py 更新 Infisical 的 THREADS_STATE_JSON;同步頻率改在 Infisical 的 AUTO_SYNC_HOURS。</div>
+          <div class="filename">project_threads_bot.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="refresh dashboard memory settings sync github 同步 自動化 operator card feedback_refresh_dashboard_after_memory_change">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">After Memory Edit · Suggest /refresh-dashboard</div><div class="zh">新增/修改 memory 後跑 /refresh-dashboard</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">After adding, modifying, or deleting memory entries — or changing <code>settings.json</code> permissions — proactively suggest running <code>/refresh-dashboard</code> at session end. Without it the public Operator's Card drifts from the live config and the tool becomes useless.</div>
+          <div class="zh-desc">memory 或 settings.json 動過後,在 session 末段建議用戶跑 /refresh-dashboard 把 Operator's Card 同步上 GitHub。沒同步 dashboard 跟現狀脫鉤,工具失效。</div>
+          <div class="filename">feedback_refresh_dashboard_after_memory_change.md</div>
         </div></div>
       </article>
 
@@ -1197,6 +1215,7 @@
     'kengkeng notion portfolio':'green','hermes agent':'green','reportrobot line':'green',
     'learning map notion sync mechanism':'green','olist excel git':'green',
     'career status employment':'yellow',
+    'threads bot data hoarder':'yellow','refresh dashboard memory settings':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
