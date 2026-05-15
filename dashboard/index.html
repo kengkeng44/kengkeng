@@ -171,6 +171,7 @@
   .perm-item.hidden{display:none}
   .perm-head{padding:11px 16px;display:grid;grid-template-columns:8px 1fr 16px;gap:12px;align-items:center;cursor:pointer;user-select:none}
   .perm-head code{font-family:var(--mono);font-size:12.5px;color:var(--text);background:transparent;padding:0;letter-spacing:-0.01em}
+  .perm-head .alt-code{font-family:var(--mono);font-size:11px;color:var(--text-mute);margin-left:10px;opacity:0.75;letter-spacing:-0.01em}
   .perm-item.open .chev{transform:rotate(90deg);color:var(--coral)}
   .perm-body{max-height:0;overflow:hidden;transition:max-height 280ms ease}
   .perm-item.open .perm-body{max-height:200px}
@@ -501,53 +502,29 @@
             <div class="perm-head"><span class="type-dot"></span><code>Read</code><span class="chev">▸</span></div>
             <div class="perm-body"><div class="perm-body-inner"><span class="en">Read any file on disk.</span>讀取磁碟上的任意檔案。</div></div>
           </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="bash ls list 目錄">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(ls)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Bare list current dir.</span>列出當前目錄。</div></div>
-          </div>
           <div class="perm-item card t-allow" data-type="allow" data-search="bash ls list 目錄 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(ls *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">List dir with arguments.</span>列目錄(帶參數)。</div></div>
-          </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="bash dir windows">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(dir)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows-style dir.</span>Windows 風格列表。</div></div>
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(ls)</code><span class="alt-code">+ Bash(ls *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">List directory — bare or with arguments.</span>列目錄,裸 / 帶參數兩種粒度。</div></div>
           </div>
           <div class="perm-item card t-allow" data-type="allow" data-search="bash dir windows 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(dir *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows dir with arguments.</span>Windows dir(帶參數)。</div></div>
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(dir)</code><span class="alt-code">+ Bash(dir *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Windows-style dir — bare or with arguments.</span>Windows 風格列表,裸 / 帶參數兩種粒度。</div></div>
           </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="git status working tree">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git status)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show working tree status.</span>顯示 working tree 狀態。</div></div>
-          </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="git status flag">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git status *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">git status with flags.</span>git status 帶 flag。</div></div>
-          </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="git diff">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git diff)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show diff.</span>顯示差異。</div></div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git status working tree flag">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git status)</code><span class="alt-code">+ Bash(git status *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show working tree status — bare or with flags.</span>顯示 working tree 狀態,裸 / 帶 flag 兩種。</div></div>
           </div>
           <div class="perm-item card t-allow" data-type="allow" data-search="git diff 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git diff *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">git diff with arguments.</span>git diff 帶參數。</div></div>
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git diff)</code><span class="alt-code">+ Bash(git diff *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show diff — bare or with arguments.</span>顯示差異,裸 / 帶參數兩種。</div></div>
           </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="git log commit history">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git log)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show commit history.</span>顯示 commit 歷史。</div></div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git log commit history 參數">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git log)</code><span class="alt-code">+ Bash(git log *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Show commit history — bare or with arguments.</span>顯示 commit 歷史,裸 / 帶參數兩種。</div></div>
           </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="git log 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git log *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">git log with arguments.</span>git log 帶參數。</div></div>
-          </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="npm install node 套件">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Install local node deps.</span>安裝本機 node 套件。</div></div>
-          </div>
-          <div class="perm-item card t-allow" data-type="allow" data-search="npm install package 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(npm install *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">npm install with package args.</span>npm install 帶套件參數。</div></div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="npm install node 套件 參數">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(npm install)</code><span class="alt-code">+ Bash(npm install *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Install local node deps — bare or with package args.</span>安裝本機 node 套件,裸 / 帶套件參數兩種。</div></div>
           </div>
           <div class="perm-item card t-allow" data-type="allow" data-search="npm run scripts package.json">
             <div class="perm-head"><span class="type-dot"></span><code>Bash(npm run *)</code><span class="chev">▸</span></div>
@@ -592,21 +569,13 @@
         <h3>Ask First <span class="badge">prompt user</span></h3>
         <div class="zh-sub">這些動作會跳出確認視窗讓你按 Yes / No。多半是不可逆、會動遠端、或碰祕密檔。</div>
         <div class="perm-list">
-          <div class="perm-item card t-ask" data-type="ask" data-search="git push 推送 遠端">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git push)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Push to remote.</span>推送到遠端。</div></div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="git push 推送 遠端 flag">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git push)</code><span class="alt-code">+ Bash(git push *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Push to remote — bare or with flags.</span>推送到遠端,裸 / 帶 flag 兩種。</div></div>
           </div>
-          <div class="perm-item card t-ask" data-type="ask" data-search="git push flag">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git push *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">git push with flags.</span>git push 帶 flag。</div></div>
-          </div>
-          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 建立">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git commit)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create a commit.</span>建立 commit。</div></div>
-          </div>
-          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 參數">
-            <div class="perm-head"><span class="type-dot"></span><code>Bash(git commit *)</code><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">git commit with args.</span>git commit 帶參數。</div></div>
+          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 建立 參數">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git commit)</code><span class="alt-code">+ Bash(git commit *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create a commit — bare or with args.</span>建立 commit,裸 / 帶參數兩種。</div></div>
           </div>
           <div class="perm-item card t-ask" data-type="ask" data-search="rm 刪除 檔案">
             <div class="perm-head"><span class="type-dot"></span><code>Bash(rm *)</code><span class="chev">▸</span></div>
