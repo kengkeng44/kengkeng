@@ -9,13 +9,13 @@
 
 ### 🚀 最近的作品
 
-#### [📊 Olist 巴西電商分析](https://github.com/kengkeng44/olist-project) · [Live Demo →](https://olist-jenho.streamlit.app/)
+#### [📊 Olist Brazil E-commerce Analytics](https://github.com/kengkeng44/olist-project) · [Live Demo →](https://olist-jenho.streamlit.app/)
 
 從 99,441 筆訂單找出 **R$469K 召回機會 (ROI 9.4×)**,用 Cohort 熱力圖證實「平台級單次客」現象,並挖出 **巴西分期付款是隱形 CRM**(7-10 期 ARPU 是一次付清的 3.48 倍)
 
 `SQL Window Function (NTILE)` · `Python` · `Streamlit` · `Plotly` · `Tableau`
 
-#### [🎮 Cookie Cats A/B 測試評估](https://github.com/kengkeng44/cookie-cats-ab-test) · [Live Demo →](https://cookie-cats-jenho.streamlit.app/)
+#### [🎮 Cookie Cats A/B Test Evaluation](https://github.com/kengkeng44/cookie-cats-ab-test) · [Live Demo →](https://cookie-cats-jenho.streamlit.app/)
 
 第一段就抓出 **SRM 異常 (p=0.0086)** — 業界標準會擋下這個實驗。用 **Frequentist + Bootstrap + Bayesian** 三角驗證 90K 玩家樣本,給 PM 明確 ship/no-ship 建議
 
