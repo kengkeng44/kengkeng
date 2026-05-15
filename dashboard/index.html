@@ -116,6 +116,19 @@
   .card:hover{background:var(--surface-2)}
   .card.hidden{display:none}
 
+  /* Priority stripe — memory cards only */
+  .card{position:relative}
+  .panel[data-panel="memory"] .card[data-priority]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;z-index:1;pointer-events:none}
+  .panel[data-panel="memory"] .card[data-priority="red"]::before{background:#B14A45}
+  .panel[data-panel="memory"] .card[data-priority="yellow"]::before{background:#B08D40}
+  .panel[data-panel="memory"] .card[data-priority="green"]::before{background:#5C8A6A}
+
+  /* Priority legend */
+  .pri-legend{display:flex;gap:18px;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);align-items:center;margin-top:8px;flex-basis:100%;padding-top:8px;border-top:1px dashed var(--line)}
+  .pri-legend > span{display:inline-flex;align-items:center;gap:0}
+  .pri-legend .swatch{width:14px;height:3px;border-radius:1px;display:inline-block;vertical-align:middle;margin-right:6px}
+  .pri-legend .zh{font-family:var(--zh);letter-spacing:0.02em;text-transform:none;font-size:11px;color:var(--text-soft);margin-left:3px}
+
   .card-head{padding:14px 20px;display:grid;grid-template-columns:8px 1fr 16px;gap:14px;align-items:center;cursor:pointer;user-select:none;transition:padding 200ms}
   .card-head:hover{padding-left:24px}
   .type-dot{width:8px;height:8px;border-radius:50%;background:var(--text-mute);align-self:center}
@@ -234,7 +247,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>21</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -243,7 +256,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">21</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">22</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">42</span></button>
     </div>
@@ -253,7 +266,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>21</b> of <b>21</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>22</b> of <b>22</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -264,7 +277,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>21</b> entries · <b>4</b> types</div>
+      <div class="panel-meta"><b>22</b> entries · <b>4</b> types</div>
     </div>
 
     <div class="cards-grid">
@@ -299,8 +312,8 @@
       <article class="card t-feedback" data-type="feedback" data-search="ai output style 文體 預測 bull base bear 機率 feedback_ai_output_style">
         <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">AI Output Style</div><div class="zh">AI 輸出文體偏好</div></div><span class="chev">▸</span></div>
         <div class="card-body"><div class="card-body-inner">
-          <div class="en-desc">No filler (no leading 🤖, no trailing ※, no "in summary"). Default to terse. Predictions must use bull/base/bear probability weighting.</div>
-          <div class="zh-desc">禁贅字（開頭🤖/結尾※/簡言之等）、預設精簡版、預測類強制 bull/base/bear 機率加權。</div>
+          <div class="en-desc">No filler (no leading 🤖, no trailing ※, no "in summary"). No translation-stilted Chinese ("保持開放" → "歡迎交流"). Default to terse. Predictions must use bull/base/bear probability weighting.</div>
+          <div class="zh-desc">禁贅字（🤖/※/簡言之）、禁英譯腔（「保持開放」改「歡迎交流」）、預設精簡版、預測類 bull/base/bear 機率加權。</div>
           <div class="filename">feedback_ai_output_style.md</div>
         </div></div>
       </article>
@@ -455,6 +468,15 @@
           <div class="en-desc">One delete per session. Revoke <code>delete_repo</code> scope after each deletion; second deletion requires re-authorization via browser. Archive over delete.</div>
           <div class="zh-desc">一次只能刪一個,刪完撤 delete_repo 權限,要刪第二個必須重新瀏覽器授權；archive 優先於 delete。</div>
           <div class="filename">feedback_repo_delete_sop.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-user" data-type="user" data-search="career status employment 已就職 portfolio pm 機會 轉職中 user_career_status">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Career Status · Employment (2026-05-15)</div><div class="zh">用戶就業狀態</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Currently employed but does not disclose current employer in portfolio. Still interested in PM / Analyst opportunities. Avoid "transitioning" / 轉職中 framing — that narrative is outdated.</div>
+          <div class="zh-desc">已就職但 portfolio 不揭露現職;對 PM/分析機會仍有興趣;原「轉職中」敘事過時。</div>
+          <div class="filename">user_career_status.md</div>
         </div></div>
       </article>
 
@@ -1077,7 +1099,14 @@
       cfg.map(c => `<button class="chip active" data-chip="${c.type}">
         <span class="swatch" style="background:${c.color}"></span>${c.label}<span class="zh">${c.zh}</span>
       </button>`).join('') +
-      '<button class="reset-chips" id="reset-chips">reset · 重設</button>';
+      '<button class="reset-chips" id="reset-chips">reset · 重設</button>' +
+      (panelKey === 'memory' ? `
+        <div class="pri-legend">
+          <span><span class="swatch" style="background:#B14A45"></span>CRITICAL<span class="zh">關鍵</span></span>
+          <span><span class="swatch" style="background:#B08D40"></span>BEHAVIOR<span class="zh">行為偏好</span></span>
+          <span><span class="swatch" style="background:#5C8A6A"></span>CONTEXT<span class="zh">背景資訊</span></span>
+        </div>
+      ` : '');
 
     activeTypes = new Set(cfg.map(c => c.type));
 
@@ -1186,6 +1215,24 @@
     } else if (e.key === 'Escape' && document.activeElement === search) {
       clearBtn.click();
       search.blur();
+    }
+  });
+
+  // Priority mapping for memory cards (red = critical, yellow = behavior pref, green = context)
+  const PRIORITY = {
+    'secret api':'red','disk cleanup':'red','anaconda3 dedup':'red','git push readme confirm':'red',
+    'git -c cd echo':'red','onedrive':'red','delete repo sop':'red',
+    'ai output':'yellow','powershell ps1':'yellow','notion learning map md sync':'yellow',
+    'pm slide pptx':'yellow','push dedup gh api':'yellow','plain language':'yellow',
+    'olist pm portfolio':'green','github linkedin':'green','finance llm':'green',
+    'kengkeng notion portfolio':'green','hermes agent':'green','reportrobot line':'green',
+    'learning map notion sync mechanism':'green','olist excel git':'green',
+    'career status employment':'yellow',
+  };
+  document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
+    const s = card.dataset.search || '';
+    for (const [prefix, p] of Object.entries(PRIORITY)) {
+      if (s.startsWith(prefix)) { card.dataset.priority = p; break; }
     }
   });
 

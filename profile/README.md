@@ -1,6 +1,9 @@
 ### Hi, I'm Jen-Ho 鄭仁和 👋
 
-正在轉職 PM 的資料分析人,擅長把分析做成可決策的商業洞察 — 而不是只跑一個漂亮的 RFM。
+資料分析人,擅長把分析做成可決策的商業洞察 — 而不是只跑一個漂亮的 RFM。
+
+> 🎛 **[Operator's Card · Claude Code 配置儀表板 →](https://kengkeng44.github.io/kengkeng/dashboard/)**
+> Memory / Permissions / Skills 三合一視覺化 · 中英對照 · 跑在 Fraunces + Geist + 思源黑體
 
 ---
 
@@ -42,4 +45,4 @@
 - 💼 [LinkedIn](https://www.linkedin.com/in/jenhocheng/)
 - 🌐 兩個 portfolio 的 live demo 在上方 ☝️
 
-> 正在尋找 **PM / Product Analyst** 機會,歡迎私訊聊聊。
+> 對 **PM / Product Analyst** 機會仍有興趣,歡迎私訊聊聊。
