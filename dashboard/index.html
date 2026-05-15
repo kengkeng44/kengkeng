@@ -136,6 +136,11 @@
   .card.t-project .type-dot{background:var(--amber);box-shadow:0 0 10px rgba(242,197,124,0.4)}
   .card.t-user .type-dot{background:var(--lavender);box-shadow:0 0 10px rgba(167,139,250,0.4)}
   .card.t-reference .type-dot{background:var(--jade);box-shadow:0 0 10px rgba(125,211,168,0.4)}
+
+  /* Memory section: dot color follows priority (overrides type-based color) */
+  .panel[data-panel="memory"] .card[data-priority="red"] .type-dot{background:#B14A45;box-shadow:0 0 10px rgba(177,74,69,0.35)}
+  .panel[data-panel="memory"] .card[data-priority="yellow"] .type-dot{background:#B08D40;box-shadow:0 0 10px rgba(176,141,64,0.35)}
+  .panel[data-panel="memory"] .card[data-priority="green"] .type-dot{background:#5C8A6A;box-shadow:0 0 10px rgba(92,138,106,0.35)}
   .card.t-allow .type-dot{background:var(--jade)}
   .card.t-ask .type-dot{background:var(--rose)}
   .card.t-custom .type-dot{background:var(--sky)}
@@ -248,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>24</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>25</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -257,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">24</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">25</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">42</span></button>
     </div>
@@ -267,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>24</b> of <b>24</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>25</b> of <b>25</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -278,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>24</b> entries · <b>4</b> types</div>
+      <div class="panel-meta"><b>25</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -496,6 +501,15 @@
           <div class="en-desc">After adding, modifying, or deleting memory entries — or changing <code>settings.json</code> permissions — proactively suggest running <code>/refresh-dashboard</code> at session end. Without it the public Operator's Card drifts from the live config and the tool becomes useless.</div>
           <div class="zh-desc">memory 或 settings.json 動過後,在 session 末段建議用戶跑 /refresh-dashboard 把 Operator's Card 同步上 GitHub。沒同步 dashboard 跟現狀脫鉤,工具失效。</div>
           <div class="filename">feedback_refresh_dashboard_after_memory_change.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="powershell 5.1 pipe json gh api stdin input field 旗標 parse error feedback_powershell_gh_stdin_json">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">PowerShell 5.1 · Piping JSON to <code>gh api --input -</code> Fails</div><div class="zh">PowerShell 5.1 pipe JSON 到 gh api stdin 會壞</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">In PS 5.1, piping a JSON body into <code>gh api --input -</code> returns HTTP 400 "Problems parsing JSON" — PS pipes default to UTF-16 LE which gh can't decode. Workaround: pass each field with <code>-f "key=value"</code> CLI flags, letting gh assemble the JSON itself.</div>
+          <div class="zh-desc"><code>$body | gh api --input -</code> 在 PS 5.1 會 400 JSON parse error;改用 <code>-f "key=value"</code> 欄位旗標個別傳,繞過 stdin 編碼問題。</div>
+          <div class="filename">feedback_powershell_gh_stdin_json.md</div>
         </div></div>
       </article>
 
@@ -1216,6 +1230,7 @@
     'learning map notion sync mechanism':'green','olist excel git':'green',
     'career status employment':'yellow',
     'threads bot data hoarder':'yellow','refresh dashboard memory settings':'yellow',
+    'powershell 5.1 pipe json':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
@@ -1223,6 +1238,19 @@
       if (s.startsWith(prefix)) { card.dataset.priority = p; break; }
     }
   });
+
+  // Sort memory cards by priority: red → yellow → green
+  const PRIORITY_RANK = {red: 0, yellow: 1, green: 2};
+  const memGrid = document.querySelector('.panel[data-panel="memory"] .cards-grid');
+  if (memGrid) {
+    const memCards = Array.from(memGrid.querySelectorAll('.card'));
+    memCards.sort((a, b) => {
+      const ra = PRIORITY_RANK[a.dataset.priority] ?? 99;
+      const rb = PRIORITY_RANK[b.dataset.priority] ?? 99;
+      return ra - rb;
+    });
+    memCards.forEach(c => memGrid.appendChild(c));
+  }
 
   // init
   renderChips('memory');
