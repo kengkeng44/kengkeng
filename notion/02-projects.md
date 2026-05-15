@@ -27,8 +27,8 @@
 <td>Phase 1 費率試算頁 → Phase 2 SKU 毛利追蹤</td>
 </tr>
 	</table>
-	### [📦 Olist 巴西電商分析 · RFM 找出 R$469K 召回機會 (ROI 9.4×)](https://github.com/kengkeng44/olist-project)
-	> 🚀 Live demo: https://olist-jenho.streamlit.app/ · SQL Window Function · 99,441 筆訂單 / 9 張表
+	### [📦 Olist Brazil E-commerce · RFM Found R$469K Reactivation Opportunity (ROI 9.4×)](https://github.com/kengkeng44/olist-project)
+	> 🚀 Live demo: https://olist-jenho.streamlit.app/ · SQL Window Function · 99,441 orders / 9 tables
 	<table fit-page-width="true" header-row="true">
 <tr>
 <td>項目</td>
@@ -59,8 +59,8 @@
 <td>AI pair programming 完成，但每段邏輯、SQL 設計、統計選擇都自己 review；有信心維護、解釋決策、針對問題提出解法</td>
 </tr>
 	</table>
-	### [🎮 Cookie Cats A/B 測試評估 · 第一段抓出 SRM 異常](https://github.com/kengkeng44/cookie-cats-ab-test)
-	> 🚀 Live demo: https://cookie-cats-jenho.streamlit.app/ · Frequentist + Bootstrap + Bayesian · 90,189 玩家
+	### [🎮 Cookie Cats A/B Test · Caught SRM Anomaly at Stage 1](https://github.com/kengkeng44/cookie-cats-ab-test)
+	> 🚀 Live demo: https://cookie-cats-jenho.streamlit.app/ · Frequentist + Bootstrap + Bayesian · 90,189 players
 	<table fit-page-width="true" header-row="true">
 <tr>
 <td>項目</td>
