@@ -20,10 +20,15 @@ notion/
 profile/
   README.md         GitHub 個人頁 (kengkeng44/kengkeng44) 的鏡像來源
 dashboard/
-  index.html        Operator's Card — Memory / Permissions / Skills 三合一視覺化儀表板
+  index.html             Operator's Card — Memory / Permissions / Skills 三合一視覺化儀表板
+  data/
+    skills.yaml          手動維護的 skill 清單(custom / docs / super 三組)
+    priorities.yaml      memory filename → red/yellow/green 對應表
+    perm-descriptions.yaml  permission pattern → en/zh + pair 合併規則
 .claude/commands/
   sync-kengkeng-to-notion.md   slash command
   sync-kengkeng-to-profile.md  把 profile/README.md 推到 kengkeng44/kengkeng44 README
+  refresh-dashboard.md         重生 dashboard/index.html 並 push (來源:memory + settings.json + data/*.yaml)
 ```
 
 每個 `notion/*.md` 用的是 Notion-flavored markdown（toggle 用 `{toggle="true"}`、tab 縮排表示巢狀）。檔名前綴決定串接順序。

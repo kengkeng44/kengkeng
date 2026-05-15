@@ -1,0 +1,144 @@
+# 每個 permission pattern 的中英文說明 + 合併 pair 規則
+# Claude 跑 /refresh-dashboard 時讀這份產生 Permissions 區段的 cards
+
+# 合併 pair — pair 內第一個是主 code, 第二個顯示為 alt-code
+pairs:
+  - primary: "Bash(ls)"
+    alt: "Bash(ls *)"
+    en: "List directory — bare or with arguments."
+    zh: "列目錄,裸 / 帶參數兩種粒度。"
+    search: "bash ls list 目錄 參數"
+  - primary: "Bash(dir)"
+    alt: "Bash(dir *)"
+    en: "Windows-style dir — bare or with arguments."
+    zh: "Windows 風格列表,裸 / 帶參數兩種粒度。"
+    search: "bash dir windows 參數"
+  - primary: "Bash(git status)"
+    alt: "Bash(git status *)"
+    en: "Show working tree status — bare or with flags."
+    zh: "顯示 working tree 狀態,裸 / 帶 flag 兩種。"
+    search: "git status working tree flag"
+  - primary: "Bash(git diff)"
+    alt: "Bash(git diff *)"
+    en: "Show diff — bare or with arguments."
+    zh: "顯示差異,裸 / 帶參數兩種。"
+    search: "git diff 參數"
+  - primary: "Bash(git log)"
+    alt: "Bash(git log *)"
+    en: "Show commit history — bare or with arguments."
+    zh: "顯示 commit 歷史,裸 / 帶參數兩種。"
+    search: "git log commit history 參數"
+  - primary: "Bash(npm install)"
+    alt: "Bash(npm install *)"
+    en: "Install local node deps — bare or with package args."
+    zh: "安裝本機 node 套件,裸 / 帶套件參數兩種。"
+    search: "npm install node 套件 參數"
+  - primary: "Bash(git push)"
+    alt: "Bash(git push *)"
+    en: "Push to remote — bare or with flags."
+    zh: "推送到遠端,裸 / 帶 flag 兩種。"
+    search: "git push 推送 遠端 flag"
+  - primary: "Bash(git commit)"
+    alt: "Bash(git commit *)"
+    en: "Create a commit — bare or with args."
+    zh: "建立 commit,裸 / 帶參數兩種。"
+    search: "git commit 建立 參數"
+
+# 獨立 patterns — pattern 是 settings.json 裡的字串, 顯示為單張 card
+descriptions:
+  "Read":
+    en: "Read any file on disk."
+    zh: "讀取磁碟上的任意檔案。"
+    search: "read file 讀檔"
+  "Bash(npm run *)":
+    en: "Run package.json scripts."
+    zh: "跑 package.json scripts。"
+    search: "npm run scripts package.json"
+  "Bash(python *)":
+    en: "Run python with args."
+    zh: "執行 python。"
+    search: "python 執行"
+  "Bash(python3 *)":
+    en: "Run python3 with args."
+    zh: "執行 python3。"
+    search: "python3 執行"
+  "Bash(py *)":
+    en: "Windows Python launcher."
+    zh: "Windows py launcher。"
+    search: "py windows python launcher"
+  "Bash(grep *)":
+    en: "Search file content."
+    zh: "搜尋檔案內容。"
+    search: "grep 搜尋 內容"
+  "Bash(find *)":
+    en: "Find files on disk."
+    zh: "搜尋磁碟檔案。"
+    search: "find 搜尋 磁碟 檔案"
+  "WebSearch":
+    en: "Search the web."
+    zh: "網路搜尋。"
+    search: "websearch web 搜尋"
+  "WebFetch":
+    en: "Fetch a web URL's content."
+    zh: "抓取網頁內容。"
+    search: "webfetch web url 抓取"
+  "Write(./research-output/**)":
+    en: "Write only inside research-output folder."
+    zh: "只允許寫入 ./research-output/ 底下。"
+    search: "write research-output 寫入"
+  "Bash(rm *)":
+    en: "Delete files."
+    zh: "刪除檔案。"
+    search: "rm 刪除 檔案"
+  "Bash(npm install -g *)":
+    en: "Global install."
+    zh: "全域安裝(會動系統)。"
+    search: "npm install global 全域 系統"
+  "Bash(npm install --global *)":
+    en: "Same as -g."
+    zh: "同上 (--global)。"
+    search: "npm install --global 全域"
+  "Bash(npm i -g *)":
+    en: "Short form of -g."
+    zh: "同上(縮寫)。"
+    search: "npm i -g 全域 縮寫"
+  "Edit(**/.env)":
+    en: "Edit dotenv file."
+    zh: "編輯 .env 環境檔。"
+    search: "edit env dotenv 環境變數"
+  "Edit(**/.env.*)":
+    en: "Edit .env variants."
+    zh: "編輯 .env 變體。"
+    search: "edit env 變體"
+  "Edit(**/secrets/**)":
+    en: "Edit anything in a secrets folder."
+    zh: "編輯 secrets 資料夾內容。"
+    search: "edit secrets 資料夾"
+  "Edit(**/*secret*)":
+    en: "Edit any file with 'secret' in name."
+    zh: "編輯檔名含 secret 的檔。"
+    search: "edit secret 檔名"
+  "Edit(**/*credentials*)":
+    en: "Edit credential files."
+    zh: "編輯憑證類檔案。"
+    search: "edit credentials 憑證"
+  "Write(**/.env)":
+    en: "Create/overwrite .env."
+    zh: "建立/覆寫 .env。"
+    search: "write env 建立 覆寫"
+  "Write(**/.env.*)":
+    en: "Create/overwrite .env variants."
+    zh: "建立/覆寫 .env 變體。"
+    search: "write env 變體 覆寫"
+  "Write(**/secrets/**)":
+    en: "Write to secrets folder."
+    zh: "寫入 secrets 資料夾。"
+    search: "write secrets 資料夾"
+  "Write(**/*secret*)":
+    en: "Write secret-named files."
+    zh: "寫入檔名含 secret 的檔。"
+    search: "write secret 檔名"
+  "Write(**/*credentials*)":
+    en: "Write credential files."
+    zh: "寫入憑證類檔。"
+    search: "write credentials 憑證"

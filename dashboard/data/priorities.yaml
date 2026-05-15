@@ -1,0 +1,30 @@
+# Memory 條目的重要程度 — 對應 dashboard 上的紅/黃/綠色條
+# key = memory filename (不含 .md), value = red | yellow | green
+# 紅:會搞壞東西的(security / data-loss / system breakage)
+# 黃:行為偏好(會影響 Claude 怎麼回應或操作,但壞不了東西)
+# 綠:背景資訊(讀完更懂使用者,不讀也不會犯錯)
+
+feedback_secrets_handling: red
+feedback_cleanup_review_only: red
+feedback_anaconda_dedup_danger: red
+feedback_confirm_before_push: red
+feedback_use_git_c_not_cd: red
+feedback_git_repo_not_in_onedrive: red
+feedback_repo_delete_sop: red
+
+feedback_ai_output_style: yellow
+feedback_powershell_utf8_bom: yellow
+feedback_notion_learning_map: yellow
+feedback_pm_slide_style: yellow
+feedback_pre_push_dedup: yellow
+feedback_explain_technical_simply: yellow
+user_career_status: yellow
+
+user_olist_pm_portfolio: green
+user_profile_links: green
+reference_finance_prompt_libs: green
+project_kengkeng_repo: green
+project_hermes_agent_install: green
+project_reportrobot_deployment: green
+project_learning_map_notion: green
+project_olist_two_locations: green

@@ -1,0 +1,217 @@
+# Skills 資料來源 — 手動維護
+# Claude Code 沒提供「列出已安裝 skill」的 API,所以這份必須手動跟系統 reminder 比對更新
+# 跑 /refresh-dashboard 時 Claude 會讀這份 yaml 渲染 Skills 區段
+# 結構: 三組 (custom / docs / super),每個 skill 有 id / name / en / zh
+
+custom:
+  - id: sync-learning-map-to-notion
+    name: "Sync Learning Map · MD → Notion"
+    en: "Push Desktop\\data analysis Markdown files to corresponding Notion subpages — one MD becomes one Notion page (full replace)."
+    zh: "把 Desktop\\data analysis 學習地圖的本地 MD 同步到 Notion 對應子頁(每份 MD → 對應 Notion 頁,整頁覆蓋)。"
+
+  - id: update-config
+    name: "Update Config · settings.json"
+    en: "Configure the Claude Code harness — permissions, env vars, hooks, automated behaviors (when-X-do-Y rules)."
+    zh: "設定 Claude Code 主程式 — 權限、環境變數、hooks、「每次 X 就 Y」這類自動行為。"
+
+  - id: keybindings-help
+    name: "Keybindings Help"
+    en: "Customize keyboard shortcuts and chord bindings in ~/.claude/keybindings.json."
+    zh: "客製化 ~/.claude/keybindings.json 裡的鍵盤捷徑與 chord 組合鍵。"
+
+  - id: simplify
+    name: "Simplify · Code Review & Fix"
+    en: "Review changed code for reuse, quality, efficiency — then fix the issues found."
+    zh: "檢視已變更的程式碼,評估重用性、品質、效率,然後修正發現的問題。"
+
+  - id: fewer-permission-prompts
+    name: "Fewer Permission Prompts"
+    en: "Scan transcripts for common read-only Bash/MCP calls, build a prioritized allowlist in .claude/settings.json."
+    zh: "掃描對話紀錄,把常見的唯讀 Bash/MCP 指令加進 .claude/settings.json 的 allowlist。"
+
+  - id: loop
+    name: "Loop · Recurring Prompt"
+    en: "Run a prompt or slash command on a recurring interval (e.g. /loop 5m /foo). Omit the interval to let the model self-pace."
+    zh: "把一條 prompt 或 slash 指令按固定間隔重複執行;不指定間隔則由模型自行決定步調。"
+
+  - id: schedule
+    name: "Schedule · Cron Routines"
+    en: "Create, update, list, or run scheduled remote agents (routines) on a cron schedule, including one-time scheduled runs."
+    zh: "建立、更新、列出、執行依 cron 排程的遠端 agent (routines),也支援一次性排程。"
+
+  - id: claude-api
+    name: "Claude API · Build / Debug / Migrate"
+    en: "Build, debug, optimize Claude API / Anthropic SDK apps. Covers prompt caching, model migration (4.5 → 4.6 → 4.7), feature tuning."
+    zh: "開發、除錯、優化 Claude API / Anthropic SDK 應用;含 prompt cache、模型版本遷移、功能調校。"
+
+  - id: init
+    name: "Init · New CLAUDE.md"
+    en: "Initialize a new CLAUDE.md file with codebase documentation for the current project."
+    zh: "為當前專案建立新的 CLAUDE.md,自動匯入專案結構說明。"
+
+  - id: review
+    name: "Review · PR"
+    en: "Review a pull request."
+    zh: "審查一個 pull request。"
+
+  - id: security-review
+    name: "Security Review · Branch"
+    en: "Complete a security review of the pending changes on the current branch."
+    zh: "對當前分支的待提交變更執行完整的安全性審查。"
+
+docs:
+  - id: brand-guidelines
+    name: "Brand Guidelines · Anthropic"
+    en: "Apply Anthropic's official brand colors and typography to any artifact."
+    zh: "把 Anthropic 官方品牌色與字體規範套到任何產出物。"
+
+  - id: claude-api
+    name: "Claude API · Plugin Version"
+    en: "Build, debug, optimize Claude API / Anthropic SDK apps with caching + cross-version migration support."
+    zh: "開發/除錯/優化 Claude API / Anthropic SDK 應用,支援 prompt cache 與版本遷移。"
+
+  - id: algorithmic-art
+    name: "Algorithmic Art · p5.js"
+    en: "Create algorithmic art using p5.js with seeded randomness and interactive parameter exploration."
+    zh: "用 p5.js 配 seed 隨機與可調參數,產生演算法藝術。"
+
+  - id: doc-coauthoring
+    name: "Doc Coauthoring · Workflow"
+    en: "Guide a structured workflow for co-authoring documentation, proposals, technical specs, decision docs."
+    zh: "引導結構化共筆文件、提案、技術規格、決策文件的流程。"
+
+  - id: frontend-design
+    name: "Frontend Design"
+    en: "Create distinctive, production-grade frontend interfaces — components, pages, applications, posters — that avoid generic AI aesthetics."
+    zh: "打造有特色、可上線水準的前端 — 元件、頁面、應用、海報 — 避開「AI 通用感」。"
+
+  - id: docx
+    name: "Word DOCX"
+    en: "Create, read, edit, manipulate Word .docx — TOC, headings, tables, page numbers, letterheads, tracked changes."
+    zh: "建立、讀取、編輯 Word .docx — 目錄、標題、表格、頁碼、信頭、追蹤修訂。"
+
+  - id: canvas-design
+    name: "Canvas Design · PNG / PDF Art"
+    en: "Create beautiful .png and .pdf visual art — posters, designs, static pieces — with original visual direction."
+    zh: "製作精美的 .png / .pdf 視覺作品 — 海報、設計、靜態作品 — 原創視覺方向。"
+
+  - id: xlsx
+    name: "Excel XLSX"
+    en: "Open, read, edit, fix .xlsx/.xlsm/.csv/.tsv files. Build spreadsheets from scratch, clean messy data, compute formulas."
+    zh: "開啟、讀取、編輯、修復 .xlsx/.xlsm/.csv/.tsv;從零建表、清理雜亂資料、計算公式。"
+
+  - id: skill-creator
+    name: "Skill Creator"
+    en: "Create new skills, edit/optimize existing ones, run evals to test, benchmark performance with variance analysis."
+    zh: "建立新 skill、修改/優化既有 skill、執行 eval 測試、效能基準與變異分析。"
+
+  - id: pdf
+    name: "PDF"
+    en: "Read, extract, combine, split, rotate, watermark, fill forms, encrypt/decrypt, OCR PDF files."
+    zh: "讀取、抽取、合併、拆分、旋轉、加浮水印、填表、加密/解密、OCR PDF 檔。"
+
+  - id: mcp-builder
+    name: "MCP Builder"
+    en: "Build high-quality MCP (Model Context Protocol) servers in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+    zh: "開發高品質的 MCP server,Python (FastMCP) 或 Node/TypeScript (MCP SDK)。"
+
+  - id: internal-comms
+    name: "Internal Comms"
+    en: "Write internal comms: status reports, leadership updates, 3P updates, newsletters, FAQs, incident reports, project updates."
+    zh: "撰寫內部溝通文件:狀態回報、主管 update、3P update、電子報、FAQ、事件報告、專案更新。"
+
+  - id: pptx
+    name: "PowerPoint PPTX"
+    en: "Create, read, edit slide decks — pitch decks, presentations, templates, layouts, speaker notes, comments."
+    zh: "建立、讀取、編輯投影片 — pitch deck、簡報、版型、母片、講者備忘、評論。"
+
+  - id: theme-factory
+    name: "Theme Factory"
+    en: "Style artifacts with a preset or custom theme — 10 pre-set themes available, or generate one on the fly."
+    zh: "用預設或客製主題替產出物上裝 — 10 套預設主題,或現場生成。"
+
+  - id: webapp-testing
+    name: "Webapp Testing · Playwright"
+    en: "Test local web apps via Playwright — verify UI, debug behavior, capture screenshots, view browser logs."
+    zh: "用 Playwright 測試本地 Web app — 驗證 UI、除錯行為、截圖、看 console log。"
+
+  - id: slack-gif-creator
+    name: "Slack GIF Creator"
+    en: "Create animated GIFs optimized for Slack with size constraints + validation tools."
+    zh: "製作符合 Slack 大小限制的動態 GIF,附驗證工具。"
+
+  - id: web-artifacts-builder
+    name: "Web Artifacts Builder"
+    en: "Build complex multi-component claude.ai HTML artifacts (React, Tailwind, shadcn/ui) — for state, routing, advanced UI."
+    zh: "開發複雜的多元件 HTML artifact(React、Tailwind、shadcn/ui)— 處理 state、routing、進階 UI。"
+
+super:
+  - id: brainstorming
+    name: "Brainstorming · Before Creation"
+    en: "Must run before any creative work (features, components, behavior changes). Explores user intent, requirements, design."
+    zh: "任何創作前必跑(新功能、新元件、行為調整),先探討意圖、需求、設計。"
+
+  - id: systematic-debugging
+    name: "Systematic Debugging"
+    en: "Required for any bug, test failure, or unexpected behavior — before proposing fixes."
+    zh: "任何 bug、測試失敗、非預期行為,提出修法前必經。"
+
+  - id: executing-plans
+    name: "Executing Plans"
+    en: "Execute a written implementation plan in a separate session with built-in review checkpoints."
+    zh: "在獨立 session 執行書面 implementation plan,中途有 review 檢查點。"
+
+  - id: receiving-code-review
+    name: "Receiving Code Review"
+    en: "Handle code-review feedback with technical rigor — not performative agreement or blind implementation."
+    zh: "嚴謹處理 code review 回饋 — 不做表演式同意、不盲目實作。"
+
+  - id: verification-before-completion
+    name: "Verification Before Completion"
+    en: "Before claiming work is complete/fixed/passing, run verification commands and confirm output. Evidence before assertions."
+    zh: "宣告完成/修好/通過前,先跑驗證指令確認輸出 — 先有證據再下結論。"
+
+  - id: using-superpowers
+    name: "Using Superpowers · Bootstrap"
+    en: "Bootstrap skill — establishes how to find and use other skills before any response, including clarifying questions."
+    zh: "啟動 skill — 規範任何回應(含釐清提問)前必須先找並使用其他 skill。"
+
+  - id: writing-skills
+    name: "Writing Skills"
+    en: "Create new skills, edit existing skills, verify skills work before deployment."
+    zh: "建立新 skill、編輯既有 skill、部署前驗證 skill 是否正常運作。"
+
+  - id: subagent-driven-development
+    name: "Subagent-Driven Development"
+    en: "Execute implementation plans with independent tasks via subagents in the current session."
+    zh: "透過 subagent 在當前 session 並行處理 implementation plan 中的獨立任務。"
+
+  - id: finishing-a-development-branch
+    name: "Finishing a Development Branch"
+    en: "Decide how to integrate completed work — merge, PR, or cleanup — when implementation is done and tests pass."
+    zh: "實作完成、測試通過後,決定整合方式 — merge、開 PR、或收尾清理。"
+
+  - id: writing-plans
+    name: "Writing Plans"
+    en: "Convert a spec or requirements into a multi-step implementation plan, before touching code."
+    zh: "在動 code 之前,把規格/需求轉成多步驟 implementation plan。"
+
+  - id: requesting-code-review
+    name: "Requesting Code Review"
+    en: "Verify work meets requirements when completing tasks, implementing features, or before merging."
+    zh: "完成任務、實作大功能、合併前確認工作是否符合需求。"
+
+  - id: using-git-worktrees
+    name: "Using Git Worktrees"
+    en: "Ensure an isolated workspace exists (native worktree or fallback) before executing implementation plans."
+    zh: "執行 plan 前先用 worktree(或備援方案)確保工作環境隔離。"
+
+  - id: dispatching-parallel-agents
+    name: "Dispatching Parallel Agents"
+    en: "Use when 2+ independent tasks can be worked on without shared state or sequential dependencies."
+    zh: "有 2+ 個獨立任務、無共享 state、無順序依賴時使用。"
+
+  - id: test-driven-development
+    name: "Test-Driven Development"
+    en: "Write tests before implementation for any feature or bugfix."
+    zh: "任何 feature 或 bugfix,實作前先寫測試。"
