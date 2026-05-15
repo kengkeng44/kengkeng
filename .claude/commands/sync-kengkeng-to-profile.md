@@ -21,13 +21,16 @@ allowed-tools: Bash, Read
 
 4. **base64 encode + PUT 上傳** — 用 PowerShell 把本地內容 base64 化,再呼叫 `gh api -X PUT repos/kengkeng44/kengkeng44/contents/README.md` 帶 `message`、`content`(base64)、`sha`(step 3 取得)、`branch=master`。
 
-   PowerShell 範本:
+   PowerShell 範本（用 `-f` 欄位旗標，**不要**用 stdin pipe — PS 5.1 把 UTF-16 byte 灌給 gh，API 直接 400 "Problems parsing JSON"）:
    ```powershell
    $content = Get-Content -Raw -Encoding UTF8 -Path "C:\Users\acer\Desktop\kengkeng\profile\README.md"
    $b64 = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($content))
    $sha = gh api repos/kengkeng44/kengkeng44/contents/README.md --jq '.sha'
-   $body = @{ message = "sync: profile README from kengkeng repo"; content = $b64; sha = $sha; branch = "master" } | ConvertTo-Json -Compress
-   $body | gh api -X PUT repos/kengkeng44/kengkeng44/contents/README.md --input -
+   gh api -X PUT repos/kengkeng44/kengkeng44/contents/README.md `
+     -f "message=sync: profile README from kengkeng repo" `
+     -f "content=$b64" `
+     -f "sha=$sha" `
+     -f "branch=master"
    ```
 
 5. **報告結果** — 一句話告訴用戶推送成功 + 給他 https://github.com/kengkeng44 連結點開檢查(可能要等 30 秒~1 分鐘 GitHub cache 才會刷新)。失敗就貼 API error 原文,不要自己推測原因。
