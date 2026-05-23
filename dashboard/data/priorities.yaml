@@ -22,6 +22,9 @@ user_career_status: yellow
 project_threads_bot: yellow
 feedback_refresh_dashboard_after_memory_change: yellow
 feedback_powershell_gh_stdin_json: yellow
+feedback_response_ordering: yellow
+feedback_push_to_skills_target: yellow
+feedback_quota_threshold_notify: yellow
 
 user_olist_pm_portfolio: green
 user_profile_links: green

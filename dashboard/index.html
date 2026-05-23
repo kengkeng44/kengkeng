@@ -253,18 +253,18 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>25</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>28</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
-    <div class="stat"><div class="n"><em>42</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
+    <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
   </section>
 
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">25</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">28</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
-      <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">42</span></button>
+      <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
 
     <div class="row">
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>25</b> of <b>25</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>28</b> of <b>28</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>25</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>28</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -513,6 +513,33 @@
         </div></div>
       </article>
 
+      <article class="card t-feedback" data-type="feedback" data-search="response ordering 最重要 最簡單 列表 步驟 選項 recommend feedback_response_ordering">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Response Ordering · Most Important &amp; Simplest First</div><div class="zh">回覆排序:最重要最簡單在前</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">When giving the user a list, options, or steps, put the most important AND the simplest one first. Don't default to "suggested execution order" or temporal/logical sequencing.</div>
+          <div class="zh-desc">給 user 列表/選項/步驟時,最重要 + 最簡單的擺第一個,不要照「建議流程」或時序排。</div>
+          <div class="filename">feedback_response_ordering.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="push to skills yaml kengkeng dashboard 補 skill 清單 feedback_push_to_skills_target">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">&quot;Push to Skills&quot; · Target File</div><div class="zh">「push 到 skills」對應位置</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">"Push to skills" / "add a skill" / "update skill list" → edit <code>Desktop\kengkeng\dashboard\data\skills.yaml</code>, then run <code>/refresh-dashboard</code> to regenerate the public dashboard.</div>
+          <div class="zh-desc">「push 到 skills」/「補 skill」/「更新 skill 清單」一律改 Desktop\kengkeng\dashboard\data\skills.yaml,改完跑 /refresh-dashboard。</div>
+          <div class="filename">feedback_push_to_skills_target.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="quota threshold notify hourly 5h block ccusage 額度 提醒 hook feedback_quota_threshold_notify">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Hourly Quota Threshold · 10% Notification</div><div class="zh">小時額度跨 10% 提醒</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">When Claude Code's 5-hour rate-limit usage crosses a 10% multiple (10/20/30…), append one warning line at the very bottom of the reply. Wired via UserPromptSubmit hook → ccusage active cost ÷ historical-max-block cost.</div>
+          <div class="zh-desc">每當 5h block 使用量(cost-based)跨越 10% 整數倍時,在回答最末加一行警示。已接 UserPromptSubmit hook,用 ccusage active cost ÷ 歷來最高 block cost 算 %。</div>
+          <div class="filename">feedback_quota_threshold_notify.md</div>
+        </div></div>
+      </article>
+
     </div>
   </section>
 
@@ -676,12 +703,12 @@
     <div class="panel-head">
       <div class="panel-num">03</div>
       <h2 class="panel-title">Skills<span class="zh">已安裝技能 · 三大來源</span></h2>
-      <div class="panel-meta"><b>11</b> custom · <b>17</b> document · <b>14</b> superpowers</div>
+      <div class="panel-meta"><b>13</b> custom · <b>17</b> document · <b>14</b> superpowers</div>
     </div>
 
     <!-- A · Custom -->
     <div class="skill-group" data-group="custom">
-      <h3>Custom <em>&amp;</em> Top-Level <span class="count">— 11 SKILLS</span></h3>
+      <h3>Custom <em>&amp;</em> Top-Level <span class="count">— 13 SKILLS</span></h3>
       <p class="zh-sub">自訂 + 內建頂層 skill 群,涵蓋學習地圖同步、設定維護、循環任務、API 開發等。</p>
       <div class="cards-grid">
 
@@ -706,14 +733,6 @@
           <div class="card-body"><div class="card-body-inner">
             <div class="en-desc">Customize keyboard shortcuts and chord bindings in ~/.claude/keybindings.json.</div>
             <div class="zh-desc">客製化 ~/.claude/keybindings.json 裡的鍵盤捷徑與 chord 組合鍵。</div>
-          </div></div>
-        </article>
-
-        <article class="card skill-card t-custom" data-type="custom" data-search="simplify code review reuse quality 程式碼">
-          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">simplify</div><div class="en">Simplify · Code Review &amp; Fix</div></div><span class="chev">▸</span></div>
-          <div class="card-body"><div class="card-body-inner">
-            <div class="en-desc">Review changed code for reuse, quality, efficiency — then fix the issues found.</div>
-            <div class="zh-desc">檢視已變更的程式碼,評估重用性、品質、效率,然後修正發現的問題。</div>
           </div></div>
         </article>
 
@@ -770,6 +789,30 @@
           <div class="card-body"><div class="card-body-inner">
             <div class="en-desc">Complete a security review of the pending changes on the current branch.</div>
             <div class="zh-desc">對當前分支的待提交變更執行完整的安全性審查。</div>
+          </div></div>
+        </article>
+
+        <article class="card skill-card t-custom" data-type="custom" data-search="code review diff effort comment correctness bug 程式碼">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">code-review</div><div class="en">Code Review · Diff</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Review the current diff for correctness bugs at the chosen effort level (low/med = high-confidence; high = broader coverage). Pass --comment to post inline PR comments.</div>
+            <div class="zh-desc">依 effort 等級(low/med 高信心、high 廣覆蓋)審當前 diff 的正確性 bug;加 --comment 可直接貼成 PR inline 留言。</div>
+          </div></div>
+        </article>
+
+        <article class="card skill-card t-custom" data-type="custom" data-search="verify run observe pr fix test 驗證 跑起來">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">verify</div><div class="en">Verify · Run &amp; Observe</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Verify a code change by running the app and observing behavior — for PR validation, fix confirmation, manual feature testing before push.</div>
+            <div class="zh-desc">跑起來看效果驗證改動 — 用於 PR 驗收、修正確認、push 前手動測試 feature。</div>
+          </div></div>
+        </article>
+
+        <article class="card skill-card t-custom" data-type="custom" data-search="run launch project app cli server tui electron browser 啟動 專案">
+          <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="id">run</div><div class="en">Run · Launch Project App</div></div><span class="chev">▸</span></div>
+          <div class="card-body"><div class="card-body-inner">
+            <div class="en-desc">Launch and drive this project's app (CLI / server / TUI / Electron / browser-driven). Looks for a project skill first, falls back to built-in patterns.</div>
+            <div class="zh-desc">啟動並操作當前專案的 app(CLI / server / TUI / Electron / 瀏覽器類)。優先找專案自有 skill,沒有就用內建 pattern 兜底。</div>
           </div></div>
         </article>
 
@@ -1231,6 +1274,7 @@
     'career status employment':'yellow',
     'threads bot data hoarder':'yellow','refresh dashboard memory settings':'yellow',
     'powershell 5.1 pipe json':'yellow',
+    'response ordering':'yellow','push to skills':'yellow','quota threshold':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
