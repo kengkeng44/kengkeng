@@ -25,6 +25,7 @@ feedback_powershell_gh_stdin_json: yellow
 feedback_response_ordering: yellow
 feedback_push_to_skills_target: yellow
 feedback_quota_threshold_notify: yellow
+user_excel_learning_focus: yellow
 
 user_olist_pm_portfolio: green
 user_profile_links: green

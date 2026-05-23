@@ -253,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>28</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>29</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -262,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">28</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">29</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>28</b> of <b>28</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>29</b> of <b>29</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>28</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>29</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -478,7 +478,7 @@
       </article>
 
       <article class="card t-user" data-type="user" data-search="career status employment 已就職 portfolio pm 機會 轉職中 user_career_status">
-        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Career Status · Employment (2026-05-15)</div><div class="zh">用戶就業狀態</div></div><span class="chev">▸</span></div>
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Career Status · Employed (updated 2026-05-23)</div><div class="zh">用戶就業狀態 (2026-05-23 更新)</div></div><span class="chev">▸</span></div>
         <div class="card-body"><div class="card-body-inner">
           <div class="en-desc">Currently employed but does not disclose current employer in portfolio. Still interested in PM / Analyst opportunities. Avoid "transitioning" / 轉職中 framing — that narrative is outdated.</div>
           <div class="zh-desc">已就職但 portfolio 不揭露現職;對 PM/分析機會仍有興趣;原「轉職中」敘事過時。</div>
@@ -537,6 +537,15 @@
           <div class="en-desc">When Claude Code's 5-hour rate-limit usage crosses a 10% multiple (10/20/30…), append one warning line at the very bottom of the reply. Wired via UserPromptSubmit hook → ccusage active cost ÷ historical-max-block cost.</div>
           <div class="zh-desc">每當 5h block 使用量(cost-based)跨越 10% 整數倍時,在回答最末加一行警示。已接 UserPromptSubmit hook,用 ccusage active cost ÷ 歷來最高 block cost 算 %。</div>
           <div class="filename">feedback_quota_threshold_notify.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="excel learning shortcut formula power query pivot lambda 範例 零售 ai-banned-workplace user_excel_learning_focus">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Excel Learning Focus · AI-Banned Workplace</div><div class="zh">Excel 學習需求(工作環境禁 AI)</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">User's daily work is Excel-heavy and the workplace bans AI tools (Copilot/ChatGPT/etc.). Learning happens off-hours via Claude — concepts and techniques explained so they can be applied manually at work. Examples should default to retail / category-analysis context; only recommend non-AI tools (Excel built-ins, Power Query, VBA, desktop-only).</div>
+          <div class="zh-desc">日常以 Excel 為主、工作環境禁用 AI 工具。學習在下班時間靠 Claude 完成,白天手動套用。教學重點:先 shortcut / 公式再講原理;範例優先零售脈絡;只推非 AI 工具(Excel 內建、Power Query、VBA、desktop)。</div>
+          <div class="filename">user_excel_learning_focus.md</div>
         </div></div>
       </article>
 
@@ -1275,6 +1284,7 @@
     'threads bot data hoarder':'yellow','refresh dashboard memory settings':'yellow',
     'powershell 5.1 pipe json':'yellow',
     'response ordering':'yellow','push to skills':'yellow','quota threshold':'yellow',
+    'excel learning':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
