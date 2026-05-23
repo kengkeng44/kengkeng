@@ -19,11 +19,6 @@ custom:
     en: "Customize keyboard shortcuts and chord bindings in ~/.claude/keybindings.json."
     zh: "客製化 ~/.claude/keybindings.json 裡的鍵盤捷徑與 chord 組合鍵。"
 
-  - id: simplify
-    name: "Simplify · Code Review & Fix"
-    en: "Review changed code for reuse, quality, efficiency — then fix the issues found."
-    zh: "檢視已變更的程式碼,評估重用性、品質、效率,然後修正發現的問題。"
-
   - id: fewer-permission-prompts
     name: "Fewer Permission Prompts"
     en: "Scan transcripts for common read-only Bash/MCP calls, build a prioritized allowlist in .claude/settings.json."
@@ -58,6 +53,21 @@ custom:
     name: "Security Review · Branch"
     en: "Complete a security review of the pending changes on the current branch."
     zh: "對當前分支的待提交變更執行完整的安全性審查。"
+
+  - id: code-review
+    name: "Code Review · Diff"
+    en: "Review the current diff for correctness bugs at the chosen effort level (low/med: high-confidence findings; high: broader coverage). Pass --comment to post inline PR comments."
+    zh: "依 effort 等級(low/med 高信心、high 廣覆蓋)審當前 diff 的正確性 bug;加 --comment 可直接貼成 PR inline 留言。"
+
+  - id: verify
+    name: "Verify · Run & Observe"
+    en: "Verify a code change by running the app and observing behavior — for PR validation, fix confirmation, manual feature testing before push."
+    zh: "跑起來看效果驗證改動 — 用於 PR 驗收、修正確認、push 前手動測試 feature。"
+
+  - id: run
+    name: "Run · Launch Project App"
+    en: "Launch and drive this project's app (CLI / server / TUI / Electron / browser-driven). Looks for a project skill first, falls back to built-in patterns."
+    zh: "啟動並操作當前專案的 app(CLI / server / TUI / Electron / 瀏覽器類)。優先找專案自有 skill,沒有就用內建 pattern 兜底。"
 
 docs:
   - id: brand-guidelines
