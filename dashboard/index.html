@@ -253,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>29</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>30</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -262,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">29</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">30</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>29</b> of <b>29</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>30</b> of <b>30</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>29</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>30</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -546,6 +546,15 @@
           <div class="en-desc">User's daily work is Excel-heavy and the workplace bans AI tools (Copilot/ChatGPT/etc.). Learning happens off-hours via Claude — concepts and techniques explained so they can be applied manually at work. Examples should default to retail / category-analysis context; only recommend non-AI tools (Excel built-ins, Power Query, VBA, desktop-only).</div>
           <div class="zh-desc">日常以 Excel 為主、工作環境禁用 AI 工具。學習在下班時間靠 Claude 完成,白天手動套用。教學重點:先 shortcut / 公式再講原理;範例優先零售脈絡;只推非 AI 工具(Excel 內建、Power Query、VBA、desktop)。</div>
           <div class="filename">user_excel_learning_focus.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="telegram no markdown asterisk emoji emphasis 表情符號 強調 feedback_telegram_no_markdown">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Telegram Reply · No ** Markdown, Use Emoji</div><div class="zh">Telegram 回覆禁 **,改用 emoji 強調</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Telegram doesn't render markdown by default; literal ** asterisks clutter the message. Use emoji prefixes (🎯 / ⚠️ / ✅ / ⭐ / 💡 etc.) for emphasis instead. CLI / Notion / GitHub outputs are unaffected — markdown still renders there.</div>
+          <div class="zh-desc">Telegram 預設不 render markdown,寫 ** 會變字面星號亂入。強調 / 重點改用 emoji 開頭(🎯 / ⚠️ / ✅ / ⭐ / 💡 等)。CLI / Notion / GitHub 輸出不受影響。</div>
+          <div class="filename">feedback_telegram_no_markdown.md</div>
         </div></div>
       </article>
 
@@ -1284,7 +1293,7 @@
     'threads bot data hoarder':'yellow','refresh dashboard memory settings':'yellow',
     'powershell 5.1 pipe json':'yellow',
     'response ordering':'yellow','push to skills':'yellow','quota threshold':'yellow',
-    'excel learning':'yellow',
+    'excel learning':'yellow','telegram no markdown':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
