@@ -245,7 +245,7 @@
     <div class="meta-right">
       <div>OWNER · <b>kengkeng44</b></div>
       <div>EMAIL · <b>jenho.cheng</b></div>
-      <div>DATE · <b>2026-05-15</b></div>
+      <div>DATE · <b>2026-05-26</b></div>
       <div>MODEL · <b>Opus 4.7</b></div>
       <div>HOST · <b>Win 11 / PS 5.1</b></div>
     </div>
@@ -253,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>30</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>32</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -262,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">30</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">32</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>30</b> of <b>30</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>32</b> of <b>32</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>30</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>32</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -555,6 +555,24 @@
           <div class="en-desc">Telegram doesn't render markdown by default; literal ** asterisks clutter the message. Use emoji prefixes (🎯 / ⚠️ / ✅ / ⭐ / 💡 etc.) for emphasis instead. CLI / Notion / GitHub outputs are unaffected — markdown still renders there.</div>
           <div class="zh-desc">Telegram 預設不 render markdown,寫 ** 會變字面星號亂入。強調 / 重點改用 emoji 開頭(🎯 / ⚠️ / ✅ / ⭐ / 💡 等)。CLI / Notion / GitHub 輸出不受影響。</div>
           <div class="filename">feedback_telegram_no_markdown.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="permission prompt explain telegram 預先 解釋 permit 拒絕 盲簽 feedback_explain_permissions">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Explain Permission Prompts Up-Front</div><div class="zh">Permission prompt 預先解釋</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Before any action that will trigger a Claude Code permission prompt, send a Telegram one-liner first: ① why I want to do it (goal), ② what exactly needs permitting (tool / command / path), ③ what happens if denied (alternatives). Reduces blind-approval risk and avoids "raw command + two buttons" confusion.</div>
+          <div class="zh-desc">會觸發 permission prompt 的動作,先在 Telegram 一句話解釋:① 為什麼要做(目標)② 具體 permit 什麼(工具 / 指令 / 路徑)③ 拒絕的影響(替代方案)。降低盲簽風險,user 才不會看到 raw command 一頭霧水。</div>
+          <div class="filename">feedback_explain_permissions.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="send url after dev deploy server publish 部署 末段 獨立 訊息 點開 feedback_send_url_after_dev">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Send Clickable URL After Dev / Deploy Run</div><div class="zh">開發跑完一次獨立丟 URL</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">After any action that produces a viewable URL (deploy to Cloudflare/Vercel/Netlify/Railway, local dev server, GitHub Pages publish, Notion page update, Streamlit/HF Spaces), end the reply with a standalone paragraph containing ONLY the URL — don't bury it inside the summary. User wants to tap straight through to verify the result.</div>
+          <div class="zh-desc">deploy / dev server / publish 完,summary 結尾另起一段只放可點 URL,不要包在句子裡或 summary 中段。user 要直接點開看成果,特別是手機 Telegram 上不想撈 URL。</div>
+          <div class="filename">feedback_send_url_after_dev.md</div>
         </div></div>
       </article>
 
@@ -1114,7 +1132,7 @@
 
   <footer>
     <div class="zh">
-      Generated for <a href="https://github.com/kengkeng44">@kengkeng44</a> · Claude Opus 4.7 · 2026-05-15<br>
+      Generated for <a href="https://github.com/kengkeng44">@kengkeng44</a> · Claude Opus 4.7 · 2026-05-26<br>
       Source-of-truth lives in <a href="https://github.com/kengkeng44/kengkeng">kengkeng44/kengkeng</a> · 設定變動會反映在 memory/*.md 與 settings.json。
     </div>
     <div>END · OPERATOR'S CARD v.2</div>
@@ -1294,6 +1312,7 @@
     'powershell 5.1 pipe json':'yellow',
     'response ordering':'yellow','push to skills':'yellow','quota threshold':'yellow',
     'excel learning':'yellow','telegram no markdown':'yellow',
+    'permission prompt explain':'yellow','send url after':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
