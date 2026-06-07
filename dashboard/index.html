@@ -253,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>32</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>59</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -262,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">32</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">59</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>32</b> of <b>32</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>59</b> of <b>59</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>32</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>59</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -573,6 +573,249 @@
           <div class="en-desc">After any action that produces a viewable URL (deploy to Cloudflare/Vercel/Netlify/Railway, local dev server, GitHub Pages publish, Notion page update, Streamlit/HF Spaces), end the reply with a standalone paragraph containing ONLY the URL — don't bury it inside the summary. User wants to tap straight through to verify the result.</div>
           <div class="zh-desc">deploy / dev server / publish 完,summary 結尾另起一段只放可點 URL,不要包在句子裡或 summary 中段。user 要直接點開看成果,特別是手機 Telegram 上不想撈 URL。</div>
           <div class="filename">feedback_send_url_after_dev.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="pickup audience pivot children 8-12 parent family heritage 童話 奶奶 project_pickup_audience_pivot">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Audience Pivot · Kids 8-12 + Family</div><div class="zh">Pickup 客群 pivot 2026-06-05</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Pickup repositioned from "burnt-out office workers · after-work escape" to a family ELT game ("Grandma's bedtime English fairy tales"). Primary: TW kids 8-12 + parents (parent pays, kid plays). The "after-work escape" IP is reserved for a future sibling app; framework (7 worlds / grandma voice / A2 / slow TTS / blindRetry) stays 100% shared.</div>
+          <div class="zh-desc">拾光客群從「下班疲憊上班族」→ 8-12 兒童 + 親子家庭 + 海外華人 heritage。Tagline 改「奶奶的睡前英文小故事」;「下班逃逸」概念預留給未來 sibling app,framework 全部沿用。</div>
+          <div class="filename">project_pickup_audience_pivot.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="default chinese reply 預設 中文 回答 wrapper log 英文 raw code path url commit feedback_default_chinese_reply">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Default Reply Language · Chinese</div><div class="zh">預設一律中文回答</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">All wrapper text — summaries, explanations, popups, agent verdicts, deploy/log narration — defaults to Chinese. English stays only inside raw elements: code blocks, shell commands, file paths, URLs, variable / function / package names, and commit message bodies.</div>
+          <div class="zh-desc">對 user 所有輸出預設中文 — wrapper 文字、總結、解釋、popup、agent verdict 一律中文;英文只保留在 code / 指令 / file path / URL / 變數套件名 / commit message 內文。</div>
+          <div class="filename">feedback_default_chinese_reply.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="autonomous mode checkpoint 三選一 預設 段落 self-driving 直到 我說停 feedback_autonomous_with_checkpoints">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Autonomous Mode · 3-Option Checkpoints</div><div class="zh">Autonomous mode 三選一檢查點</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">On signals like "until I say stop" / "you decide" / "I'm AFK," enter self-driving: end each segment with a brief report + 3 next-step options + a starred default, then immediately take the default in the same turn and continue. User's next input is the chance to override, not the trigger to start.</div>
+          <div class="zh-desc">user 說「直到我說停」/「自己跑」就進 self-driving 模式 — 每段落簡短報告 + 3 個方向 + ⭐ 預設選擇,報告完不停留,同一 turn 直接取預設繼續跑下一段。遇到不可逆動作仍要停下來問。</div>
+          <div class="filename">feedback_autonomous_with_checkpoints.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="push notification segment completion 段落 完成 推播 autonomous proactive feedback_push_per_segment">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">PushNotification · Per Segment Completion</div><div class="zh">段落完成發 PushNotification</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">In autonomous mode, send a <code>PushNotification(status: proactive)</code> on every meaningful segment finish (background subagent done, deploy + new URL ready, major milestone) — not only for permission prompts. User is often AFK; push is the anchor that says "come back, there's new progress."</div>
+          <div class="zh-desc">autonomous mode 下,每個段落實質完成(subagent done / deploy + 新 URL / 重大里程碑)就發 PushNotification(proactive),不只是 permission 才推。User 不在電腦前時靠 push 才知道何時可以回來看。</div>
+          <div class="filename">feedback_push_per_segment.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="segment quota status 報告 末尾 % 剩餘 時間 block max plan feedback_segment_quota_status">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Segment Report · Append Quota Line</div><div class="zh">段落報告末尾附 quota 狀態</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">In autonomous / multi-segment work, end every segment report and milestone deploy with one line: <code>📊 Quota: X% used | block 還有 Yh Zm</code>. No dollar amount (Max plan is flat-fee — $ is fictional). Higher-frequency visibility than the 10% threshold notify; suppress if the threshold line already fired this turn.</div>
+          <div class="zh-desc">autonomous / multi-segment 工作中,每個段落報告 / milestone 末尾加一行 <code>📊 Quota: X% used | block 還有 Yh Zm</code>。Max plan 用 % + 時間,不顯示 $。跟跨 10% 閾值通知不衝突,同 turn 已觸發閾值就不重複。</div>
+          <div class="filename">feedback_segment_quota_status.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="pickup ios distribution capacitor codemagic app store path b webview pwa project_pickup_ios_distribution">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup iOS · Capacitor + Codemagic (Path B)</div><div class="zh">Pickup iOS 上架路線</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Pickup ships to iOS via Capacitor + Codemagic cloud build — never EAS (Pickup isn't RN) or local Xcode (user is on Windows, no Mac). Apple Developer $99/yr is the only hard cost. PWA is a parallel short-term add for "add to Home Screen," not a substitute.</div>
+          <div class="zh-desc">Pickup 走 Capacitor + Codemagic 雲端 build,**不走** Expo/EAS(非 RN)或本機 Xcode(用戶 Windows 無 Mac)。Codemagic 直推 TestFlight + App Store Connect,全程不碰 Mac。PWA 另外加,不互斥。</div>
+          <div class="filename">project_pickup_ios_distribution.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="default no computer mobile phone 手機 inline code 複製 長按 vscode 開檔 feedback_default_no_computer">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Default · User Is On Phone, Not PC</div><div class="zh">預設用戶在手機</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Assume the user is on a phone unless they explicitly say otherwise. Paste prompts/scripts as inline code blocks for long-press copy. Never say "open file X" / "double-click" / "edit in VSCode" / "drop into C:\…". File handling goes through APIs (I run via Bash); secrets go through Infisical web UI.</div>
+          <div class="zh-desc">預設用戶在手機,沒電腦。所有要複製的 prompt / 指令直接 inline code block(長按可全選);不要叫他開檔 / 雙擊 / VSCode / 拖檔。檔案處理走 API 不走 manual file move;secret 走 Infisical web UI。</div>
+          <div class="filename">feedback_default_no_computer.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="automode git push commit allow no prompt npx wrangler force push deny secret ask feedback_automode_no_prompts">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Automode · No Prompts For git push / commit</div><div class="zh">Automode:git push / commit 不再跳</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">settings.json moves <code>git push *</code> / <code>git commit *</code> / <code>npx *</code> / <code>wrangler *</code> from <em>ask</em> to <em>allow</em> so deploy flows don't get interrupted. Force push / <code>reset --hard</code> / <code>rm</code> / <code>.env</code> / secrets stay restricted. Chat-level preview before push is still required — silence ≠ stealth.</div>
+          <div class="zh-desc">為減少 deploy 被打斷,settings.json 已把 git push / commit / npx / wrangler 從 ask 移到 allow。force push / reset --hard / rm / .env / secrets 仍受限。OS 不跳窗,但 push 前仍要在 chat 預告。</div>
+          <div class="filename">feedback_automode_no_prompts.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-reference" data-type="reference" data-search="pickup game ui resources figma duolingo design system agents skills reference_pickup_game_ui_resources">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Game UI · External Reference Library</div><div class="zh">Pickup game UI 外部資源 reference</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Curated external resources for Pickup UI/UX work: free Figma game-UI kits, Untitled UI / Plus UI design systems, Duolingo design-system mirrors + shape-language posts, mobile-game UI primers, plus installed agents (<code>pickup-game-ui-designer</code>) and recommended skills (UI UX Pro Max).</div>
+          <div class="zh-desc">Pickup UI/UX 工作可查的外部資源 — 免費 Figma game-UI kits、Untitled UI / Plus UI、Duolingo Design System / Shape Language、mobile game UI 原則、推薦安裝的 Claude skills + 自定義 agent。</div>
+          <div class="filename">reference_pickup_game_ui_resources.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="audit link popup askuserquestion review 驗收 url 跳窗 不要打字 feedback_audit_link_and_popup">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Audit / Review · URL + AskUserQuestion Popup</div><div class="zh">審查/驗收給連結 + popup 回報</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">For any audit / review / design check / acceptance task, end with two things: a standalone clickable URL (live deploy / PR / Figma) and an <code>AskUserQuestion</code> popup for feedback — never a "type A / B / C" text prompt. Phone-friendly = tap, not type.</div>
+          <div class="zh-desc">審查 / 驗收 / 設計 review 結尾必附可點 URL(獨立一段)+ 用 AskUserQuestion 跳 popup 收回應;不要在文字裡列 A/B/C 要 user 打字。autonomous mode 段落 checkpoint 也用 popup 取代文字選項。</div>
+          <div class="filename">feedback_audit_link_and_popup.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="perf budget lcp 載入 首次 3s 回訪 1s deploy 檢查 commit metrics splash feedback_perf_budget">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Perf Budget · LCP ≤ 3s First / ≤ 1s Repeat</div><div class="zh">Pickup app 載入 perf budget</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Pickup load-time budget: first visit LCP ≤ 3s, repeat visit (sessionStorage cached) ≤ 1s. Over budget = must-fix before ship. Every <code>npm run build</code> reads <code>[BootPerf]</code>; commit message includes perf numbers; the red <code>PERF: Xms (budget Yms)</code> pill in the corner means it's broken.</div>
+          <div class="zh-desc">Pickup 載入 budget — 首次 ≤ 3s LCP / 回訪 ≤ 1s LCP。超 budget = ship 前必修。每次 build 看 <code>[BootPerf]</code>、commit message 帶 perf 數字;右下紅 pill 亮 = 超 budget。新功能若預估會破 budget,先做 lazy load / 分包。</div>
+          <div class="filename">feedback_perf_budget.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup bilingual ui banner button section chapter title 雙語 a2 台灣 feedback_pickup_bilingual">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Bilingual UI · EN + 中文 Everywhere</div><div class="zh">Pickup app 雙語 UI 規則</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">All UI chrome text — banners, buttons, chapter titles, CTAs, hints, microcopy — must be bilingual (English + Chinese) by default. A2 Taiwanese learners get blocked by English-only chrome. Don't hide Chinese in tooltips; ship it visible. (Pre-reveal Q content is the exception, governed by the no-Chinese-pre-reveal rule.)</div>
+          <div class="zh-desc">Pickup 所有 UI chrome 文字 — banner / button / 章節標題 / CTA / hint / microcopy — 預設雙語(EN + 中文)。A2 台灣客群看純英文會卡。中文要 visible 不可藏 tooltip。題目 pre-reveal 內容例外(由「中文 pre-reveal 永禁」管)。</div>
+          <div class="filename">feedback_pickup_bilingual.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup retry reveal 2-strike blindretry 答錯 第二次 揭露 答案 explanation duolingo feedback_pickup_retry_reveal">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Retry · 2-Strike Reveal (All Question Types)</div><div class="zh">Pickup 全題型答錯第 2 次 reveal</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Every question type (cloze 4-MC / tap-tiles / tap-pairs / type-what-you-hear / future ones) follows 2-strike reveal: 1st wrong = blind retry, 2nd wrong = auto-reveal correct answer + Chinese explanation + Continue. No score penalty. Future new types inherit this default — don't regress to infinite blind retry.</div>
+          <div class="zh-desc">所有題型答錯流程一致:第 1 次答錯 blindRetry、第 2 次答錯自動揭露正確答案 + 中文解釋 + Continue。不扣分。未來新題型沿用,不可回退到無限 blindRetry。</div>
+          <div class="filename">feedback_pickup_retry_reveal.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup no emoji qa question options 題目 答案 純語言 mascot ui chrome 例外 feedback_pickup_no_emoji_qa">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Q&amp;A · Zero Emoji Policy</div><div class="zh">Pickup 題目+答案禁 emoji</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Question strings and option arrays must contain zero emoji — they collapse "language learning" into "icon recognition." Mascots / avatars / UI chrome can still use emoji (those are decoration, not content). Sweep all data files (story-kitten, lessons-ch1..8, sentences.ts, scenarios.ts) when this rule changes.</div>
+          <div class="zh-desc">所有題目 question 跟 options 絕對不能放 emoji,純語言學習。Mascot / avatar / UI chrome 例外。改規則要 sweep 全部 data 檔(story-kitten / lessons-ch1..8 / sentences.ts / scenarios.ts)。</div>
+          <div class="filename">feedback_pickup_no_emoji_qa.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup listening format speaker icon sentence blank word tap 中文 tap to listen ban feedback_pickup_listening_format">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Listening Format · Locked</div><div class="zh">Pickup 聽力題格式 lock</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Listening UI is locked: 36-44px speaker icon prefix (tap to replay), full sentence visible with <code>___</code> as visible underline blank, tap a word or the blank to reveal Chinese via WordHint, question prompt is English-only. Big "Tap to listen" pill button is banned across all variants.</div>
+          <div class="zh-desc">聽力題格式 lock:題目前小喇叭 36-44px(點重播)、sentence 可見 + <code>___</code> visible blank、點字/點空格 → 中文 popup(WordHint)、題目 prompt 純英文。禁止「Tap to listen」大藍按鈕跟 72px 中央喇叭。</div>
+          <div class="filename">feedback_pickup_listening_format.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="ui fix verify component dom multi mascot chapterintro hero avatar 截圖 真的修對 feedback_ui_fix_verify">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">UI Fix · Verify You Edited The Right Component</div><div class="zh">Pickup UI 改完必驗</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">After any Pickup UI tweak, ship-blocking checks: ① confirm which DOM component the user actually sees (one visual = often several components — Mascot / mascotHalo / ChapterIntro hero / narration avatar), ② read your size + position values together to confirm the desired part is rendered, ③ verify against the dist preview, not just code. Same visual theme = edit all variants in one sweep.</div>
+          <div class="zh-desc">改 Pickup UI 後,ship 前必先確認:① user 看的是哪個 component(同視覺常有多個 DOM 變體),② 自己讀數值組合(size + position)能否顯示對的部位,③ 看 dist 真實 render 不只看 code。同視覺主題的所有 component 變體一次全改。</div>
+          <div class="filename">feedback_ui_fix_verify.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="auto verify deploy curl grep dist playwright smoke scene transition phaser feedback_auto_verify_deploy">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Auto-Verify Every Deploy</div><div class="zh">Pickup deploy 後 auto-verify</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">After every deploy, run a smoke pass before claiming success: <code>grep</code> the dist bundle for expected new strings, <code>curl</code> the live URL and validate response, manually walk scene transitions (Phaser <code>game.scene.start</code> doesn't stop the caller — use the scene instance). Future: Playwright headless on key paths. Commit message must include "Verified: &lt;method&gt;".</div>
+          <div class="zh-desc">每次 deploy 完 ship 前必跑 smoke:<code>grep</code> dist 看新代碼有沒有真的進 bundle、<code>curl</code> 線上 URL 驗 response、手動走 scene transition。Phaser <code>game.scene.start</code> 不 stop 當前 scene 要注意。未來加 Playwright headless 把關。</div>
+          <div class="filename">feedback_auto_verify_deploy.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-user" data-type="user" data-search="claude subscription max 5x plan 100 訂閱 quota 40 block burn rate user_claude_subscription">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Claude Subscription · Max 5x ($100/mo)</div><div class="zh">Claude 訂閱方案 = Max 5x</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">User is on Claude Max 5x ($100/mo) — not Pro, not Max 20x. Use $40 as the per-block ceiling when computing quota %, since community observation places a single 5-hour block at ~$35–50 USD-equivalent. Daily ≥ $100 means the plan is being squeezed (pure value); &lt; $30/day means there's still headroom — push agents / Opus harder.</div>
+          <div class="zh-desc">用戶訂 Claude Max 5x($100/月),不是 Pro / 不是 Max 20x。單 5h block 容量 ~$35-50,算 % 用 $40 當中位上限;burn rate $5+/hr 持續會在 block 結束前用爆。Max plan flat-fee,$ 是理論值,實際 0 元。</div>
+          <div class="filename">user_claude_subscription.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup q prompt quality toeic comprehension wh question 8 字 banned which word did you hear paraphrase r1 feedback_pickup_q_prompt_quality">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Q Prompt Quality · TOEIC-Aligned</div><div class="zh">Pickup 題目 prompt 品質</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Question prompts must be TOEIC Part 2 grade: single WH-question, ≤ 8 words, single sentence, references story characters, forces comprehension over phonetic discrimination. Banned: "Which word did you hear?" and any phonetic-only stem. Hard rules R1-R8 + anti-patterns A1-A7 live in <code>docs/toeic-research/pickup-q-design-standard-v1.md</code>; R1 (correct option ⊄ sentence) is most important.</div>
+          <div class="zh-desc">題目 prompt 必須 TOEIC Part 2 等級:單一 WH 問句、≤ 8 字、單句、提到角色、強迫 comprehension。禁用「Which word did you hear?」等純辨音 prompt。Hard rule R1-R8 + anti-pattern A1-A7 在 <code>docs/toeic-research/pickup-q-design-standard-v1.md</code>;R1(正解不可是 sentence 子字串)最重要。</div>
+          <div class="filename">feedback_pickup_q_prompt_quality.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup speech rate web speech 0.75 0.85 sentence question options a2 115 wpm toeic 150 feedback_pickup_speech_rate">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup TTS Rate · 0.75 / 0.85 (A2 ≈115 wpm)</div><div class="zh">Pickup 語速標準</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Web Speech API rate is locked: 0.75 for sentence + options, 0.85 for question prompt. That maps to ~115 wpm — below TOEIC native 150 wpm, above the choppy 0.5 floor (iOS Safari engine). Never hardcode 0.85 / 0.9 / 0.92 / 1.0 — use <code>SPEECH_RATE_SENTENCE</code> / <code>_QUESTION</code> / <code>_OPTIONS</code> constants across both scene files.</div>
+          <div class="zh-desc">Web Speech rate 訂死:sentence + options 用 0.75,question 用 0.85,對應 ~115 wpm。TOEIC native 150 wpm 對 A2 太快,0.5 以下會 choppy。用 <code>SPEECH_RATE_SENTENCE/_QUESTION/_OPTIONS</code> 常數,不可 hardcode。</div>
+          <div class="filename">feedback_pickup_speech_rate.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup placeholder substitution catname dogname loadchapterlessons inject question options sentence explanation feedback_pickup_placeholder_substitution">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Placeholder Substitution · Cover Every Field</div><div class="zh">Pickup placeholder substitution 覆蓋率</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc"><code>{catName}</code> / <code>{dogName}</code> (and any future placeholder) must run through <code>applyCatName + applyDogName</code> on every user-visible string field in <code>loadChapterLessons()</code> — sentence, question, options, explanationZh, storyBeat. Adding a new placeholder-bearing field means extending the loader first. CI guard candidate: grep dist bundle for any raw <code>{catName}</code> literal.</div>
+          <div class="zh-desc"><code>{catName}</code> / <code>{dogName}</code> 必須在 <code>loadChapterLessons()</code> 對每個 user-visible string field 都跑 substitute(question / options / sentence / explanationZh / storyBeat),新增含 placeholder 的欄位前先擴 loader。CI 驗證:dist bundle 不可有 raw <code>{catName}</code>。</div>
+          <div class="filename">feedback_pickup_placeholder_substitution.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup option button bilingual duolingo style en zh 左右並列 blind listening sentence question feedback_pickup_bilingual_options">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup MC Options · Bilingual, Duolingo-Style</div><div class="zh">Pickup option button 雙語並列</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Every MC option button uses horizontal flex: <code>[A]</code> letter pill on the left, English option in the middle (flex:1), Chinese translation muted on the right — Duolingo style. Schema adds <code>optionsZh: string[]</code>. Blind-listening scope narrows to sentence + question audio only; option labels are visible bilingual. <code>hideOptionText</code> is permanently false.</div>
+          <div class="zh-desc">每個 4-MC button 用 horizontal flex:左 A/B/C/D 字母 pill / 中英文 option / 右中文翻譯(Duolingo style)。Schema 加 <code>optionsZh: string[]</code>。Blind-listening 範圍縮到 sentence + question 層,選項 visible 雙語。</div>
+          <div class="filename">feedback_pickup_bilingual_options.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup no chinese pre-reveal intro sentence question prompt title options chrome listen-tf-zh carve-out feedback_pickup_no_chinese_pre_reveal">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup · No Chinese Pre-Reveal (Override Rule)</div><div class="zh">Pickup 中文 pre-reveal 永禁</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Before user answers, every learning surface — intro overlay, sentence card, question prompt, option buttons, lesson title, chip — is English-only. Chinese explanations belong to the post-reveal panel. <strong>This rule overrides the bilingual-UI rule when they conflict</strong>. Carve-out: <code>listen-tf-zh</code> Duolingo Stories type explicitly allows Chinese pre-reveal for its <code>questionZh</code>/<code>optionsZh</code>.</div>
+          <div class="zh-desc">答對/答錯前所有 surface(intro / sentence card / question prompt / options / title / chip)禁中文,中文只能在 reveal panel 顯示。<strong>本 rule 跟雙語規則衝突時以本 rule 為主</strong>。例外:<code>listen-tf-zh</code> Duolingo Stories 型題允許中文 pre-reveal。</div>
+          <div class="filename">feedback_pickup_no_chinese_pre_reveal.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup post iteration audit 5 agents qa bug check ux compliance audio text walkthrough toeic standard feedback_pickup_post_iteration_audit">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup · Post-Iteration 5-Agent Audit</div><div class="zh">Pickup iteration 後 5-agent audit</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">After every Pickup build + deploy, dispatch 5 audit agents in parallel before commit: QA (lessons content vs pickup-q-design-standard-v1), Bug-check (TS strict + Playwright smoke), UX Compliance (11 R rules), Audio-Text Consistency (speaker queue vs DOM reveal), Player Walkthrough (A2 + timeline). Wait for all 5; any flagged issue blocks ship. Commit message tags "QA ✓ Bug ✓ UX ✓ Audio ✓ Walk ✓".</div>
+          <div class="zh-desc">每次 Pickup iteration 完 build + deploy 後,並行 dispatch 5 個 audit agent:QA(題目對 v1 standard)/ Bug-check(TS + Playwright)/ UX Compliance(11 條 R)/ Audio-Text Consistency / Player Walkthrough(A2 視角 + 時間軸)。全 pass 才 commit,commit msg 帶 5-agent ✓。</div>
+          <div class="filename">feedback_pickup_post_iteration_audit.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="proofread chinese popups askuserquestion 校對 亂碼 錯字 同音 unicode 草稿 feedback_proofread_chinese_in_popups">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Proofread Chinese In Popups Before Sending</div><div class="zh">AskUserQuestion 中文必校對</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">All Chinese inside <code>AskUserQuestion</code> options + descriptions must be publication-grade — no garbled chars, no typos, no contextual nonsense. Draft each sentence in plain text first, read it aloud, check homophones (預設 vs 預付 / 視覺 vs 試覺), then encode to JSON. After encoding, grep your output for stray <code>\uXXXX</code> bleed-through.</div>
+          <div class="zh-desc">AskUserQuestion popup 內中文必須校對:不允許亂碼 / 錯字 / 跳針。寫前先草稿讀順、檢查同音字、encode 進 JSON 後 grep 自己 output 有沒有 <code>\u</code> 碎片漏出。發現已送出有錯就立刻道歉重發。</div>
+          <div class="filename">feedback_proofread_chinese_in_popups.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="dont pause for block quota 5h 收工 defer 不主動建議 self-pacing feedback_dont_pause_for_block">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Never Pace Work Around Quota Block</div><div class="zh">不要因 block 暫停工作節奏</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">The 5-hour billing block's remaining time must not influence decisions. Keep the 10%-threshold notify line (one-liner only), but never write "block ends in X min, let's wrap up" / "defer to next block" / "wait for next block." Agents dispatch regardless of block boundary. Crossing into a new block needs no ceremony — just keep going.</div>
+          <div class="zh-desc">Claude Code 5h block 剩餘時間不該影響工作節奏。跨 10% 通知保留(一行),但訊息不該寫「block 剩 X 分建議...」「等下個 block 再...」這類把 block 當決策變數的句子。Agent 該跑就跑,跨 block 不用 ceremony。</div>
+          <div class="filename">feedback_dont_pause_for_block.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="qa static resend lessons json render html senduserfile chapter mobile environment feedback_qa_static_resend_after_update">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">QA Static HTML · Auto-Resend After Lessons Update</div><div class="zh">QA 靜態 HTML 更新後自動再傳</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Any commit that changes <code>public/lessons-ch{N}.json</code> content must, within the same session, re-run <code>node tools/_render-qa-static.cjs</code> and <code>SendUserFile</code> the affected chapter's fresh <code>qa-static-ch{N}.html</code> — only the changed chapters, with a caption listing which Q-IDs moved. Keeps the user's offline mobile work-surface aligned with the source of truth.</div>
+          <div class="zh-desc">改 <code>public/lessons-ch{N}.json</code> 內容後,session 內必須重 gen <code>public/qa-static-ch{N}.html</code> 並用 <code>SendUserFile</code> 自動再送變動章節給用戶,caption 標明改了哪些 Q-ID。確保用戶手機離線工作面跟 source-of-truth 一致。</div>
+          <div class="filename">feedback_qa_static_resend_after_update.md</div>
         </div></div>
       </article>
 
@@ -1313,6 +1556,20 @@
     'response ordering':'yellow','push to skills':'yellow','quota threshold':'yellow',
     'excel learning':'yellow','telegram no markdown':'yellow',
     'permission prompt explain':'yellow','send url after':'yellow',
+    'pickup audience pivot':'yellow','default chinese reply':'yellow',
+    'autonomous mode checkpoint':'yellow','push notification segment':'yellow',
+    'segment quota status':'yellow','pickup ios distribution':'green',
+    'default no computer':'yellow','automode git push':'yellow',
+    'pickup game ui resources':'green','audit link popup':'yellow',
+    'perf budget lcp':'yellow','pickup bilingual ui banner':'yellow',
+    'pickup retry reveal':'yellow','pickup no emoji qa':'yellow',
+    'pickup listening format':'yellow','ui fix verify component':'yellow',
+    'auto verify deploy curl':'yellow','claude subscription max':'green',
+    'pickup q prompt quality':'yellow','pickup speech rate':'yellow',
+    'pickup placeholder substitution':'yellow','pickup option button bilingual':'yellow',
+    'pickup no chinese pre-reveal':'yellow','pickup post iteration audit':'yellow',
+    'proofread chinese popups':'yellow','dont pause for block':'yellow',
+    'qa static resend':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
