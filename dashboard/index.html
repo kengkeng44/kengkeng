@@ -245,7 +245,7 @@
     <div class="meta-right">
       <div>OWNER · <b>kengkeng44</b></div>
       <div>EMAIL · <b>jenho.cheng</b></div>
-      <div>DATE · <b>2026-05-26</b></div>
+      <div>DATE · <b>2026-06-09</b></div>
       <div>MODEL · <b>Opus 4.7</b></div>
       <div>HOST · <b>Win 11 / PS 5.1</b></div>
     </div>
@@ -253,17 +253,17 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>59</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
-    <div class="stat"><div class="n"><em>22</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
-    <div class="stat"><div class="n"><em>18</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
+    <div class="stat"><div class="n"><em>64</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>20</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
+    <div class="stat"><div class="n"><em>14</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
   </section>
 
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">59</span></button>
-      <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">40</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">64</span></button>
+      <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">34</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
 
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>59</b> of <b>59</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>64</b> of <b>64</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>59</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>64</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -819,6 +819,51 @@
         </div></div>
       </article>
 
+      <article class="card t-feedback" data-type="feedback" data-search="hex code prompt image gen midjourney civitai pony sd flux dall-e figma make color 圖片生成 feedback_hex_codes_in_prompts">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Image Gen Prompts · Always Include Hex Codes</div><div class="zh">圖片生成 prompt 必含 hex</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Every AI image-gen prompt (Midjourney / Civitai / Pony / SD / Flux / DALL-E / Figma Make) must follow each color name with an explicit hex (<code>tan #d8a258</code>), including negative-list "no" colors (<code>no #58CC02</code>). Sacrifice filler words before hex — the "save tokens" rationale is dead post Pony XL / Flux / MJ V7. Spec docs and human-facing copy keep hex too.</div>
+          <div class="zh-desc">任何 AI 生圖 prompt(Midjourney / Civitai / Pony / SD / Flux / DALL-E / Figma Make)色名後緊接 hex,例 <code>tan #d8a258</code>;negative 紅線禁色也寫 hex(<code>no #58CC02</code>)。寧可砍贅詞不砍 hex,「省 token」的舊推測 Pony XL / Flux / MJ V7 之後不成立。spec 文件給人看的版本同樣保留 hex。</div>
+          <div class="filename">feedback_hex_codes_in_prompts.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="image gen prompt single block merged no negative positive civitai midjourney flux dall-e figma make outline neon nose clip 圖片生成 feedback_single_prompt_no_negative">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Image Gen Prompts · Single Merged Block</div><div class="zh">圖片生成 prompt 單一 block</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">All AI image-gen prompts ship as ONE merged block — no separate positive/negative split. Critical negation tags (<code>no outline</code> / <code>no nose</code> / <code>no neon green #58CC02</code> / <code>no #000000</code>) inline at the tail; Civitai's negative field stays empty. Drop soft-style negations (<code>no sparkle eyes</code> / <code>no 3d</code>) — LoRA already covers them. Trade ~30% negative-embedding precision for one-tap copy ergonomics.</div>
+          <div class="zh-desc">AI 生圖任務(Civitai / Midjourney / Pony / SD / Flux / DALL-E / Figma Make)只輸出一個合併 prompt block,不分 positive / negative。紅線 negation tag(<code>no outline</code> / <code>no nose</code> / <code>no neon green #58CC02</code>)inline 在後段;Civitai negative 欄位留空。風格弱項類 negation tag(no sparkle eyes / no 3d)可棄,LoRA 風格已防。犧牲約 30% negative embedding 精度換 user 一鍵 copy 工作流。</div>
+          <div class="filename">feedback_single_prompt_no_negative.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-feedback" data-type="feedback" data-search="pickup no chinese ui en-only override bilingual mochi hana grandma narration explanation aria-label keysentences bottomnav button heading empty loading 嚴格 feedback_pickup_no_chinese_ui">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup UI · Strict EN-Only (Overrides Bilingual)</div><div class="zh">Pickup UI 嚴格 EN-only(2026-06-08)</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Per 2026-06-08 user directive: everything outside story dialog and character voice is English-only. BottomNav, buttons, headings, empty / loading / status states → EN or icon-only. Chinese survives ONLY in Mochi / Hana / Grandma narration bubbles, post-reveal <code>explanationZh</code>, story sentence content, NextStoryPicker, GrandmaRecommendCarousel, KeySentencesSheet body, tomorrow-queue banner ("今晚講 X" is Mochi voice), and <code>aria-label</code> (screen-reader parents). <strong>Overrides the older bilingual-UI rule.</strong></div>
+          <div class="zh-desc">2026-06-08 user directive:除對話框 / 故事 / Mochi-奶奶 voice 外,任何 UI 都不准中文說明。BottomNav / button / heading / empty / loading / status → EN 或 icon-only。保留中文:Mochi / Hana / 奶奶 narration、答對後 <code>explanationZh</code>、故事 sentence、NextStoryPicker、GrandmaRecommendCarousel、KeySentencesSheet body、tomorrow-queue banner、aria-label。<strong>覆蓋舊雙語 UI 規則。</strong></div>
+          <div class="filename">feedback_pickup_no_chinese_ui.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="fabu pickup app store identity bundle id com.kengkeng44.pickup capacitor 8 spm codemagic mochi hana cat dog mascot education family ios testflight project_fabu_app_identity">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Fabu · App Store Identity (Bundle ID Locked)</div><div class="zh">Fabu App Store 身份</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Pickup ships to the App Store as <strong>"Fabu"</strong> (Latin <em>fabula</em> + Duolingo-style short coinage). Bundle ID <code>com.kengkeng44.pickup</code> is <strong>permanently locked</strong> (Apple policy — never propose changing it). Stack: Capacitor <strong>8.4.0</strong> + Swift Package Manager (no CocoaPods), Codemagic CI/CD on mac_mini_m2 with the 500 min/mo free tier, iOS folder <code>ios/App/App.xcodeproj + CapApp-SPM/</code>. Mascots default to Mochi (cat) + Hana (dog). App Store: Primary Education, Secondary Family. Workflows: <code>ios-testflight</code> auto on master push, <code>ios-appstore</code> manual.</div>
+          <div class="zh-desc">Pickup iOS App = <strong>"Fabu"</strong>(拉丁 <em>fabula</em> 童話根 + Duolingo style 短發明字),Bundle ID <code>com.kengkeng44.pickup</code> <strong>永鎖</strong>(Apple 政策,不要再問也不要建議改)。Tech stack:Capacitor <strong>8.4.0</strong> + Swift Package Manager(不用 CocoaPods),Codemagic CI/CD(mac_mini_m2 / 500 min/mo 免費 tier),iOS 資料夾 <code>ios/App/App.xcodeproj + CapApp-SPM/</code>。Mascot 預設 Mochi(三花貓)+ Hana(米格魯)。App Store 主類別 Education / 次類 Family。Workflow:<code>ios-testflight</code> master push 自動、<code>ios-appstore</code> 手動。</div>
+          <div class="filename">project_fabu_app_identity.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="pickup animation rive lottie svg recraft state machine duolingo capacitor cloudflare 角色 動畫 riv runtime canvas project_pickup_rive_direction">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Animation · Rive (Skip Lottie)</div><div class="zh">Pickup 角色動畫走 Rive</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Pickup character animation goes static SVG → <strong>Rive</strong> (<code>.riv</code> + State Machine + <code>@rive-app/canvas</code> runtime), <strong>skipping Lottie entirely</strong>. Same upgrade Duolingo completed in 2024–25. Capacitor + Rive has native support, files ~1/15 of Lottie (matters for the &lt;10MB cellular threshold), and State Machine + data binding power interactions like "correct → Mochi happy bounce / wrong → head tilt" that Lottie's linear playback can't do. Toolchain: Recraft (vector gen) → Rive (animation) → Capacitor (iOS shell) → Cloudflare Pages (web). Never propose Lottie as a stepping stone.</div>
+          <div class="zh-desc">Pickup 角色動畫長期方向走 <strong>Rive</strong>(<code>.riv</code> + State Machine + <code>@rive-app/canvas</code> runtime),直接從靜態 SVG → Rive,<strong>不過 Lottie 中間站</strong>。對齊 Duolingo 2024-25 完成的同樣升級路徑。Capacitor + Rive 原生支援、檔案 ~1/15(對 App Store &lt;10MB cellular 閾值有利),State Machine + data binding 支援「答對 Mochi 彈跳 / 答錯歪頭」這類 Lottie 線性播放做不到的互動。工具組合:Recraft(SVG)→ Rive(動畫)→ Capacitor(iOS shell)→ Cloudflare Pages(web)。未來不要再推 Lottie 中間站。</div>
+          <div class="filename">project_pickup_rive_direction.md</div>
+        </div></div>
+      </article>
+
     </div>
   </section>
 
@@ -827,7 +872,7 @@
     <div class="panel-head">
       <div class="panel-num">02</div>
       <h2 class="panel-title">Permissions<span class="zh">工具呼叫權限 · 自動放行 vs 先詢問</span></h2>
-      <div class="panel-meta"><b>22</b> allow · <b>18</b> ask</div>
+      <div class="panel-meta"><b>20</b> allow · <b>14</b> ask</div>
     </div>
 
     <div class="perm-split">
@@ -900,6 +945,22 @@
             <div class="perm-head"><span class="type-dot"></span><code>Write(./research-output/**)</code><span class="chev">▸</span></div>
             <div class="perm-body"><div class="perm-body-inner"><span class="en">Write only inside research-output folder.</span>只允許寫入 ./research-output/ 底下。</div></div>
           </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git push 推送 遠端 flag automode">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git push)</code><span class="alt-code">+ Bash(git push *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Push to remote — bare or with flags. Moved from ask → allow for autonomous deploy flows.</span>推送到遠端,裸 / 帶 flag 兩種。為 autonomous deploy 流暢度從 ask 移到 allow。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="git commit 建立 參數 automode">
+            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git commit)</code><span class="alt-code">+ Bash(git commit *)</span></span><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create a commit — bare or with args. Moved from ask → allow for autonomous deploy flows.</span>建立 commit,裸 / 帶參數兩種。為 autonomous deploy 流暢度從 ask 移到 allow。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="npx package 執行">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(npx *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Run any <code>npx</code> command (one-off package execution).</span>跑任何 <code>npx</code> 指令(一次性 package 執行)。</div></div>
+          </div>
+          <div class="perm-item card t-allow" data-type="allow" data-search="wrangler cloudflare deploy pages workers">
+            <div class="perm-head"><span class="type-dot"></span><code>Bash(wrangler *)</code><span class="chev">▸</span></div>
+            <div class="perm-body"><div class="perm-body-inner"><span class="en">Run Cloudflare <code>wrangler</code> CLI — Pages / Workers deploy.</span>跑 Cloudflare <code>wrangler</code> CLI(Pages / Workers 部署)。</div></div>
+          </div>
         </div>
       </div>
 
@@ -907,14 +968,6 @@
         <h3>Ask First <span class="badge">prompt user</span></h3>
         <div class="zh-sub">這些動作會跳出確認視窗讓你按 Yes / No。多半是不可逆、會動遠端、或碰祕密檔。</div>
         <div class="perm-list">
-          <div class="perm-item card t-ask" data-type="ask" data-search="git push 推送 遠端 flag">
-            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git push)</code><span class="alt-code">+ Bash(git push *)</span></span><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Push to remote — bare or with flags.</span>推送到遠端,裸 / 帶 flag 兩種。</div></div>
-          </div>
-          <div class="perm-item card t-ask" data-type="ask" data-search="git commit 建立 參數">
-            <div class="perm-head"><span class="type-dot"></span><span><code>Bash(git commit)</code><span class="alt-code">+ Bash(git commit *)</span></span><span class="chev">▸</span></div>
-            <div class="perm-body"><div class="perm-body-inner"><span class="en">Create a commit — bare or with args.</span>建立 commit,裸 / 帶參數兩種。</div></div>
-          </div>
           <div class="perm-item card t-ask" data-type="ask" data-search="rm 刪除 檔案">
             <div class="perm-head"><span class="type-dot"></span><code>Bash(rm *)</code><span class="chev">▸</span></div>
             <div class="perm-body"><div class="perm-body-inner"><span class="en">Delete files.</span>刪除檔案。</div></div>
@@ -1375,7 +1428,7 @@
 
   <footer>
     <div class="zh">
-      Generated for <a href="https://github.com/kengkeng44">@kengkeng44</a> · Claude Opus 4.7 · 2026-05-26<br>
+      Generated for <a href="https://github.com/kengkeng44">@kengkeng44</a> · Claude Opus 4.7 · 2026-06-09<br>
       Source-of-truth lives in <a href="https://github.com/kengkeng44/kengkeng">kengkeng44/kengkeng</a> · 設定變動會反映在 memory/*.md 與 settings.json。
     </div>
     <div>END · OPERATOR'S CARD v.2</div>
@@ -1570,6 +1623,9 @@
     'pickup no chinese pre-reveal':'yellow','pickup post iteration audit':'yellow',
     'proofread chinese popups':'yellow','dont pause for block':'yellow',
     'qa static resend':'yellow',
+    'hex code prompt':'yellow','image gen prompt single':'yellow',
+    'pickup no chinese ui':'yellow',
+    'fabu pickup app store':'green','pickup animation rive':'green',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
