@@ -4,6 +4,7 @@
 # 黃:行為偏好(會影響 Claude 怎麼回應或操作,但壞不了東西)
 # 綠:背景資訊(讀完更懂使用者,不讀也不會犯錯)
 
+# ──── RED: 安全防線 ────
 feedback_secrets_handling: red
 feedback_cleanup_review_only: red
 feedback_anaconda_dedup_danger: red
@@ -12,6 +13,7 @@ feedback_use_git_c_not_cd: red
 feedback_git_repo_not_in_onedrive: red
 feedback_repo_delete_sop: red
 
+# ──── YELLOW: 行為偏好 ────
 feedback_ai_output_style: yellow
 feedback_powershell_utf8_bom: yellow
 feedback_notion_learning_map: yellow
@@ -28,6 +30,37 @@ feedback_quota_threshold_notify: yellow
 user_excel_learning_focus: yellow
 feedback_telegram_no_markdown: yellow
 
+# ──── YELLOW: 互動流程(2026-06-07/08 補) ────
+feedback_default_chinese_reply: yellow
+feedback_explain_permissions: yellow
+feedback_send_url_after_dev: yellow
+feedback_autonomous_with_checkpoints: yellow
+feedback_push_per_segment: yellow
+feedback_segment_quota_status: yellow
+feedback_default_no_computer: yellow
+feedback_automode_no_prompts: yellow
+feedback_audit_link_and_popup: yellow
+feedback_proofread_chinese_in_popups: yellow
+feedback_dont_pause_for_block: yellow
+
+# ──── YELLOW: Pickup 專案規則(2026-06-07/08 補) ────
+project_pickup_audience_pivot: yellow
+feedback_perf_budget: yellow
+feedback_pickup_bilingual: yellow
+feedback_pickup_retry_reveal: yellow
+feedback_pickup_no_emoji_qa: yellow
+feedback_pickup_listening_format: yellow
+feedback_ui_fix_verify: yellow
+feedback_auto_verify_deploy: yellow
+feedback_pickup_q_prompt_quality: yellow
+feedback_pickup_speech_rate: yellow
+feedback_pickup_placeholder_substitution: yellow
+feedback_pickup_bilingual_options: yellow
+feedback_pickup_no_chinese_pre_reveal: yellow
+feedback_pickup_post_iteration_audit: yellow
+feedback_qa_static_resend_after_update: yellow
+
+# ──── GREEN: 背景資訊 ────
 user_olist_pm_portfolio: green
 user_profile_links: green
 reference_finance_prompt_libs: green
@@ -36,3 +69,8 @@ project_hermes_agent_install: green
 project_reportrobot_deployment: green
 project_learning_map_notion: green
 project_olist_two_locations: green
+
+# ──── GREEN: Pickup 背景 (2026-06-07/08 補) ────
+project_pickup_ios_distribution: green
+user_claude_subscription: green
+reference_pickup_game_ui_resources: green
