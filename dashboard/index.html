@@ -253,7 +253,7 @@
 
   <!-- STATS -->
   <section class="stats">
-    <div class="stat"><div class="n"><em>64</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
+    <div class="stat"><div class="n"><em>66</em></div><div class="lbl">Memory <span class="zh">記憶</span></div></div>
     <div class="stat"><div class="n"><em>20</em></div><div class="lbl">Allow <span class="zh">放行</span></div></div>
     <div class="stat"><div class="n"><em>14</em></div><div class="lbl">Ask <span class="zh">詢問</span></div></div>
     <div class="stat"><div class="n"><em>44</em></div><div class="lbl">Skills <span class="zh">技能</span></div></div>
@@ -262,7 +262,7 @@
   <!-- CONTROL BAR -->
   <div class="control">
     <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">64</span></button>
+      <button class="tab active" data-tab="memory" role="tab"><span class="num">01</span>Memory <span class="zh">記憶</span><span class="ct">66</span></button>
       <button class="tab" data-tab="perms" role="tab"><span class="num">02</span>Permissions <span class="zh">權限</span><span class="ct">34</span></button>
       <button class="tab" data-tab="skills" role="tab"><span class="num">03</span>Skills <span class="zh">技能</span><span class="ct">44</span></button>
     </div>
@@ -272,7 +272,7 @@
         <input type="text" id="search" placeholder="Search English or 中文 · 搜尋(例:git, secret, 簡報, pptx)" autocomplete="off" spellcheck="false">
         <button class="clear-search" id="clear-search" aria-label="Clear search">×</button>
       </div>
-      <div class="result-count" id="result-count"><b>64</b> of <b>64</b> 顯示中</div>
+      <div class="result-count" id="result-count"><b>66</b> of <b>66</b> 顯示中</div>
     </div>
 
     <div class="chips" id="chips"></div>
@@ -283,7 +283,7 @@
     <div class="panel-head">
       <div class="panel-num">01</div>
       <h2 class="panel-title">Memory<span class="zh">持久記憶 · 跨對話保留</span></h2>
-      <div class="panel-meta"><b>64</b> entries · sorted by priority</div>
+      <div class="panel-meta"><b>66</b> entries · sorted by priority</div>
     </div>
 
     <div class="cards-grid">
@@ -861,6 +861,24 @@
           <div class="en-desc">Pickup character animation goes static SVG → <strong>Rive</strong> (<code>.riv</code> + State Machine + <code>@rive-app/canvas</code> runtime), <strong>skipping Lottie entirely</strong>. Same upgrade Duolingo completed in 2024–25. Capacitor + Rive has native support, files ~1/15 of Lottie (matters for the &lt;10MB cellular threshold), and State Machine + data binding power interactions like "correct → Mochi happy bounce / wrong → head tilt" that Lottie's linear playback can't do. Toolchain: Recraft (vector gen) → Rive (animation) → Capacitor (iOS shell) → Cloudflare Pages (web). Never propose Lottie as a stepping stone.</div>
           <div class="zh-desc">Pickup 角色動畫長期方向走 <strong>Rive</strong>(<code>.riv</code> + State Machine + <code>@rive-app/canvas</code> runtime),直接從靜態 SVG → Rive,<strong>不過 Lottie 中間站</strong>。對齊 Duolingo 2024-25 完成的同樣升級路徑。Capacitor + Rive 原生支援、檔案 ~1/15(對 App Store &lt;10MB cellular 閾值有利),State Machine + data binding 支援「答對 Mochi 彈跳 / 答錯歪頭」這類 Lottie 線性播放做不到的互動。工具組合:Recraft(SVG)→ Rive(動畫)→ Capacitor(iOS shell)→ Cloudflare Pages(web)。未來不要再推 Lottie 中間站。</div>
           <div class="filename">project_pickup_rive_direction.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="pickup listening anchor parent child narration 48 duolingo passive 聽故事 親子陸聽 toeic spec audit grandma mochi bedtime 路線 by design project_pickup_listening_anchor">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Anchor · Parent-Child Listening (Not Duolingo)</div><div class="zh">Pickup 親子陸聽 anchor</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">Confirmed 2026-06-09: Pickup's core positioning is <strong>"parent-child listening English"</strong> (narration-heavy bedtime story route), <strong>not "kids' Duolingo active-answering"</strong>. Production data across <code>lessons-ch{0..31}.json</code> (2472 questions): narration <strong>48.0%</strong> by design, listen-mc 21.2%, others &lt; 10%. Drives 5 downstream strategies — narration &gt; listen-mc question priority, listening-completion scoring (not speed), slow TTS 0.75-0.85 (already shipped), 4-6 sentence story narration per question, commercial pitch "Grandma helps me sleep + English by osmosis." Stop asking if narration % is too high — it's spec, default audit reports to PASS. Remaining drifts (24 vs 7 lesson, 5 vs 2 segment, missing type-what-you-hear/tap-tiles) are separate cleanups.</div>
+          <div class="zh-desc">2026-06-09 確認:Pickup 核心定位 = <strong>「親子陸聽英文」</strong>(narration-heavy 睡前故事),<strong>不是「兒童 Duolingo 主動答題」</strong>。production <code>lessons-ch{0..31}.json</code> 2472 題:narration <strong>48.0%</strong> 是設計特色、listen-mc 21.2%、其他 &lt; 10%。決定 5 個下游策略 — narration &gt; listen-mc 題型優先、評分用聽完率非速度、TTS 慢速 0.75-0.85(已落地)、每題 4-6 句 narration、商業 pitch「奶奶哄睡 + 順便學英文」。不要再問 narration 是不是太高(by design),audit 報告預設 PASS。CLAUDE.md 24 vs production 7 lesson、5 vs 2 segment、缺 type-what-you-hear/tap-tiles 等 drift 另議。</div>
+          <div class="filename">project_pickup_listening_anchor.md</div>
+        </div></div>
+      </article>
+
+      <article class="card t-project" data-type="project" data-search="pickup react native rn pivot expo capacitor revert phaser metro bundler eas build codemagic 切換 pivot 架構 重寫 project_pickup_rn_pivot">
+        <div class="card-head"><span class="type-dot"></span><div class="card-titles"><div class="en">Pickup Pivots to React Native (2026-06-09)</div><div class="zh">Pickup 改走 React Native</div></div><span class="chev">▸</span></div>
+        <div class="card-body"><div class="card-body-inner">
+          <div class="en-desc">2026-06-09 user decision: Pickup full pivot to <strong>React Native</strong> stack. <strong>Overrides</strong> previous Capacitor + Codemagic path (just shipped in v2.0.B.262). Conflicts with 3 existing memories: <code>project_pickup_ios_distribution</code> (said "not RN"), <code>project_fabu_app_identity</code> (Capacitor 8 SPM), <code>project_pickup_rive_direction</code> (Rive React canvas — needs swap to <code>rive-react-native</code> runtime). Still TBD: Expo SDK vs bare RN, keep web (Vite/Phaser) as PWA fallback or all-in RN, revert vs archive the Capacitor commit, what to replace Phaser 3 with (react-native-game-engine / expo-three / pure RN components), Codemagic vs EAS Build. Phaser 3 cannot run in RN — 8 scenes need rewrite. Still valid: listening anchor, audience pivot, all <code>feedback_pickup_*</code> product rules (these are spec rules, not stack rules).</div>
+          <div class="zh-desc">2026-06-09 user decision:Pickup 全面 pivot 到 <strong>React Native</strong> 棧。<strong>覆蓋</strong>之前 Capacitor + Codemagic 路線(剛剛 v2.0.B.262 ship)。跟 3 條既有 memory 衝突:<code>project_pickup_ios_distribution</code>(原寫「不走 RN」)、<code>project_fabu_app_identity</code>(Capacitor 8 SPM)、<code>project_pickup_rive_direction</code>(Rive React canvas → 改 <code>rive-react-native</code>)。待決:Expo SDK or bare RN、web 版(Vite/Phaser)留 PWA fallback 還是全 RN、Capacitor commit revert or archive、Phaser 3 換什麼(react-native-game-engine / expo-three / 純 RN)、Codemagic vs EAS Build。Phaser 3 不能在 RN 跑 — 8 scene 重寫。仍適用:listening anchor、audience pivot、所有 <code>feedback_pickup_*</code> 產品規則(product rule 跟 stack 無關)。</div>
+          <div class="filename">project_pickup_rn_pivot.md</div>
         </div></div>
       </article>
 
@@ -1626,6 +1644,8 @@
     'hex code prompt':'yellow','image gen prompt single':'yellow',
     'pickup no chinese ui':'yellow',
     'fabu pickup app store':'green','pickup animation rive':'green',
+    'pickup listening anchor':'green',
+    'pickup react native':'yellow',
   };
   document.querySelectorAll('.panel[data-panel="memory"] .card').forEach(card => {
     const s = card.dataset.search || '';
