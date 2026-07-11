@@ -17,7 +17,7 @@ def _setup(tmp_path):
     (dash / "data").mkdir(parents=True)
     (dash / "data" / "priorities.yaml").write_text("feedback_x.md: red\n", encoding="utf-8")
     (dash / "data" / "perm-descriptions.yaml").write_text(
-        "Read:\n  en: read\n  zh: 讀檔\n", encoding="utf-8")
+        "descriptions:\n  Read:\n    en: read\n    zh: 讀檔\n", encoding="utf-8")
     (dash / "data" / "skills.yaml").write_text("custom: []\ndocs: []\nsuper: []\n", encoding="utf-8")
     return claude, dash
 

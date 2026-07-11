@@ -21,9 +21,12 @@ def build_all(claude_dir, dashboard_dir, project_roots, date):
     memory_dir = claude_dir / "projects" / "C--Users-acer" / "memory"
     settings = json.loads((claude_dir / "settings.json").read_text(encoding="utf-8"))
 
+    perm_raw = _load_yaml(data / "perm-descriptions.yaml")
+    perm_descs = perm_raw.get("descriptions", perm_raw) if isinstance(perm_raw, dict) else {}
+
     models = {
         "memory": build_memory_model(memory_dir, _load_yaml(data / "priorities.yaml")),
-        "permissions": build_permissions_model(settings, _load_yaml(data / "perm-descriptions.yaml")),
+        "permissions": build_permissions_model(settings, perm_descs),
         "skills": build_skills_model(_load_yaml(data / "skills.yaml")),
         "projects": discover_projects(project_roots, exclude=[claude_dir.parent]),
         "generated_at": date,
