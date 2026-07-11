@@ -42,3 +42,19 @@ def test_build_is_idempotent(tmp_path):
               project_roots=[tmp_path / "none"], date="2026-07-11")
     mtime2 = (dash / "index.html").stat().st_mtime_ns
     assert mtime1 == mtime2      # 內容沒變 → 不重寫
+
+
+def test_build_survives_missing_settings(tmp_path):
+    claude, dash = _setup(tmp_path)
+    (claude / "settings.json").unlink()      # settings.json 不存在
+    build_all(claude_dir=claude, dashboard_dir=dash,
+              project_roots=[tmp_path / "none"], date="2026-07-11")
+    assert (dash / "index.html").exists()
+
+
+def test_build_survives_malformed_yaml(tmp_path):
+    claude, dash = _setup(tmp_path)
+    (dash / "data" / "priorities.yaml").write_text(":\n  - [unclosed", encoding="utf-8")
+    build_all(claude_dir=claude, dashboard_dir=dash,
+              project_roots=[tmp_path / "none"], date="2026-07-11")
+    assert (dash / "index.html").exists()

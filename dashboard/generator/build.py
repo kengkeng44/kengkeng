@@ -11,7 +11,10 @@ from .render import render_index
 
 def _load_yaml(path):
     if Path(path).exists():
-        return yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
+        try:
+            return yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError:
+            return {}
     return {}
 
 
@@ -19,7 +22,11 @@ def build_all(claude_dir, dashboard_dir, project_roots, date):
     claude_dir, dashboard_dir = Path(claude_dir), Path(dashboard_dir)
     data = dashboard_dir / "data"
     memory_dir = claude_dir / "projects" / "C--Users-acer" / "memory"
-    settings = json.loads((claude_dir / "settings.json").read_text(encoding="utf-8"))
+    settings_path = claude_dir / "settings.json"
+    try:
+        settings = json.loads(settings_path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        settings = {}
 
     perm_raw = _load_yaml(data / "perm-descriptions.yaml")
     perm_descs = perm_raw.get("descriptions", perm_raw) if isinstance(perm_raw, dict) else {}
