@@ -1,5 +1,8 @@
+import re
 import subprocess
 from pathlib import Path
+
+from .frontmatter import parse_frontmatter
 
 
 def _git(path, args):
@@ -23,6 +26,34 @@ def _git_info(path):
     return {"branch": branch, "last_commit": last, "dirty": bool(dirty)}
 
 
+def _claude_md_outline(proj):
+    """回傳 {lines, headings[]} 或 None(檔案不存在/近乎空)。只取 h1/h2,上限 8。"""
+    p = proj / "CLAUDE.md"
+    if not p.is_file():
+        return None
+    txt = p.read_text(encoding="utf-8", errors="replace")
+    if len(txt) < 20:
+        return None
+    heads = [m[1].strip() for m in re.findall(r"^(#{1,3})\s+(.*)$", txt, re.M) if len(m[0]) <= 2]
+    return {"lines": txt.count("\n") + 1, "headings": heads[:8]}
+
+
+def _rules_of(proj):
+    """回傳 [{name, desc, type}],讀 .claude/rules/*.md 的 frontmatter。"""
+    rd = proj / ".claude" / "rules"
+    items = []
+    if rd.is_dir():
+        for f in sorted(rd.glob("*.md")):
+            meta, _ = parse_frontmatter(f.read_text(encoding="utf-8", errors="replace"))
+            meta = meta or {}
+            items.append({
+                "name": meta.get("name", f.stem),
+                "desc": meta.get("description", ""),
+                "type": (meta.get("metadata") or {}).get("type", ""),
+            })
+    return items
+
+
 def discover_projects(roots, exclude=()):
     exclude = {Path(e).resolve() for e in exclude} | {Path(r).resolve() for r in roots}
     seen = {}
@@ -35,11 +66,20 @@ def discover_projects(roots, exclude=()):
             proj = marker.parent.resolve()
             if proj in exclude or proj in seen:
                 continue
+            has_claude_dir = (proj / ".claude").is_dir()
             seen[proj] = {
                 "name": proj.name,
                 "path": str(proj),
-                "has_claude_dir": (proj / ".claude").is_dir(),
+                "has_claude_dir": has_claude_dir,
                 "has_claude_md": (proj / "CLAUDE.md").is_file(),
+                "has_settings": (proj / ".claude" / "settings.local.json").exists()
+                or (proj / ".claude" / "settings.json").exists(),
+                "claude_md": _claude_md_outline(proj),
+                "rules": _rules_of(proj),
                 "git": _git_info(proj),
             }
-    return sorted(seen.values(), key=lambda p: p["name"])
+    # 規範越豐富的排前面(rules + CLAUDE.md 章節數),再依名稱
+    def richness(p):
+        cm = p.get("claude_md")
+        return -(len(p.get("rules", [])) + (len(cm["headings"]) if cm else 0)), p["name"]
+    return sorted(seen.values(), key=richness)
