@@ -7,6 +7,7 @@ def _git(path, args):
         out = subprocess.run(
             ["git", "-C", str(path), *args],
             capture_output=True, text=True, timeout=10,
+            encoding="utf-8", errors="replace",
         )
         return out.stdout.strip() if out.returncode == 0 else None
     except (OSError, subprocess.SubprocessError):
