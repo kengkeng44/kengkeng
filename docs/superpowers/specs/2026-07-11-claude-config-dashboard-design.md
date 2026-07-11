@@ -1,7 +1,7 @@
 # Claude Code 設定儀表板 — 設計文件
 
 - 日期：2026-07-11
-- 狀態：設計進行中 — 主體(§1-§11)已對齊,考核機制(§12)待使用者確認;尚未進實作
+- 狀態：設計已對齊(§1-§12 全數確認),待使用者最終過目 → 進實作計畫
 - 位置：`Desktop/kengkeng/dashboard/`(擴充現有 Operator's Card,不新建平行專案)
 
 ## 1. 目標
@@ -137,27 +137,59 @@ Stop → generate_dashboard.py
 - 新增第 4 頁 `audit.html`:每條規範一列(對象/檢查方式/結果/扣分原因,可點到違規檔行)
 - 專案卡角落顯示 A/B/C/D 徽章
 
-### 12.4 標準來源
+### 12.4 標準來源:`rubric.yaml` 規則目錄(採 linter catalog schema)
 
-新增 `dashboard/data/rubric.yaml`(id / 規範描述 / 對象 / 檢查方式 / 權重),與 memory 對齊,為考核唯一標準檔。
+新增 `dashboard/data/rubric.yaml`,為考核唯一標準檔,與 memory 一一對齊。每條採業界 linter 規則目錄欄位:
+
+```yaml
+- id: pickup-no-emoji-qa
+  rule: "題目與選項禁 emoji"
+  scope: pickup-rn          # global 或專案名
+  severity: error           # error 違規扣滿 / warn 只提醒不扣
+  check: auto               # auto腳本 / ai判定 / attest自陳
+  detector: "grep emoji in lessons-*.json question|options"
+  fix: "移除該欄位 emoji"     # 可修建議
+  weight: 3
+  waiver: null              # 例外:填 {reason, until} 就不扣分
+```
 
 ### 12.5 歷史趨勢
 
 每次考核存一筆(日期→分數),`audit.html` 畫趨勢線,追蹤遵循度隨時間變化。
 
-### 12.6 待使用者確認的兩點
+### 12.6 waiver 例外機制(已採用)
 
-1. 三類檢查 + A/B/C/D + 第 4 頁考核頁 的架構是否 OK?
-2. 第一版考核項是否先從「可自動查」的 5-8 條規範起步(AI 判定/自陳類第二批再加)?
+規則可對特定專案標記豁免:`waiver: {reason: "wordwar 為實驗場", until: 2026-12-31}`。豁免項在 audit.html 以灰色「已豁免」呈現、不計入扣分,但仍列出以保留可視性。避免刻意的例外被誤判成違規。
+
+### 12.7 規範預算指標(已採用)
+
+Hub 顯示「目前 active 規範數 vs LLM 可靠遵循上限(~150 條指令)」。依研究:前沿 LLM 可靠遵循約 150-200 條、扣系統佔用剩 ~100-150;規範過量反而被忽略。超過門檻亮黃/紅,提醒瘦身或把專案專屬規範下放到 `.claude/rules/`(見 12.9)。
+
+### 12.8 研究依據(2026-07-11 上網學習)
+
+- **Linter 規則目錄**(ESLint / ast-grep):規則 = id + severity(off/warn/error)+ note可修建議 + glob + autofix + waiver;純文字 + metadata 為 source of truth。→ 定義 §12.4 schema。
+- **Scorecard 分級**(Port.io):gold/silver/bronze 漸進 > 二元 pass/fail;掉閾值→通知、可申請例外、季度複審門檻。→ A-D 分級 + §12.6 waiver。
+- **Compliance Dashboard 版面**(MetricStream / EOXS):三段式 Headline KPI → Trends → Details,每頁 ≤10-15 widget。→ 驗證 Hub→趨勢→audit.html 結構。
+- **CLAUDE.md 最佳實踐**:指令預算 ~150 條上限、重要規範置頂、可模組化。→ §12.7 規範預算。
+
+### 12.9 未來可選優化(非本專案範圍)
+
+Claude Code 2.0.64+ 原生支援 `.claude/rules/` 路徑範圍規則。可把專案專屬規範(如 Pickup 系列)從全域 memory 下放到各專案 `.claude/rules/`,只在該專案生效,省全域指令預算。列為 backlog,不在 P1-P4 內。
+
+### 12.10 已確認(取代原待確認)
+
+- 架構:三類檢查 + A/B/C/D + 第 4 頁 `audit.html` + 趨勢線 → 採用
+- 第一版:先做「可自動查」的 5-8 條規範,AI 判定 / 自陳類第二批再加 → 採用
+- 升級:waiver 例外(§12.6)+ 規範預算指標(§12.7)→ 採用
+- 不採用:考核分數掉級 Telegram 通知(使用者婉拒)
 
 ## 13. 進度快照(2026-07-11 收尾,重開機前)
 
-**已鎖定**:§3 全部決策 + §12 考核機制設計草案。
-**待辦(下個 session 接續)**:
-1. 使用者回覆 §12.6 兩個確認點
-2. 併定案 → recommit spec
-3. 進 `superpowers:writing-plans` 產實作計畫(P1→P4,見 §9)
-4. 依計畫實作,P1 先做:`generate_dashboard.py`(重建現有全域卡)+ Stop hook + 桌面捷徑
+**已鎖定**:§3 全部決策 + §12 考核機制(含研究依據、waiver、規範預算,全數確認)。
+**待辦**:
+1. 使用者最終過目 spec
+2. 進 `superpowers:writing-plans` 產實作計畫(P1→P4,見 §9)
+3. 依計畫實作,P1 先做:`generate_dashboard.py`(重建現有全域卡)+ Stop hook + 桌面捷徑
 
 **其他 in-flight(與本專案獨立)**:
 - pm-skills plugin 已在 `settings.json` 設 `false`(移除 Atlassian 認證黃字),**重開機後生效**;其他 15 plugin 未動。
