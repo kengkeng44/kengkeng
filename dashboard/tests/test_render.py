@@ -21,3 +21,15 @@ def test_render_contains_all_sections():
     assert "讀檔" in html
     assert "sync-x" in html
     assert "2026-07-11" in html
+
+
+def test_skills_section_survives_bare_string_entry():
+    models = {
+        "memory": [],
+        "permissions": {"allow": [], "ask": [], "deny": [], "defaultMode": "default"},
+        "skills": {"custom": ["raw-skill"], "docs": [], "super": []},
+        "projects": [],
+        "generated_at": "2026-07-11",
+    }
+    html = render_index(models)      # 不應丟 AttributeError
+    assert "raw-skill" in html

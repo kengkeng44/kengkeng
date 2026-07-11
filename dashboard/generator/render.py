@@ -44,7 +44,10 @@ def _perm_section(perms):
 def _skills_section(skills):
     parts = []
     for group in ("custom", "docs", "super"):
-        rows = "".join(f'<div class="row">{_esc(s.get("name", s))}</div>' for s in skills[group])
+        rows = "".join(
+            f'<div class="row">{_esc(s.get("name", s) if isinstance(s, dict) else s)}</div>'
+            for s in skills[group]
+        )
         parts.append(f'<h2>🛠️ {group} ({len(skills[group])})</h2>{rows}')
     return f'<div class="sec">{"".join(parts)}</div>'
 
