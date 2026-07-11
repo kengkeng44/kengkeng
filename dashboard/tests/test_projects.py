@@ -40,3 +40,16 @@ def test_finds_claude_projects_and_excludes_home(tmp_path):
     assert alpha["has_claude_md"] is True
     assert "git" in alpha            # 非 git → None
     assert alpha["git"] is None
+
+
+def test_scan_root_itself_is_not_listed_as_project(tmp_path):
+    root = tmp_path / "root"
+    (root / ".claude").mkdir(parents=True)      # root 本身有 .claude,不該被列為 project
+    sub = root / "sub"
+    sub.mkdir(parents=True)
+    (sub / "CLAUDE.md").write_text("# rules\n", encoding="utf-8")
+
+    found = discover_projects(roots=[root], exclude=[])
+    names = {p["name"] for p in found}
+    assert "root" not in names
+    assert "sub" in names

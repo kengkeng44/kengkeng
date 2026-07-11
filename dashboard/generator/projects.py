@@ -24,7 +24,7 @@ def _git_info(path):
 
 
 def discover_projects(roots, exclude=()):
-    exclude = {Path(e).resolve() for e in exclude}
+    exclude = {Path(e).resolve() for e in exclude} | {Path(r).resolve() for r in roots}
     seen = {}
     for root in roots:
         root = Path(root)
