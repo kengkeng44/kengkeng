@@ -44,11 +44,16 @@ def _sidebar(models):
     if perms["defaultMode"] == "bypassPermissions":
         chip = ('<div class="bypass-chip" title="defaultMode: bypassPermissions — '
                 '所有 allow/ask/deny 規則目前被跳過">⚠ bypassPermissions</div>')
+    gen = _e(models.get("generated_at", ""))
+    genat = (f'<div class="genat" style="font-family:var(--mono);font-size:10px;'
+             f'letter-spacing:.06em;color:var(--muted);padding:8px 12px">更新於 {gen}</div>'
+             if gen else "")
+    mt = ' style="margin-top:auto"' if not chip else ""
     return (
         '<aside class="side">'
         '<div class="wordmark">Operator\'s Card<small>Claude Code cockpit</small></div>'
         '<nav class="nav" aria-label="Dashboard sections">' + "".join(btns) + "</nav>"
-        + chip + "</aside>"
+        + chip + f'<div{mt}></div>' + genat + "</aside>"
     )
 
 
