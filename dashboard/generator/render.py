@@ -5,6 +5,10 @@ from .categorize import perm_families, memory_topics
 
 TYPE_LABEL = {"feedback": "feedback", "reference": "ref", "project": "proj", "user": "user"}
 
+# 已接平台狀態 → 燈號色 / 中文標籤
+STATUS_DOT = {"ok": "ok", "warn": "warn", "project": "warn", "off": "crit"}
+STATUS_TEXT = {"ok": "已連線", "warn": "需重連", "project": "專案限定", "off": "未連線"}
+
 
 def _e(s):
     return html.escape(str(s if s is not None else ""))
@@ -25,10 +29,11 @@ def _sidebar(models):
         "memory": len(models["memory"]),
         "permissions": len(perms["allow"]) + len(perms["ask"]) + len(perms["deny"]),
         "skills": sum(len(v) for v in models["skills"].values()),
+        "integrations": len(models.get("integrations", [])),
     }
     items = [("overview", "Overview", None), ("projects", "Projects", counts["projects"]),
              ("memory", "Memory", counts["memory"]), ("permissions", "Permissions", counts["permissions"]),
-             ("skills", "Skills", counts["skills"])]
+             ("skills", "Skills", counts["skills"]), ("integrations", "Integrations", counts["integrations"])]
     btns = []
     for i, (view, label, cnt) in enumerate(items):
         cur = ' aria-current="page"' if i == 0 else ""
@@ -56,6 +61,7 @@ def _overview(models):
         ("", len(projs), "Projects"), ("", len(models["memory"]), "Memory"),
         ("t-ok", len(p["allow"]), "Allow"), ("t-warn", len(p["ask"]), "Ask"),
         ("t-crit", len(p["deny"]), "Deny"), ("", sum(len(v) for v in models["skills"].values()), "Skills"),
+        ("", len(models.get("integrations", [])), "Integrations"),
     ]
     thtml = "".join(
         f'<div class="tile {c}"><div class="num">{n}</div><div class="lbl">{l}</div></div>'
@@ -221,11 +227,35 @@ def _skills(models):
     )
 
 
+# ---------------- integrations ----------------
+def _integrations(models):
+    items = models.get("integrations", [])
+    rows = []
+    for it in items:
+        dot = STATUS_DOT.get(it["status"], "ok")
+        stxt = STATUS_TEXT.get(it["status"], it["status"])
+        scope = f'<span class="pill">{_e(it["scope"])}</span>' if it.get("scope") else ""
+        rows.append(
+            f'<details class="card"><summary><span class="dot {dot}" title="{_e(stxt)}"></span>'
+            f'<span class="proj-name">{_e(it["name"])}</span>{scope}'
+            f'<span class="chev">›</span></summary>'
+            f'<div class="body"><div class="proj-meta">{_e(it["id"])} · {_e(stxt)}</div>'
+            f'<p style="margin:8px 0 0">{_e(it["zh"])}</p></div></details>'
+        )
+    return (
+        '<section class="view" id="view-integrations" aria-label="Integrations" hidden>'
+        '<p class="eyebrow">Integrations</p>'
+        f'<h1 class="vtitle">{len(items)} 個已接平台 · MCP 整合</h1>'
+        + ("".join(rows) or '<p class="mutenote">目前沒有已接平台。</p>')
+        + "</section>"
+    )
+
+
 def render_index(models):
     body = (
         '<div class="shell">' + _sidebar(models) + '<main class="pane">'
         + _overview(models) + _projects(models) + _memory(models)
-        + _permissions(models) + _skills(models)
+        + _permissions(models) + _skills(models) + _integrations(models)
         + "</main></div>"
     )
     return (

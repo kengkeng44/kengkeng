@@ -5,6 +5,7 @@ import yaml
 from .memory import build_memory_model
 from .permissions import build_permissions_model
 from .skills import build_skills_model
+from .integrations import build_integrations_model
 from .projects import discover_projects
 from .render import render_index
 
@@ -35,6 +36,7 @@ def build_all(claude_dir, dashboard_dir, project_roots, date):
         "memory": build_memory_model(memory_dir, _load_yaml(data / "priorities.yaml")),
         "permissions": build_permissions_model(settings, perm_descs),
         "skills": build_skills_model(_load_yaml(data / "skills.yaml")),
+        "integrations": build_integrations_model(_load_yaml(data / "integrations.yaml")),
         "projects": discover_projects(project_roots, exclude=[claude_dir.parent]),
         "generated_at": date,
     }

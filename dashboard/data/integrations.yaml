@@ -1,0 +1,28 @@
+# 已接平台(MCP 整合)資料來源 — 手動維護
+# Claude Code 沒有「列出帳號連了哪些 MCP」的 API,依 session 的 MCP server 清單手動更新
+# 跑 /refresh-dashboard 時讀這份 yaml 渲染 Integrations 區段
+# status: ok=已連線 / warn=需重連 / project=僅綁特定專案 / off=未連線
+integrations:
+  - name: "Gmail"
+    id: "mcp__claude_ai_Gmail"
+    status: ok
+    scope: "帳號級"
+    zh: "讀信、搜尋信件與討論串、建立草稿、貼標籤。"
+
+  - name: "Notion"
+    id: "mcp__claude_ai_Notion"
+    status: ok
+    scope: "帳號級"
+    zh: "建頁、搜尋、查/改資料庫、移動頁面(學習地圖同步靠它)。"
+
+  - name: "Telegram"
+    id: "plugin:telegram"
+    status: warn
+    scope: "帳號級"
+    zh: "Telegram bot 收發訊息;本次 session 連線中斷,需重連。"
+
+  - name: "context7"
+    id: "context7"
+    status: project
+    scope: "wordwar 專案"
+    zh: "查第三方套件的技術文件,僅綁在 wordwar 專案、非帳號級。"
