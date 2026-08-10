@@ -34,11 +34,23 @@ git -C "C:/Users/acer/Desktop/kengkeng" add dashboard/index.html
 - 直接 commit 到 `main`(此 repo 既有慣例,dashboard 例行同步不開分支)。
 - push 完把可點的 URL 單獨一行給用戶:`https://kengkeng44.github.io/kengkeng/dashboard/`
 
-## 自我指涉現象(正常,不要追)
+## 自我指涉現象:用「落後幾個 commit」判斷,不要看差異內容
 
-dashboard 會把各專案(含 kengkeng 自己)的最新 commit hash 畫進 `index.html`。所以**每次 commit 完,index.html 立刻又過期一次** — 線上顯示的 hash 永遠落後 HEAD 一個,這是設計下限不是 bug。
+dashboard 會把各專案(含 kengkeng 自己)的最新 commit hash 畫進 `index.html`,所以每次 commit 完 index.html 立刻又過期一次。線上永遠落後 HEAD 一個 commit,這是設計下限不是 bug。
 
-處理原則:push 完若工作樹又出現 `M dashboard/index.html`,先看差異;**若只有 hash 和日期不同就直接 `git checkout -- dashboard/index.html` 丟掉,不要再 commit 一輪**,否則會無限追。若差異不只 hash(例如 generator 有新功能),代表有別的變更在跑,先查清楚再動。
+判準**不是**「差異是不是只有 hash」(那條會誤判:別的 session push 過之後,差異同樣只有 hash,但線上是真的落後)。正確判準是**已 commit 的 dashboard 裡記錄的 hash 距離現在的 HEAD 差幾個 commit**:
+
+```powershell
+$repo = "C:/Users/acer/Desktop/kengkeng"
+$html = git -C $repo show HEAD:dashboard/index.html
+$old = [regex]::Match($html, 'kengkeng.{0,600}?proj-meta">([0-9a-f]{7})').Groups[1].Value
+git -C $repo rev-list --count "$old..HEAD"
+```
+
+- 輸出 **0 或 1** → 自我指涉的正常下限。`git checkout -- dashboard/index.html` 丟掉,不要 commit,否則會無限追。
+- 輸出 **2 以上** → 線上真的落後(中間有別的 commit 進來,可能來自並行的 session),照上面的同步流程 commit + push。
+
+若差異不只 kengkeng 自己的 hash(例如 generator 被改出新區塊或新欄位),代表有別的變更正在跑,先查清楚來源再動。
 
 備註:
 - 收工時 Stop hook 已會自動跑同一支腳本,通常不需手動。
