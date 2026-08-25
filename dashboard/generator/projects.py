@@ -78,6 +78,14 @@ def discover_projects(roots, exclude=()):
                 "rules": _rules_of(proj),
                 "git": _git_info(proj),
             }
+    # 同名專案(例如 Desktop/pickup 與 projects/pickup 這種重複 clone)
+    # 補上所在目錄,否則畫面上兩張卡長得一模一樣,分不出在看哪一份。
+    from collections import Counter
+    dupes = {n for n, c in Counter(p["name"] for p in seen.values()).items() if c > 1}
+    for p in seen.values():
+        if p["name"] in dupes:
+            p["name"] = f'{Path(p["path"]).parent.name}/{p["name"]}'
+
     # 規範越豐富的排前面(rules + CLAUDE.md 章節數),再依名稱
     def richness(p):
         cm = p.get("claude_md")

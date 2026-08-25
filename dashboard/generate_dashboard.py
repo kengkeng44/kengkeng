@@ -9,7 +9,9 @@ HOME = Path("C:/Users/acer")
 CLAUDE_DIR = HOME / ".claude"
 DASHBOARD_DIR = HOME / "Desktop" / "kengkeng" / "dashboard"
 DESKTOP = HOME / "Desktop"
-PROJECT_ROOTS = [HOME / "Desktop", HOME]
+# ~/projects 是第二個放 repo 的地方(ReportRobot 就在那)。探索只掃一層,
+# 所以兩個位置都要列出來,不能只靠 HOME。
+PROJECT_ROOTS = [HOME / "Desktop", HOME, HOME / "projects"]
 
 
 def main():
