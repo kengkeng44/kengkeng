@@ -37,7 +37,12 @@ def build_all(claude_dir, dashboard_dir, project_roots, date):
         "permissions": build_permissions_model(settings, perm_descs),
         "skills": build_skills_model(_load_yaml(data / "skills.yaml")),
         "integrations": build_integrations_model(_load_yaml(data / "integrations.yaml")),
-        "projects": discover_projects(project_roots, exclude=[claude_dir.parent]),
+        # 排除家目錄與 ~/.claude 本身:後者有 CLAUDE.md 所以會被 glob 命中,
+        # 但它是設定目錄不是 repo(沒有 .git),列進來會讓「N 個追蹤中的 repo」
+        # 這句話不成立 —— 而且 memory / permissions / skills 三個分頁本來就在
+        # 描述這個目錄,再列成專案是自我指涉。
+        "projects": discover_projects(
+            project_roots, exclude=[claude_dir.parent, claude_dir]),
         "generated_at": date,
     }
     html = render_index(models)
