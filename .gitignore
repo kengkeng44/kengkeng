@@ -6,3 +6,8 @@ Thumbs.db
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# 儀表板生成產物 — 含 memory/權限/專案內幕,repo 是 PUBLIC,嚴禁進版控
+# 本機由 regen.ps1 重生,雲端走 Claude Artifact(私密)
+dashboard/index.html
+dashboard/index.legacy.html
