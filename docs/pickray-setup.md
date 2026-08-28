@@ -1,5 +1,10 @@
 # 拾光 / PickRay — 整理範本(在本機做)
 
+> ⚠️ **2026-08-28 註**:這份是 2026-07 的一次性整理範本,當時專案還叫「拾光 / PickRay」。
+> 該做的都做完了 —— 專案現名 **Pickup**,repo 在 `kengkeng44/pickup`(預設分支 `master`),
+> 頂層壞檔名殘骸也已清掉。留著是為了裡面的通則(AGENTS.md 複數命名、CLAUDE.md 單一正本),
+> 步驟本身不必再跑。
+
 > 拾光的 code 在你桌面(`C:\Users\acer\Desktop\...`),不在雲端環境裡,所以這步要**在你本機開 Claude Code / 編輯器**做。
 > 這份是「怎麼整理」的具體步驟 + 範本。做完再上 GitHub。暫時寄放在 kengkeng repo,之後可搬進拾光 repo。
 
